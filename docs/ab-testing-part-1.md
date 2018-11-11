@@ -64,27 +64,26 @@ Other examples:
     * *Effect* - the difference in OEC (mean of Treatment minus mean of Control) Type III errors happen more often when the effects are small
 * Standard deviation
   * subtract the mean from every value, then square each result, then get the mean of those results.
-  ![Standard Deviation](http://www.sciweavers.org/tex2img.php?eq=%20%5Csigma%20%3D%20%5Csqrt%7B%20%5Cfrac%7B1%7D%7BN%7D%20%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%20%28x_%7Bi%7D%20-%20%20%5Cmu%20%29%5E%7B2%7D%20%7D&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
-   [//]: #  (\sigma = \sqrt{ \frac{1}{N}  \sum_{i=1}^{N} (x_{i} -  \mu )^{2} })
+  ![Standard Deviation](https://user-images.githubusercontent.com/638189/48319308-62526b80-e5da-11e8-8253-aeb9665de9bf.png)
 * *T-Test*, used in A/B testing (single factor hypothesis tests)
-  ![T-test](http://www.sciweavers.org/tex2img.php?eq=t%20%3D%20%5Cfrac%7B%20%5Coverline%7B%20O_%7Bb%7D%20%7D%20-%20%20%5Coverline%7B%20O_%7Ba%7D%20%7D%20%7D%7B%20%5Cwidehat%7B%20%20%5Csigma_%7Bd%7D%20%7D%20%7D%0A&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
-  [//]: #  (t = \frac{ \overline{ O_{b} } -  \overline{ O_{a} } }{ \widehat{  \sigma_{d} } })
+  ![T-test](https://user-images.githubusercontent.com/638189/48319320-82822a80-e5da-11e8-9ec6-1e22be7ce55c.png)
+
 * Calculation for minimum sample size, with 95% confidence level, 80% power
-  ![Minimum Sample Size](http://www.sciweavers.org/tex2img.php?eq=n%20%3D%20%5Cfrac%7B%2016%5Csigma%5E2%20%20%7D%7B%20%5CDelta%5E%7B2%7D%20%20%7D&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
-  [//]: #  (n = \frac{ 16\sigma^2  }{ \Delta^{2}  })
+  ![Minimum Sample Size](https://user-images.githubusercontent.com/638189/48319372-32f02e80-e5db-11e8-9269-3b3c76be8bc2.png)
 * Demo: e-commerce site:
   * 5% of users who visit will buy something, (which means 95% spend $0)
   * Those who buy something spend about $75
   * The average user spends $3.75
   * Assume the standard deviation of purchase amount is $30
   * To run an A/B test and want to detect a 5% change in revenue, you need 409,600 users to achieve 80% power
-    ![5% revenue change, sample size equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7B%2016%20%2A%2030%5E2%20%20%7D%7B%20%283.75%20%2A%200.05%29%5E%7B2%7D%20%20%7D%20%3D%20409600&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
-  [//]: # ( \frac{ 16 * 30^2  }{ (3.75 * 0.05)^{2}  } = 409600)
-
-
+    ![5% revenue change, sample size equation](https://user-images.githubusercontent.com/638189/48319384-51562a00-e5db-11e8-9f62-6626a1c7c4e6.png)
 
 
 ## Sources
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
 
 
+[//]: # (\sigma = \sqrt{ \frac{1}{N}  \sum_{i=1}^{N} (x_{i} -  \mu )^{2} })
+[//]: # (t = \frac{ \overline{ O_{b} } -  \overline{ O_{a} } }{ \widehat{  \sigma_{d} } })
+[//]: # (n = \frac{ 16\sigma^2  }{ \Delta^{2}  })
+[//]: # (\frac{ 16 * 30^2  }{ (3.75 * 0.05)^{2}  } = 409600)
