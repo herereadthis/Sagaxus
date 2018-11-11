@@ -1,0 +1,8 @@
+.git
+node_modules/
+.DS_Store
+.idea
+npm-debug.log
+dist/*
+build
+.vscode
