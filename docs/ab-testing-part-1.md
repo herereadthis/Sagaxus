@@ -78,6 +78,26 @@ Other examples:
     * Conversion rate can be thought of as Bernoulli trials (either buy or don't buy)
     * Using the formula for standard deviation for a binomial distribution (see below), the result is 122,000 users. *Measuring conversion requires far fewer trials than revenue.*
 
+* Things to watch out for:
+  * Robots! - they are not actual users and they can skew results.
+  * **Quantitative metrics, not explanatins** - We can learn which variant is better (and by how much) but controlled experiments cannot tell us why.
+  * **Short vs long term effects** - There may be a lag between the time a user is exposed to something and when they take action, aka *latent conversion*
+  * **Primacy and newness effects** - Users may be less efficient at doing something until they learn how to do it, e.g., a new navigation. Also, users may want to click on everything if they see something new, and not actually use it for its purpose
+  * **Hawthorne Effect** - users may alter their behavior if they know they are being studied.
+  * **Feature Implementation** - if we expose something new to the user, we have to make sure it actually works.
+  * **Consistency** - Make sure that users see the variant every time they use the application, and make sure they aren't aware other users are seeing something different
+  * **Launch events** - make sure the new feature exists if we announce it.
+
+## Multi-Variable Testing (MVT)
+
+* an experiment that includes more than one factor
+* MVT can accelerate improvement by shortening the testing time
+* You can also estimate interactions between factors, e.g., the interaction of 2 factors is different than the sum of the individual factors. If the two factors together yield a better result, then it is *synergistic*, but *antagonistic* otherwise.
+* Limitations
+  * Antagonistic interactions - for example, a item description with a larger image and a longer description may make the "buy" button harder to find
+  * Analysis are interpretation are more difficult
+  * It may take longer to create the test - you need to have all the features ready
+
 ## Sources
 
 * [Controlled experiments on the web: survey and practical guide](https://www.exp-platform.com/Documents/controlledExperimentDMKD.pdf)

@@ -23,10 +23,10 @@
   > ![z](https://user-images.githubusercontent.com/638189/48364012-43ed7e00-e675-11e8-89e0-679c221853f8.png)
 * The test statistic *t* in term of the sample mean is
   > ![t](https://user-images.githubusercontent.com/638189/48366729-b6159100-e67c-11e8-92bc-1c74a3c2ec1d.png)
-  where *&sigma;<sub>x</sub>* is the standard deviation of the sample
+  * where *&sigma;<sub>x</sub>* is the standard deviation of the sample
 * The test statistic *z* in terms of sample proportion is
   > ![proportion](https://user-images.githubusercontent.com/638189/48368969-258e7f00-e683-11e8-8fde-7939a1cf4d43.png)
-  where *p<sub>0</sub>* is the true population proportion and *p* is the hypothesized proportion
+  * where *p<sub>0</sub>* is the true population proportion and *p* is the hypothesized proportion
 
 * **Lower Tail Test**
   * The hypothesized mean *&mu;<sub>o</sub>* is less than the true population mean *&mu;*.

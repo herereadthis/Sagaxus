@@ -6,8 +6,10 @@ Links to stuff:
 * [Sampling Size](https://github.com/herereadthis/sagaxus/blob/master/docs/sampling-size.md)
 * [Bernoulli Trials](https://github.com/herereadthis/sagaxus/blob/master/docs/bernoulli-trials.md)
 * [Hypothesis Testing](https://github.com/herereadthis/sagaxus/blob/master/docs/hypothesis-testing.md)
-* [List of Applications](https://github.com/herereadthis/sagaxus/blob/master/docs/applications.md)
 * [Predictive Analytics](https://github.com/herereadthis/sagaxus/blob/master/docs/predictive-analytics.md)
+* Services
+  * [Overview](https://github.com/herereadthis/sagaxus/blob/master/docs/services/README.md)
+  * [Optimizely](https://github.com/herereadthis/sagaxus/blob/master/docs/services/optimizely.md)
 * Libraries
   * [NumPy](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/numpy.md)
   * [Pandas](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/pandas.md)
