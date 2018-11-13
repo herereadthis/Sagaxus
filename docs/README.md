@@ -13,3 +13,4 @@ Links to stuff:
 * Libraries
   * [NumPy](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/numpy.md)
   * [Pandas](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/pandas.md)
+  * [Sixpack](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/sixpack.md)
