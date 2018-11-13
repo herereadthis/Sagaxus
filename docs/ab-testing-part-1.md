@@ -97,10 +97,15 @@ Other examples:
   * Antagonistic interactions - for example, a item description with a larger image and a longer description may make the "buy" button harder to find
   * Analysis are interpretation are more difficult
   * It may take longer to create the test - you need to have all the features ready
+* test *n* factors with the designs:
+  * **full factorial**
+  * **fractional factorial**
+  * **Plackett-Burman**
 
 ## Sources
 
 * [Controlled experiments on the web: survey and practical guide](https://www.exp-platform.com/Documents/controlledExperimentDMKD.pdf)
+* [Early Amazon: Shopping cart recommendations](https://glinden.blogspot.com/2006/04/early-amazon-shopping-cart.html)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
   * Standard Deviation: `\sigma = \sqrt{ \frac{1}{N}  \sum_{i=1}^{N} (x_{i} -  \mu )^{2} }`
   * T-test: `t = \frac{ \overline{ O_{b} } -  \overline{ O_{a} } }{ \widehat{  \sigma_{d} } }`

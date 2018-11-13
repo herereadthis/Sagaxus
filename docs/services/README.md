@@ -20,6 +20,7 @@
 ## Analytics
 
 * [Google Analytics](https://www.google.com/analytics/) - free for the most part
+* [Matomo](https://matomo.org/) - analytics
 * [Mixpanel](https://mixpanel.com/) - insights for A/B testing
 * [HotJar](https://mixpanel.com/) - analytics and feedback
 
