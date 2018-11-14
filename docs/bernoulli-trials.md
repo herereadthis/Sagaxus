@@ -14,9 +14,12 @@ An experiment that only has two possible results, *success* and *failure*, can b
     > ![Distribution Function](https://user-images.githubusercontent.com/638189/48320683-769e6480-e5ea-11e8-8a15-d22a9ae925a9.png)
 * Bernoulli trials follow a **Binomial Distribution** If *n* trials with a *p* probability, then `X ~ B(n,p)`
     > ![Binomial Distribution](https://user-images.githubusercontent.com/638189/48320873-10b2dc80-e5ec-11e8-9e1f-86632948918b.png)
-* [Standard Deviation](https://math.stackexchange.com/questions/1716156/sd-of-a-bernoulli-trial) of a Bernoulli Trial
-    > ![Bernoulli Standard Deviation](https://user-images.githubusercontent.com/638189/48321218-e282cc00-e5ee-11e8-8976-1e58630e981e.png)
+* The mean of a Bernoulli Trial is its probability *&mu; = p*
+* [Variance of](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf) a Bernoulli Trial
+  > ![bernoulli Variance](https://user-images.githubusercontent.com/638189/48450932-19371e80-e776-11e8-936a-342b373f99b8.png)
 
+* [Standard Deviation](https://math.stackexchange.com/questions/1716156/sd-of-a-bernoulli-trial) of a Bernoulli Trial
+  > ![Bernoulli Standard Deviation](https://user-images.githubusercontent.com/638189/48321218-e282cc00-e5ee-11e8-8976-1e58630e981e.png)
 ## Examples:
 * The outcome of a coin flip is a Bernoulli random variable, and assume each outcome is equally possible. The probability that a coin flip lands heads is *0.5*, while tails is *1 - 0.5*
   * Outcome of 5 heads in 5 flips is *0.5<sup>5</sup>* - each coin toss is independent of the others
@@ -37,9 +40,12 @@ An experiment that only has two possible results, *success* and *failure*, can b
   * Success Probability: `P(X = 1) = p`
   * Distribution Function: `F(x) =\begin{cases}0 & x < 0\\1 - p & 0  \leq x < 1\\1 & x  \geq 1\end{cases}`
   * Binomial Distribution: `P(X = x) = (\frac{n}{x})p^x(1 - p)^{n - x}`
+  * Bernoulli Variance: `Var(X) = p(1 - p)`
   * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)} `
   * Coin flip example: `(\frac{5}{3})0.5^3(1 - 0.5)^{5 - 3} = (\frac{5}{3})0.5^3(0.5)^{2} = 0.05208 \overline{3} `
   * Plane ticket example: `(\frac{50}{50})0.95^{50}(1 - 0.95)^{50 - 50} = 0.95^{50}(0.05) = 0.003847`
 * [Some probabilistic models](http://www.est.uc3m.es/esp/nueva_docencia/getafe/economia/estadistica_I/doc_generica/Chapt1_Part-C_Print.pdf)
 * [What is the difference and relationship between the binomial and Bernoulli distributions?](https://math.stackexchange.com/questions/838107/what-is-the-difference-and-relationship-between-the-binomial-and-bernoulli-distr)
 * [SD of a bernoulli trial?](https://math.stackexchange.com/questions/1716156/sd-of-a-bernoulli-trial)
+* [Variance of Discrete Random Variables](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf)
+* [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
