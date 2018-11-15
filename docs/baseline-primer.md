@@ -7,8 +7,15 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * **Probability** - *P* - the likelihood that an event will occur
   * If *p* = 0, the event will not occur.
   * If *p* = 1, the event will occur.
+  * The probability of *A* happening is *P(A)*
+  * The probability of *A* happening, given that *B* has occurred is *P(A|B)*
+    > ![conditional probability](https://user-images.githubusercontent.com/638189/48531444-3ea55480-e86a-11e8-975f-db87956c90e6.png)
+  * Rewritten is the multiplication rule:
+    > ![multiplication rule](https://user-images.githubusercontent.com/638189/48531532-9a6fdd80-e86a-11e8-9e17-f1431a938bfa.png)
+
 * **Law of Large Numbers** - the frequency of an event will converge on the probability of the event as the number of trials increase.
 * **Mutually Exclusive** - two events cannot occur at the same time.
+  * *A* is independent of *B* if *P(A|B) = P(A)*
 * **Random Variable** - a variable with a value that determined by a chance event.
   * **Discrete Variable** - variables that can only be certain values, within a range. For example, the number of heads from *n* coin flips is a whole number between 0 and *n*. It cannot be fractions.
     * Discrete Variables can be **finite** or **infinite**. While coin flips that result with heads can be infinite, but selecting aces from a pack of cards is finite.
@@ -59,11 +66,14 @@ Establish terms so we know we are talking about the same thing when we say a wor
   > ![nonnonegative pdf](https://user-images.githubusercontent.com/638189/48522476-d1cc9300-e846-11e8-8ce8-4e9047cdc861.png)
   * and the pdf across all ranges will equal 1
   > ![infinity pdf](https://user-images.githubusercontent.com/638189/48522569-2a9c2b80-e847-11e8-9962-081dc473b52a.png)
+  * You have to integrate *f(x)* to get the probability
 
 ## Sources
 
 * [Rules of Probability](https://stattrek.com/probability/probability-rules.aspx?Tutorial=AP)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
+  * conditional probability: `P(A|B) = \frac{P(A \cap B)}{P(B)}`
+  * multiplication rule: `P(A \cap B) = P(A|B) * P(B)`
   * discrete mean: `E(X) = \mu_{x} = \sum_{i=1}^n {x_{i} * P(x_{i}) }`
   * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
   * discrete standard deviation: ` \sigma  =  \sqrt{Var(X)} `
