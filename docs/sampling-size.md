@@ -5,17 +5,20 @@ How many samples from a population do you need to see whether they possess a par
 * **Critical Value** - the area under a normal distribution curve.
   * There is an 80% probability a result will fall within 1.28 standard deviations of the mean. So 1.28 is the critical value of *z* that corresponds to central area of 0.80.
   * *&alpha;* is the tail area. For a 0.80 central area, then there are 0.10 tail areas on either side of the curve.
-  * *z*<sub>0.10</sub> 1.28 is the critical value of *z* for a 0.80 probability.
-  * *z*<sub>0.05</sub> 1.645 is the critical value of *z* for a 0.90 probability.
-  * 95%: *z*<sub>0.025</sub> = 1.96
-  * 95.4%: *z*<sub>0.023</sub> = 2.00
-  * 96%: *z*<sub>0.02</sub> = 2.054
-  * 98%: *z*<sub>0.01</sub> = 2.326
-  * 99%: *z*<sub>0.005</sub> = 2.576
-  * 99.5%: *z*<sub>0.0025</sub> = 2.807
-  * 99.73%: *z*<sub>0.0013</sub> = 3.000
-  * 99.8%: *z*<sub>0.001</sub> = 3.091
-  * 99.9%: *z*<sub>0.0005</sub> = 3.291
+  * Z-table
+  
+    | confidence % | critical value | &alpha;/2             |
+    |--------------|----------------|-----------------------|
+    | 80%          | 1.282          | *z<sub>0.1</sub>*     |
+    | 90%          | 1.645          | *z<sub>0.05</sub>*    |
+    | 95%          | 1.960          | *z<sub>0.025</sub>*   |
+    | 95.45%       | 2.000          | *z<sub>0.02275</sub>* |
+    | 96%          | 2.054          | *z<sub>0.02</sub>*    |
+    | 98%          | 2.326          | *z<sub>0.01</sub>*    |
+    | 99.73%       | 3.000          | *z<sub>0.00135</sub>* |
+    | 99.8%        | 3.090          | *z<sub>0.001</sub>*   |
+    | 99.9%        | 3.291          | *z<sub>0.0005</sub>*  |
+    | 99.99%       | 3.891          | *z<sub>0.00005</sub>* |
 
 * Margin of Error formula
   * where Z<sub>&alpha;/2</sub> is the critical value,
