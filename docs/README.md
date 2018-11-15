@@ -1,7 +1,5 @@
 # Sagaxus Documentation
 
-Links to stuff:
-
 * [Baseline Primer](https://github.com/herereadthis/sagaxus/blob/master/docs/baseline-primer.md)
 * [Sampling Size](https://github.com/herereadthis/sagaxus/blob/master/docs/sampling-size.md)
 * [Bernoulli Trials](https://github.com/herereadthis/sagaxus/blob/master/docs/bernoulli-trials.md)
@@ -16,3 +14,7 @@ Links to stuff:
   * [Pandas](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/pandas.md)
   * [React A/B Test](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/react-ab-test.md)
   * [Sixpack](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/sixpack.md)
+
+## Dead Libraries/Services
+
+  * [Facebook Planout](http://facebook.github.io/planout/) - last commits in 2016

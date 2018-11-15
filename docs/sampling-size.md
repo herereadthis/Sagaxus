@@ -20,7 +20,10 @@ How many samples from a population do you need to see whether they possess a par
 * Margin of Error formula
   * where Z<sub>&alpha;/2</sub> is the critical value,
   * *p* is the proportion,
-  * *n* is sample size
+  * *n* is sample size,
+  * *&sigma;* is standard deviation
+    > ![interval estimation](https://user-images.githubusercontent.com/638189/48491707-2a277480-e7f6-11e8-8632-19a6d0daf3b2.png)
+  * For a binomial distribution, the standard deviation is the square root of the proportion times the inverse proportion
     > ![Margin of Error](https://user-images.githubusercontent.com/638189/48325466-b1f95d00-e603-11e8-92cd-7502e202f77a.png)
   * Usually we don't know what the proportion is, but to maximize the margin of error, the proportion will be 50% to maximize the the formula
 * Sample size:
@@ -37,6 +40,7 @@ How many samples from a population do you need to see whether they possess a par
 
 * [Critical Values of *z*](http://www.math.armstrong.edu/statsonline/5/5.3.2.html)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
+  * interval estimateion: `\mu =  \overline{x}  \pm ME = \overline{x}  \pm z_{ \alpha/ 2}\frac{ \sigma }{ \sqrt{n} }`
   * Margin of Error: `Z_{ \alpha / 2}  \sqrt{\frac{p(1 - p)}{n}}  \leq ME`
   * Sample Size: `n = \frac{p(1-p)}{(\frac{ME}{Z_{ \alpha / 2}})^2}`
   * Example 1: `\frac{0.5 * 0.5}{(\frac{0.05}{1.96})^2}  \approx  384`

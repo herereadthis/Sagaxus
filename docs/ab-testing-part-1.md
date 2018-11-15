@@ -105,6 +105,7 @@ Other examples:
 ## Sources
 
 * [Controlled experiments on the web: survey and practical guide](https://www.exp-platform.com/Documents/controlledExperimentDMKD.pdf)
+  * [Alternate Source](http://www.robotics.stanford.edu/~ronnyk/2009controlledExperimentsOnTheWebSurvey.pdf)
 * [Early Amazon: Shopping cart recommendations](https://glinden.blogspot.com/2006/04/early-amazon-shopping-cart.html)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
   * Standard Deviation: `\sigma = \sqrt{ \frac{1}{N}  \sum_{i=1}^{N} (x_{i} -  \mu )^{2} }`

@@ -9,7 +9,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * If *p* = 1, the event will occur.
 * **Law of Large Numbers** - the frequency of an event will converge on the probability of the event as the number of trials increase.
 * **Mutually Exclusive** - two events cannot occur at the same time.
-* **Random Variable** - a variable with a vaule that determined by a chance event.
+* **Random Variable** - a variable with a value that determined by a chance event.
   * **Discrete Variable** - variables that can only be certain values, within a range. For example, the number of heads from *n* coin flips is a whole number between 0 and *n*. It cannot be fractions.
     * Discrete Variables can be **finite** or **infinite**. While coin flips that result with heads can be infinite, but selecting aces from a pack of cards is finite.
   * **Continuous Variable** - variables that be any value within a range. For example the height of a person selected from a population is continuous.
@@ -51,6 +51,15 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * For constants *a* and *b*, *Var(aX + b) = a<sup>2</sup>Var(X)*.
   * *Var(X) = E(X<sup>2</sup>) − E(X)<sup>2</sup>*
 
+## Continuous Random Variables
+
+* A random variable X is **continuous** if there is a function *f(x)* such that for any *c &le; d*, the probability density function is:
+  > ![continuous pdf](https://user-images.githubusercontent.com/638189/48522379-6d113880-e846-11e8-9ce8-89766ea995bd.png)
+  * The pdf is always non negative,
+  > ![nonnonegative pdf](https://user-images.githubusercontent.com/638189/48522476-d1cc9300-e846-11e8-8ce8-4e9047cdc861.png)
+  * and the pdf across all ranges will equal 1
+  > ![infinity pdf](https://user-images.githubusercontent.com/638189/48522569-2a9c2b80-e847-11e8-9962-081dc473b52a.png)
+
 ## Sources
 
 * [Rules of Probability](https://stattrek.com/probability/probability-rules.aspx?Tutorial=AP)
@@ -58,6 +67,9 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * discrete mean: `E(X) = \mu_{x} = \sum_{i=1}^n {x_{i} * P(x_{i}) }`
   * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
   * discrete standard deviation: ` \sigma  =  \sqrt{Var(X)} `
+  * continuous pdf: `P(c  \leq d) =  \int_c^d f(x) dx`
+  * nonnegative pdf: `f(x)  \geq 0`
+  * infinity pdf: `P( -\infty   \leq X \leq \infty) =  \int_{-\infty}^\infty f(x) dx = 1`
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
 * [Intruction to probability and statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)
 * [Variance of Discrete Random Variables](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf)
