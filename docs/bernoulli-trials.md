@@ -49,16 +49,16 @@ An experiment that only has two possible results, *success* and *failure*, can b
 ### What is the probability that passengers show up on a plane?
 
 * The plane has 50 seats.
+* All seats have been sold.
 * For every passenger, there is a 5% chance they do not board.
  * In other words = *X = Bin(50, 0.95)*
 
-* An airline has sold 50 tickets for a flight. The probability of a passenger not showing up is 0.05. *X = number of passengers that don't show up)*
-  * What is the probability that all 50 passengers show up?
-    * 50 independent success, or 0.95<sup>50</sup> = 7.694%
-  * What is the probability that exactly 49 passengers show up?
-    ![plane ticket example 1](https://user-images.githubusercontent.com/638189/48597885-2a2a9000-e92e-11e8-9435-c97f5bafa574.png)
-  * What is the probability at least 48 passengers show up?
-    * *P(X &ge; 48) = 1 - P(X = 50) - P(X = 49) = 72.06%
+* What is the probability that all 50 passengers show up?
+  * 50 independent success, or 0.95<sup>50</sup> = 7.694%
+* What is the probability that exactly 49 passengers show up?
+  > ![plane ticket example 1](https://user-images.githubusercontent.com/638189/48598046-f2701800-e92e-11e8-9873-ce8685125980.png)
+* What is the probability at least 48 passengers show up?
+  * *P(X &ge; 48) = 1 - P(X = 50) - P(X = 49) = 72.06%
 
 
 ## Sources
@@ -72,7 +72,7 @@ An experiment that only has two possible results, *success* and *failure*, can b
   * Bernoulli Variance: `Var(X) = p(1 - p)`
   * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)} `
   * Coin flip example: `(\frac{5}{3})0.5^3(1 - 0.5)^{5 - 3} = (\frac{5}{3})0.5^3(0.5)^{2} = 0.05208 \overline{3} `
-  * Plane ticket example 1: `P(X = 48) = \begin{pmatrix}50 \\48 \end{pmatrix}0.95^{48}(1-0.95)^{50-48} = 1225 *0.95^48*0.05^2 = 0.2025`
+  * Plane ticket example 1: `P(X = 49) = \begin{pmatrix}50 \\49 \end{pmatrix}0.95^{49}(1-0.95)^{50-49} = 50 *0.95^{49}*0.05 = 0.2025`
 * [Binomial Coefficient](http://mathworld.wolfram.com/BinomialCoefficient.html)
 * [Some probabilistic models](http://www.est.uc3m.es/esp/nueva_docencia/getafe/economia/estadistica_I/doc_generica/Chapt1_Part-C_Print.pdf)
 * [What is the difference and relationship between the binomial and Bernoulli distributions?](https://math.stackexchange.com/questions/838107/what-is-the-difference-and-relationship-between-the-binomial-and-bernoulli-distr)
