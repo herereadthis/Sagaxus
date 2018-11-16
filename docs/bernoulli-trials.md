@@ -22,7 +22,14 @@ An experiment that only has two possible results, *success* and *failure*, can b
 * The mean of a Bernoulli Trial is its probability *&mu; = p*
 * [Variance of](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf) a Bernoulli Trial
   > ![bernoulli Variance](https://user-images.githubusercontent.com/638189/48450932-19371e80-e776-11e8-936a-342b373f99b8.png)
+  * Proof
 
+    |        Values *X*        |           0           |          1          |
+    |:------------------------:|:---------------------:|:-------------------:|
+    |        pmf *p(x)*        |        *(1-p)*        |         *p*         |
+    | *(X - &mu;)<sup>2</sup>* | *(0 - p)<sup>2</sup>* | *(1-p)<sup>2</sup>* |
+
+  * *Var(X) = (1 − p)p<sup>2</sup> + p(1 − p)<sup>2</sup> = (1 − p)p(1 − p + p) = (1 − p)p.*
 * [Standard Deviation](https://math.stackexchange.com/questions/1716156/sd-of-a-bernoulli-trial) of a Bernoulli Trial
   > ![Bernoulli Standard Deviation](https://user-images.githubusercontent.com/638189/48321218-e282cc00-e5ee-11e8-8976-1e58630e981e.png)
 

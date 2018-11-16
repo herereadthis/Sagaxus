@@ -100,6 +100,40 @@ Establish terms so we know we are talking about the same thing when we say a wor
     * 0 &le; *y* &le; 1 for all values of *x*
     * The area of the curve created by the function is equal to 1
     * The probability that *y* occurs within the interval of *a* and *b* is equal to the area of the function curve from *a* to *b*
+* **Cumulative Distribution Function cdf** - analogous to cmf
+  * *F(x) = P(X &le; x)*
+  * 0 &le; *F(x)* &le; 1
+* **Uniform Distribution** - all outcomes in the range have equal probobability, aka same probability density
+  * Parameters: *a, b*
+  * Range: *[a, b]*
+  * Notation: *U(a, b)*
+  * Density: *f(x) = 1/(b - a)* for *a &le; x &le; b*
+  * Distribution: *F(x) = (x - a)/(b - a)* for *a &le; x &le; b*
+  * an example of uniform distribution is throwing darts at a dartboard and getting the angle drawn from a vertical line to the center to the dart
+* **Exponential Distribution** - the probability of and outcome gets larger as *x* increases
+  * Parameter: *&lambda;*
+  * Range: [0, &infin;)
+  * Notation: exp(&lambda;)
+  * Density: *f(x) = &lambda;e<sup>-&lambda;x</sup>* for *0 &le; x*
+  * Distribution: *F(x) = 1 - e<sup>-&lambda;x</sup>* for *x &ge; 0*
+  * Example: waiting for a taxi to arrive. The longer you wait, the more likely it will arrive
+
+### Normal Distribution
+
+* Also known as a **Gaussian** Distribution, named after Carl Friedrich Gauss
+* Parameters: *&mu;, &sigma;*
+* Range: (-&infin;, &infin;)
+* Notation: *N(&mu;,&sigma;<sup>2</sup>)*
+* Density:
+  > ![normal density](https://user-images.githubusercontent.com/638189/48600644-b773e180-e93a-11e8-8fdf-20158f26b93d.png)
+* **Standard normal distribution Z** - a normal distribution where *&mu;* = 0 and *&sigma;* = 1
+* Let *X* be a random variable with *&mu;* mean and *&sigma;* standard deviation. Then:
+  > ![Z](https://user-images.githubusercontent.com/638189/48600293-4b44ae00-e939-11e8-9e3d-8a5cda02f1bd.png)
+* The probability that that a value *z* is between the mean and *Z*
+  * *f(z) = &phi;(z) - 1/2*
+  * *P(-1 &le; Z &le; 1)* &asymp; 0.6827
+  * *P(-2 &le; Z &le; 2)* &asymp; 0.9545
+  * *P(-3 &le; Z &le; 3)* &asymp; 0.9973
 
 ## Central Limit Theorem
 
@@ -119,6 +153,8 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * continuous pdf: `P(c  \leq d) =  \int_c^d f(x) dx`
   * nonnegative pdf: `f(x)  \geq 0`
   * infinity pdf: `P( -\infty   \leq X \leq \infty) =  \int_{-\infty}^\infty f(x) dx = 1`
+  * Z: `Z = \frac{X -  \mu }{ \sigma }`
+  * Normal density: `f(x) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}}`
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
 * [Intruction to probability and statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)
 * [Variance of Discrete Random Variables](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf)
