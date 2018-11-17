@@ -129,7 +129,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * **Standard normal distribution Z** - a normal distribution where *&mu;* = 0 and *&sigma;* = 1
 * Let *X* be a random variable with *&mu;* mean and *&sigma;* standard deviation. Then:
   > ![Z](https://user-images.githubusercontent.com/638189/48600293-4b44ae00-e939-11e8-9e3d-8a5cda02f1bd.png)
-* The probability that that a value *z* is between the mean and *Z*
+* [The probability that a value](http://courses.atlas.illinois.edu/spring2016/STAT/ST) *z* is between the mean and *Z*
   * *f(z) = &phi;(z) - 1/2*
   * *P(-1 &le; Z &le; 1)* &asymp; 0.6827
   * *P(-2 &le; Z &le; 2)* &asymp; 0.9545
@@ -141,6 +141,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 ## Sources
 
+* Graph generator: [http://courses.atlas.illinois.edu/spring2016/STAT/STAT200/pnormal.html](http://courses.atlas.illinois.edu/spring2016/STAT/ST)
 * [HTML Math Symbols, Math Entities, and ASCII Math Character Code Reference](https://www.toptal.com/designers/htmlarrows/math/)
 * [Rules of Probability](https://stattrek.com/probability/probability-rules.aspx?Tutorial=AP)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
