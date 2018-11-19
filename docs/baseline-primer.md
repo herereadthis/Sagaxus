@@ -154,6 +154,26 @@ Establish terms so we know we are talking about the same thing when we say a wor
 ## Central Limit Theorem
 
 * **Law of Large Numbers** - the frequency of an event will converge on the probability of the event as the number of trials increase.
+  * The average of many independent samples is close to the average of the population.
+  > ![law of large numbers](https://user-images.githubusercontent.com/638189/48669423-6eef2c00-ead2-11e8-8fb2-559bbd693ab3.png)
+* **Central Limit Theorem** - as more averages of independent samples is gathered, the distribution approaches a normal distribution
+* **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
+  > ![Z](https://user-images.githubusercontent.com/638189/48657572-cc1aad00-ea00-11e8-8f6e-433a358d7377.png)
+  * *Z* has a mean of 0 and standard deviation 1
+* Let *S<sub>n</sub>* the the sum of *X<sub>1</sub>, X<sub>1</sub>, ... , X<sub>n</sub>* random variables each with a mean &mu; and a standard deviation *&sigma;*. Then the weighted average of the random variables is:
+  > ![clt](https://user-images.githubusercontent.com/638189/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)
+* Mean
+  > ![Expected Value Sum, Sample](https://user-images.githubusercontent.com/638189/48675521-dbe0e100-eb27-11e8-8fef-85909fae57d5.png)
+* Variance
+  > ![Variance Sum, Sample](https://user-images.githubusercontent.com/638189/48675533-fc10a000-eb27-11e8-8ed0-e67c6aa32ed2.png)
+* Standard Deviation
+  > ![Standard Deviation, sum, sample](https://user-images.githubusercontent.com/638189/48675542-1d718c00-eb28-11e8-9da9-2e556ed992b2.png)
+* CLT: For large *n*,
+  > ![large n](https://user-images.githubusercontent.com/638189/48675580-9e308800-eb28-11e8-9f9a-6dc3e99fe996.png)
+
+### CLT Examples
+  * See [Sampling Size page](https://github.com/herereadthis/sagaxus/blob/master/docs/sampling-size.md) for examples
+
 
 ## Sources
 
@@ -174,6 +194,12 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * expected value, continuous: `E(X) =  \int_a^b xf(x)dx`
   * expected value, standard: `E(z) = \phi(z) = \frac{1}{ \sqrt{2 \pi } }e^{-z^2/2} \Big|_{-\infty}^{\infty} = 0`
   * expected value uniform continuous: `E(X) = \int_{0}^{1}xdx = \frac{x^2}{2}  \Big|_0^1 = \frac{1}{2}`
+  * law of large numbers: `\lim_{n \rightarrow \infty} P(\left |  \overline{X} - \mu  \right | < a) = 1 `
+  * Clt: ` \overline{X}_{n} = \frac{S_{n}}{n} = \frac{X_{1} + ... + X_{n}}{n} =  \big(\sum_{i=1}^nX_{i}\big)/n`
+  * Expected Value Sum, Sample: `E(S_{n}) = n\mu, E( \overline{X}_{n}) =\mu`
+  * Variance, Sum, Sample: `Var(S_{n}) = n\sigma^2, Var( \overline{X}_{n}) =\frac{\sigma^2}{n}`
+  * Standard Deviation Sum, sample: `\sigma_{S_{n}} =\sqrt{n}\sigma, \sigma_{\overline{X}_{n}} =\frac{\sigma}{\sqrt{n}}`
+  * large n: `\overline{Xn} \approx N(\mu, \frac{\sigma^2}{n}), S_n \approx N(n\mu, n\sigma^2), Zn \approx N(0,1))`
 * [Better Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
 * [Intruction to probability and statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)

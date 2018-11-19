@@ -19,7 +19,8 @@ An experiment that only has two possible results, *success* and *failure*, can b
 * **Binomial Distribution** is the model for *n* independent Bernoulli trials with a *p* probability, then `X ~ Bin(n,p)`
   * Therefore *Bin(1,p) = Ber(p)*
   > ![Binomial Distribution](https://user-images.githubusercontent.com/638189/48593528-27726f80-e91b-11e8-8e9e-783779803c55.png)
-* The mean of a Bernoulli Trial is its probability *&mu; = p*
+* **Mean** of a Bernoulli Trial is its probability *&mu; = p*
+* **Expected Value** is *E(X) = 0(1-p) + 1(p) = p*
 * [Variance of](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf) a Bernoulli Trial
   > ![bernoulli Variance](https://user-images.githubusercontent.com/638189/48450932-19371e80-e776-11e8-936a-342b373f99b8.png)
   * Proof
