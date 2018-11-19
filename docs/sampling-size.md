@@ -38,9 +38,12 @@ How many samples from a population do you need to see whether they possess a par
     > ![Example 1](./img/ff3b6b07-32e1-4e83-9de6-cf2d3b09bb74.png)
   * If they know the conversion rate is 5%, then the sample size is 73.
     > ![Example 2](./img/09c9b0c3-cd0a-4888-831c-fcd5bd25c044.png)
+* **Margin of Error, rule of thumb** - A sample of *n* people will have have a margin of error:
+  > ![margin of error rule of thumb](./img/ffc64dd1-c3a4-490d-b5a1-7deb5c88ad9f.png)
 
 ## Central Limit Theorem, Examples
 
+* See [Baseline Primer](./baseline-primer.md) page for description of CLT
 * CLT
   > ![clt](./img/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)
 * Mean
@@ -59,7 +62,8 @@ How many samples from a population do you need to see whether they possess a par
     * Expected Value of Sum of 100 coin flips *E(S)* = 0.5 * 100 = 50
     * *Var(S) = n&sigma;<sup>2</sup>* = 100 * 0.5<sup>2</sup> = 25*
     * Standard Deviation of *S* is square root of its variance: 5
-
+    > ![55 coin example](./img/e61b6506-ba9c-4133-aff7-f1e82fa0bb7b.png)
+    * Another way to think of this problem is 55 is 1 standard deviation over the mean. What is the left tail over 1 standard deviation?
 
 ## Sources
 
@@ -69,5 +73,8 @@ How many samples from a population do you need to see whether they possess a par
   * Margin of Error: `Z_{ \alpha / 2}  \sqrt{\frac{p(1 - p)}{n}}  \leq ME`
   * Sample Size: `n = \frac{p(1-p)}{(\frac{ME}{Z_{ \alpha / 2}})^2}`
   * Example 1: `\frac{0.5 * 0.5}{(\frac{0.05}{1.96})^2}  \approx  384`
-  * Example 2: `\frac{0.95 * 0.05}{(\frac{0.05}{1.96})^2}  \approx  73
+  * Example 2: `\frac{0.95 * 0.05}{(\frac{0.05}{1.96})^2}  \approx  73`
+  * 55 coin example `P(S > 55) = P\left ( \frac{S-50}{5} > \frac{55-50}{5} \right ) \approx P(Z > 1) = 0.16`
+  * margin of error rule of thumb: `ME = 1\pm\sqrt{n}`
+
 `

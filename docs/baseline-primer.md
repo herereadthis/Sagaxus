@@ -26,7 +26,12 @@ Establish terms so we know we are talking about the same thing when we say a wor
     *P(B|A) * P(A) = P(A &cap; B) = P(A|B) * P(B)*
   * Let *H<sub>1</sub>* be the probability that the first coin toss is heads, and let *H<sub>2</sub>* be the probability that all 3 coin tosses are heads.
     * Then *P(H<sub>1</sub>|H<sub>A</sub>)* = 1, while *P(H<sub>A</sub>|H<sub>1</sub>)* = 1/4
-
+  * **Sally Clark**
+    * What is the probability that a mother's first 2 babies dies of SIDS? Are these events dependent or independent?
+    * Given that a mother's first baby died of SIDS, what is the probability that her second baby will also die of SIDS?
+    * Professor Sir Roy Meadow incorrectly concluded that these were 2 independent events, and famously said it was a "1 in 73 million" chance.
+    * This false statistic lead to her false conviction in November 2009.
+    * She was release on January 2003, but died in March 2007 from alcohol poisoning.
 
 ## Discrete Random Variables
 

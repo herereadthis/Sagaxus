@@ -1,20 +1,22 @@
 # Sagaxus Documentation
 
-* [Baseline Primer](https://github.com/herereadthis/sagaxus/blob/master/docs/baseline-primer.md)
-* [Sampling Size](https://github.com/herereadthis/sagaxus/blob/master/docs/sampling-size.md)
-* [Bernoulli Trials](https://github.com/herereadthis/sagaxus/blob/master/docs/bernoulli-trials.md)
-* [Hypothesis Testing](https://github.com/herereadthis/sagaxus/blob/master/docs/hypothesis-testing.md)
-* [A/B Testing, Part 1](https://github.com/herereadthis/sagaxus/blob/master/docs/ab-testing-part-1.md)
-* [Predictive Analytics](https://github.com/herereadthis/sagaxus/blob/master/docs/predictive-analytics.md)
-* Services
-  * [Overview](https://github.com/herereadthis/sagaxus/blob/master/docs/services/README.md)
-  * [Optimizely](https://github.com/herereadthis/sagaxus/blob/master/docs/services/optimizely.md)
+* [Baseline Primer](./baseline-primer.md)
+* [Sampling Size](./sampling-size.md)
+* [Bernoulli Trials](./bernoulli-trials.md)
+* [Hypothesis Testing](./hypothesis-testing.md)
+* [Statistics Primer](./statistics-primer.md)
+* [A/B Testing, Part 1](./ab-testing-part-1.md)
+* [Predictive Analytics](./predictive-analytics.md)
+
+* Services.
+  * [Overview](./services/README.md)
+  * [Optimizely](./services/optimizely.md)
 * Libraries
-  * [NumPy](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/numpy.md)
-  * [Pandas](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/pandas.md)
-  * [React A/B Test](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/react-ab-test.md)
-  * [Sixpack](https://github.com/herereadthis/sagaxus/blob/master/docs/libraries/sixpack.md)
+  * [NumPy](./libraries/numpy.md)
+  * [Pandas](./libraries/pandas.md)
+  * [React A/B Test](./libraries/react-ab-test.md)
+  * [Sixpack](./libraries/sixpack.md)
 
 ## Dead Libraries/Services
 
-  * [Facebook Planout](http://facebook.github.io/planout/) - last commits in 2016
+* [Facebook Planout](http://facebook.github.io/planout/) - last commits in 2016
