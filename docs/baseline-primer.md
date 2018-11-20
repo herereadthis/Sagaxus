@@ -21,7 +21,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * **Mutually Exclusive** - two events cannot occur at the same time.
   * *A* is independent of *B* if *P(A|B) = P(A)*
 * **Bayes' Theorem**
-  > ![Bayes' Theorem](https://user-images.githubusercontent.com/638189/48657490-7d204800-e9ff-11e8-94ab-b5aec7a3cd00.png)
+  > ![Bayes' Theorem](./img/48657490-7d204800-e9ff-11e8-94ab-b5aec7a3cd00.png)
   * Proof (divide both sides by *P(A)*:
     *P(B|A) * P(A) = P(A &cap; B) = P(A|B) * P(B)*
   * Let *H<sub>1</sub>* be the probability that the first coin toss is heads, and let *H<sub>2</sub>* be the probability that all 3 coin tosses are heads.

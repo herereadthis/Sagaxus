@@ -31,6 +31,7 @@ How many samples from a population do you need to see whether they possess a par
   * For a binomial distribution, the standard deviation is the square root of the proportion times the inverse proportion
     > ![Margin of Error](./img/48325466-b1f95d00-e603-11e8-92cd-7502e202f77a.png)
   * Usually we don't know what the proportion is, but to maximize the margin of error, the proportion will be 50% to maximize the the formula
+  * The maxima of *p(1 - p)* can be found by gettings its derivative: *1 - 2p = 0*
 * Sample size:
   > ![Sample Size](./img/48326258-5a102580-e606-11e8-95b1-a6df859de965.png)
 * Examples
