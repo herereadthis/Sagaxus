@@ -4,10 +4,10 @@
 * [Sampling Size](./sampling-size.md)
 * [Bernoulli Trials](./bernoulli-trials.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
-* [Statistics Primer](./statistics-primer.md)
+* [Bayesian Statistics](./bayesian-statistics.md)
+* [Frequentist Statistics](./frequentist-statistics.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
 * [Predictive Analytics](./predictive-analytics.md)
-
 * Services.
   * [Overview](./services/README.md)
   * [Optimizely](./services/optimizely.md)

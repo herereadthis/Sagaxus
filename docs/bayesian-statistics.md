@@ -1,4 +1,6 @@
-# Statistics Primer
+# Bayesian Statistics
+
+## Statistics Primer
 
 The goal of statistics is to make inferences based on data.
 
@@ -7,6 +9,7 @@ The goal of statistics is to make inferences based on data.
 3. Analyze the data
 
 * **Statistic** - anything that can be computed from collected data
+  * To be more specific, statistic is a rule for computing something, value is what is computed
   * Is a coin fair if it lands 60 heads out of 100 tosses?
 * **Probability** - the likelihood that an event occurs
   * What is the likelihood of landing 60 heads out of 100 coin tosses
