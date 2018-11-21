@@ -41,6 +41,8 @@ is *probability.*
   * Example: What is the MLE of the probability *p*, given 55 heads from 100 coin flips?
     * *P(55 heads | p)*
     * The derivative will get 0.55
+* **Type 1 Probability** - the standard probability of data (e.g. probability of getting heads)
+* **Type 2 Probability** - The probability of hypothesis (e.g. the coin is *A*
 
 ### Bayesian Updating
 
@@ -56,16 +58,46 @@ is *probability.*
     * First what is the probability of getting a coin?
     * *P(A)* = 0.4, *P(B)* = 0.4, *P(C)* = 0.2
     * Then probability of heads is the probability of getting heads for each coin
-    * *P(D)* = 0.5*0.4 + 0.6*0.4 + 0.9*0.2 = 0.62
+    * *P(D)* = 0.5*0.4 + 0.6*0.4 + 0.9*0.2 = 0.2 + 0.24 + 0.18 = 0.62
     * Using Bayes' Theorem, *P(A|D) = P(D|A)*P(A)/P(D) = 0.5*0.4/0.62 = 0.3226
     * Similarly, *P(B)* = 0.3871 and *P(C)* = 0.2903
+* **Predictive Probabilities** - assigining a probability to each possible outcome of an experiment.
+* Example again:
+  * The coin is flipped again, and it lands heads again.
+  * What is the probability that the coin is *A*? or *B* or *C*?
+    * The **Posterior** probability from the first round becomes the hypothesis or **Prior** for the second round
+    * P(D<sub>2>) = 0.5*0.2 + 0.6*0.24 + 0.9*0.18 = 0.1 + 0.144 + 0.162 = 0.406
+    * Then the probability of *A* given 2 heads is 0.1/0.406 = 0.2463
 
-* **Type 1 Probability** - the standard probability of data (e.g. probability of getting heads)
-* **Type 2 Probability** - The probability of hypothesis (e.g. the coin is *A*
+### Odds
 
+* **Odds** the odds of event *E* vs. complement event *E<sup>c</sup>* are *O(E) = P(E)/P(E<sup>c</sup>)*
+  * The probability of rain is 67%, and the probability of no rain is 33%. So the odds of rain are 67%/33% = "2 to 1"
+* Example
+  * Marfan Syndrome occurs in 1 out of every 15000 people. 3 different ocular symptoms that may occur with Marfan Syndrome are:
+    * Lens dislocation, myopia, and retinal detachment.
+  * 70% of people with Marfan Syndrome have at least 1 of these features
+  * 7% of people without Mafan Syndrome have at least 1 of these features
+  * What are the odds that someone with one of these features *F* has Marfan Syndrome?
+    * Odds of having Marfan Syndrome (prior odds):
+      * *O(M) = P(M)/P(M<sup>C</sup>)* = 1/14999 = 0.000067
+    * Odds of having Marfan Syndrome if person has ocular feature (posterior odds):
+      * *O(M|F) = P(M|F)/P(M<sup>C</sup>|F) = 0.000667
+  * So posterior odds are 10 times larger than prior odds.
+  * Note that the odds are still very tiny.
+* **Bayes Factor** the order of magnitude that the posterior odds  is greater than prior odds.
+  > ![Bayes Factor](./img/40e0ca48-66eb-418d-8d03-7ade5be645aa.png)
+  * for a hypothesis *H* and data *D*
+  * posterior odds = BF * prior odds
+  * *BF > 1* - data provides evidence for hypothesis
+  * *BF < 1* - data provides evidence against hypothesis
+  * *BF = 1* - data provides no evidence either way
+
+### Continuous Priors
 
 
 ## Sources
 
 * [Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
   * Bayes' Theorem: `P(B|A) = \frac{P(A|B)*P(B)}{P(A)}`
+  * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
