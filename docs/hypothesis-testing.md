@@ -1,17 +1,31 @@
 # Hypothesis Testing
 
 * **Hypothesis** - a premise or claim that we want to test.
-* **Null Hypothesis (*H<sub>0</sub>*)** - Currently accepted value for a parameter.
-* **Alternate Hypothesis (*H<sub>1</sub>*)** - Claim to be tested, aka "research hypothesis"
+*
 * The null and alternative hypothesis are mathematical opposites. Together, they must allow for all possible answers
-* A candy machine makes chocolate bars that weight 5g on average. A work claims the machine no longer makes 5g bars.
-  * *H<sub>0</sub>*: *&mu; = 5g*
-  * *H<sub>1</sub>*: *&mu; &ne; 5g*
+* **Neyman-Pearson Paradigm** - If the data is well outside the what is expected under the null hypothesis, then reject the null hypothesis.
+* **Difference from Bayesian updating**
+  * The evidence of the data will be considered through the likelihood function, not prior beliefs.
+  * Need a notion of data considered "extreme," or outside what is expected.
+* **Null Hypothesis Significance Testing (NHST)** - compare an observed statistic against a hypothetical distribution aka test distribution
+  * **Null Hypothesis (*H<sub>0</sub>*)** - Currently accepted value for a parameter.
+  * **Alternate Hypothesis (*H<sub>A</sub>*)** - Claim to be tested, aka "research hypothesis"
+  * **Test Statistic (*X*)** - is calculated from the sample data, and is used make a decision
+  * **Null Distribution** - the probability distribution of *X* assuming *H<sub>0</sub>*
+  * **Rejection Region** - where *X* would be in order to reject *H<sub>0</sub>* for *H<sub>A</sub>*
+  * **Non-Rejection Region** - where *X* would be in order not to reject *H<sub>0</sub>* for *H<sub>A</sub>*
+    - "Do not reject" is not the same as "accept!"
+  * Example: 
+    * A candy machine makes chocolate bars that weight 5g on average. A work claims the machine no longer makes 5g bars.
+      * *H<sub>0</sub>*: *&mu; = 5g*
+      * *H<sub>A</sub>*: *&mu; &ne; 5g*
+* Example: flip a coin 10 times. Let *&theta;* be the probability that a coin flip lands heads.
+  * Null Hypothesis *H<sub>0</sub>*  - *&theta;* - 0.5, aka "the coin is fair"
+  * Alternative Hypothesis *H<sub>A</sub>* - *&theta;* &ne; 0.5, aka "the coin is rigged"
 * In hypothesis testing, we assume the null hypothesis is true
   * If evidence proves otherwise, then we will ***reject*** the null hypothesis
   * If there isn't evidence to prove otherwise, then we will ***fail to reject*** the null hypothesis
   * Analogy to US courts: you are presumed to be innocent. It is up to the evidence to prove guilt. You don't have to prove innocence (aka null hypothesis)
-* The **test statistic** is calculated from the sample data, and is used to decided.
 * **Statistically significant** - where do we draw the line to make a decision?
 * **Confidence Level (*c*)** - how confident are we in our decision?
 * **Significance Level (*&alpha; = 1 - c*)** complement to confidence level
@@ -83,3 +97,4 @@
 * [Intro to Hypothesis testing in Statistics](https://www.youtube.com/watch?v=VK-rnA3-41c)
 * [Hypothesis testing and p-values](https://www.youtube.com/watch?v=-FtlH4svqx4)
 * [Introductin to Hypothesis testing](https://www.youtube.com/watch?v=qsMZ4Zi5Csk)
+* [Null Hypothesis Significance Testing I](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading17b.pdf)
