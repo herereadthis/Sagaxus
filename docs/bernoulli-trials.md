@@ -4,25 +4,26 @@ An experiment that only has two possible results, *success* and *failure*, can b
 * The results are mutually exclusive,
 * The probability of these two results do not change each time the experiment is done
 * **Bernoulli Distribution** - a distribution for a random variable defined as
-    > ![Bernoulli Random Variable](https://user-images.githubusercontent.com/638189/48320500-e0b60a00-e5e8-11e8-8fc1-f1b316c3fe83.png)
+    > ![Bernoulli Random Variable](./img/9885ccd3-9602-431f-a028-4a3ede2d189e.png)
 * `X` follows a Bernoulli distribution with parameter `p` is `X ~ Ber(p)`
 * Probability function:
-  > ![Failure Probability Function](https://user-images.githubusercontent.com/638189/48320567-85d0e280-e5e9-11e8-8ad2-cac44548e809.png)
-  > ![Success Probability Function](https://user-images.githubusercontent.com/638189/48320591-adc04600-e5e9-11e8-9b75-8e1a3732a2a0.png)
+  > ![Failure Probability Function](./img/b687c0d1-f61c-49e7-bda5-e74f9d3d773f.png)
+  > ![Success Probability Function](./img/9f2cb1c2-bb2a-4ac1-8089-7996f6ab8c94.png)
   * The probability of failure *1 - p* is sometimes called *q*
 * Cumulative Distribution Function:
-    > ![Distribution Function](https://user-images.githubusercontent.com/638189/48320683-769e6480-e5ea-11e8-8a15-d22a9ae925a9.png)
+    > ![Distribution Function](./img/78111350-ec3e-46c6-9fd3-a44cb923da9f.png)
 * **Binomial Coefficient** - the number of ways of picking *k* unordered outcomes from *n* possibilities, or "*n* choose *k*"
-  > ![Binomial Coefficient](https://user-images.githubusercontent.com/638189/48592760-f17fbc00-e917-11e8-93ad-525242f6d083.png)
+  > ![Binomial Coefficient](./img/f1166446-ab18-4655-93a3-7b8ab9d1bc5e.png)
   * For example, <sub>4</sub>C<sub>2</sub> = 6
   * From a set of 4 numbers {1, 2, 3, 4} choosing 2 unordered numbers  will yield 6 subsets {1,2}, {1,3}, {1,4}, {2,3}, {2,4}, {3,4}
 * **Binomial Distribution** is the model for *n* independent Bernoulli trials with a *p* probability, then `X ~ Bin(n,p)`
   * Therefore *Bin(1,p) = Ber(p)*
-  > ![Binomial Distribution](https://user-images.githubusercontent.com/638189/48593528-27726f80-e91b-11e8-8e9e-783779803c55.png)
+  > ![Binomial Distribution](./img/ee2f4eba-449d-4790-bdbf-9d53da126aa6.png)
 * **Mean** of a Bernoulli Trial is its probability *&mu; = p*
-* **Expected Value** is *E(X) = 0(1-p) + 1(p) = p*
+* **Expected Value** of a Bernoulli Trial is *E(X) = 0(1-p) + 1(p) = p*
+* **Expected Value** of a Binomial distribution is *E(X) = np*
 * [Variance of](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf) a Bernoulli Trial
-  > ![bernoulli Variance](https://user-images.githubusercontent.com/638189/48450932-19371e80-e776-11e8-936a-342b373f99b8.png)
+  > ![bernoulli Variance](./img/5037bb01-1d16-40e5-b6e6-52921370204a.png)
   * Proof
 
     |        Values *X*        |           0           |          1          |
@@ -32,7 +33,7 @@ An experiment that only has two possible results, *success* and *failure*, can b
 
   * *Var(X) = (1 − p)p<sup>2</sup> + p(1 − p)<sup>2</sup> = (1 − p)p(1 − p + p) = (1 − p)p.*
 * [Standard Deviation](https://math.stackexchange.com/questions/1716156/sd-of-a-bernoulli-trial) of a Bernoulli Trial
-  > ![Bernoulli Standard Deviation](https://user-images.githubusercontent.com/638189/48321218-e282cc00-e5ee-11e8-8976-1e58630e981e.png)
+  > ![Bernoulli Standard Deviation](./img/d35efa90-8c71-44a5-a4eb-85bb8e291928.png)
 
 ## Examples
 
@@ -64,7 +65,7 @@ An experiment that only has two possible results, *success* and *failure*, can b
 * What is the probability that all 50 passengers show up?
   * 50 independent success, or 0.95<sup>50</sup> = 7.694%
 * What is the probability that exactly 49 passengers show up?
-  > ![plane ticket example 1](https://user-images.githubusercontent.com/638189/48598046-f2701800-e92e-11e8-9873-ce8685125980.png)
+  > ![plane ticket example 1](./img/4b653c69-4a4c-4222-b6d0-2e53fe534425.png)
 * What is the probability at least 48 passengers show up?
   * *P(X &ge; 48) = 1 - P(X = 50) - P(X = 49) = 72.06%
 
@@ -78,7 +79,7 @@ An experiment that only has two possible results, *success* and *failure*, can b
   * Binomial Coefficient: `_nC_k =  \begin{pmatrix}n \\k \end{pmatrix} = \frac{n!}{k!(n - k)!}`
   * Binomial Distribution: `P(X = k) = \begin{pmatrix}n \\k \end{pmatrix}p^{k}(1-p)^{n-k}     =   \big({\frac{n!}{k!(n - k)!}}\big)p^{k}(1-p)^{n-k}`
   * Bernoulli Variance: `Var(X) = p(1 - p)`
-  * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)} `
+  * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)}`
   * Coin flip example: `(\frac{5}{3})0.5^3(1 - 0.5)^{5 - 3} = (\frac{5}{3})0.5^3(0.5)^{2} = 0.05208 \overline{3} `
   * Plane ticket example 1: `P(X = 49) = \begin{pmatrix}50 \\49 \end{pmatrix}0.95^{49}(1-0.95)^{50-49} = 50 *0.95^{49}*0.05 = 0.2025`
 * [Binomial Coefficient](http://mathworld.wolfram.com/BinomialCoefficient.html)

@@ -23,48 +23,96 @@
   * Null Hypothesis *H<sub>0</sub>*  - *&theta;* - 0.5, aka "the coin is fair"
   * Alternative Hypothesis *H<sub>A</sub>* - *&theta;* &ne; 0.5, aka "the coin is rigged"
   * *p*(*x*|*&theta;* = 0.5) ~ *Bin*(10, 0.5) - Binomial distribution
+  * **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
+  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
+    * Variance of sum is 10 * 0.5<sup>2</sup> = 2.5
+    * *&sigma;* of sum is 1.15811
   * table for the null distribution
 
-  <table>
-    <tr>
-      <th>*x*</th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-    </tr>
-    <tr>
-      <td>*p(x|H<sub>0</sub>*)</td>
-      <td>0.0010</td>
-      <td>0.0098</td>
-      <td>0.0439</td>
-      <td>0.1172</td>
-      <td>0.2051</td>
-      <td>0.2461</td>
-      <td>0.2051</td>
-      <td>0.1172</td>
-      <td>0.0439</td>
-      <td>0.0098</td>
-      <td>0.0010</td>
-    <tr>
-  </table>
+    <table>
+      <tr>
+        <th><em>x</em></th>
+        <th>0</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+      <tr>
+        <td><em>p(x|H<sub>0</sub>)</em></td>
+        <td>0.0010</td>
+        <td>0.0098</td>
+        <td>0.0439</td>
+        <td>0.1172</td>
+        <td>0.2051</td>
+        <td>0.2461</td>
+        <td>0.2051</td>
+        <td>0.1172</td>
+        <td>0.0439</td>
+        <td>0.0098</td>
+        <td>0.0010</td>
+      </tr>
+      <tr>
+         <td><em>Z</em></td>
+         <td>-3.1623</td>
+         <td>-2.5298</td>
+         <td>-1.8974</td>
+         <td>-1.2649</td>
+         <td>-0.6325</td>
+         <td>0</td>
+         <td>0.6325</td>
+         <td>1.2649</td>
+         <td>1.8974</td>
+         <td>2.5298</td>
+         <td>3.1623</td>
+      </tr>
+      <tr>
+        <td><em>p</em></td>
+        <td>0.0008</td>
+        <td>0.0057</td>
+        <td>0.0294</td>
+        <td>0.1083</td>
+        <td>0.2644</td>
+        <td>0.5</td>
+        <td>0.2644</td>
+        <td>0.1083</td>
+        <td>0.0294</td>
+        <td>0.0057</td>
+        <td>0.0008</td>
+    </table>
+
+  * Expected Value of 10 coin flips with 0.5 probability is *E(X) = np* = 10 * 0.5 = 5
+  * Reject null hypothesis if heads is extremely fewer or greater than 5. *What counts as 'extremely?'*
+* Types of Hypotheses
+  * **Simple** - the distribution can be specified
+  * **Composite** - the distribution cannot be fully specified
 
 ### Innocent until proven guilty
 
 * In hypothesis testing, we assume the null hypothesis is true
+  * *H<sub>0</sub>* - defendant is innocent
+  * *H<sub>A</sub>* - defendant is guilty
   * If evidence proves otherwise, then we will ***reject*** the null hypothesis
   * If there isn't evidence to prove otherwise, then we will ***fail to reject*** the null hypothesis
   * Analogy to US courts: you are presumed to be innocent. It is up to the evidence to prove guilt. You don't have to prove innocence (aka null hypothesis)
 * **Statistically significant** - where do we draw the line to make a decision?
 * **Confidence Level (*c*)** - how confident are we in our decision?
 * **Significance Level (*&alpha; = 1 - c*)** complement to confidence level
+
+### Designing a hypothesis test
+  * Pick the null hypothesis *H<sub>0</sub>*
+  * Decide if *H<sub>A</sub>* is one- or two-sided
+    * one-sided: probability that coin favors heads
+    * two-sided: probability that coin is not fair
+  * Pick a test statistic, e.g., sample mean, sample total
+  * pick a significance level *&alpha;*
+  * Determine the power
 
 
 ## Tests of population mean
@@ -92,6 +140,11 @@
   * Example: The food label for a bag of cookies says there is at most 2g saturated fat in a single cookie. From a sample of 35 cookies, the average amount of saturated fat is 2.1 grams. Assume the standard deviation of the population is 0.25 grams. Can we reject the null hypothesis with a 0.05 (5%) significance level?
     > ![cookie example](https://user-images.githubusercontent.com/638189/48365826-04756080-e67a-11e8-95a8-36093a2889ed.png)
     * The test statistic of 2.366 means we reject the claim
+  * Example: IQ is a N(100, 15<sup>2</sup) distribution
+    * From a sample of 9 students, the average IQ is 112. Can we reject *H<sub>0</sub>* at a *&alpha;* = 0.05 significance level?
+    > ![iq example](./img/dbd1e14b-6631-478f-b30d-0aa9482b25d7.png)
+    * *p = P(Z &ge; 2.4)* = 0.0082
+    * Since *p &le; &alpha;* we reject null hypothesis.
 * **Two-Tailed Test**
   * The null hypothesis is saying the hypothesized mean is equal to the true mean
   * Reject the null hypothesis if *z &le; -z<sub>&alpha;/2</sub>* or *z &ge; z<sub>&alpha;/2</sub>*, where *z<sub>&alpha;/2</sub>* is the *100(1 - &alpha;/2) percentile of the standard normal distribution.
@@ -126,6 +179,7 @@
   * Sampling Standard Deviation: `\sigma_{ \overline{x} } =  \frac{ \sigma }{ \sqrt{n} }`
   * Light bulb example: `\frac{9900 - 10000}{120 /  \sqrt{30} } = -4.456`
   * cookie example: `\frac{2.1 - 2}{0.25 /  \sqrt{35} } = 2.366`
+  * IQ example: `z = \frac{112 - 100}{15\sqrt{9}} = 2.4 \approx N(0,1)`
   * Penguin example: `\frac{15.4 - 14.6}{2.5 /  \sqrt{35} } = 1.893`
   * voter example: `\frac{ \frac{85}{148} - 0.6}{   \sqrt{0.6(1 - 0.6)/148}  } =  \frac{  0.57\overline{432} - 0.6}{   \sqrt{0.6 * 0.4/148}  } = -0.638`
   * apple example: `\frac{ \frac{30}{214} - 0.12}{   \sqrt{0.12(1 - 0.12)/214}  } =  \frac{  0.1402 - 0.12}{   \sqrt{0.12 * 0.88/214}  } = 0.909`

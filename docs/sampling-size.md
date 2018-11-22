@@ -29,7 +29,7 @@ How many samples from a population do you need to see whether they possess a par
   * *&sigma;* is standard deviation
     > ![interval estimation](./img/48491707-2a277480-e7f6-11e8-8632-19a6d0daf3b2.png)
   * For a binomial distribution, the standard deviation is the square root of the proportion times the inverse proportion
-    > ![Margin of Error](./img/48325466-b1f95d00-e603-11e8-92cd-7502e202f77a.png)
+    > ![Margin of Error](./img/dd8573b2-eefb-4d3c-91c6-7bbb32c674d5.png)
   * Usually we don't know what the proportion is, but to maximize the margin of error, the proportion will be 50% to maximize the the formula
   * The maxima of *p(1 - p)* can be found by gettings its derivative: *1 - 2p = 0*
 * Sample size:
@@ -52,8 +52,10 @@ How many samples from a population do you need to see whether they possess a par
 * Variance
   > ![Variance Sum, Sample](./img/48675533-fc10a000-eb27-11e8-8ed0-e67c6aa32ed2.png)
 * Standard Deviation
-  > ![Standard Deviation, sum, sample](./img/48675542-1d718c00-eb28-11e8-9da9-2e556ed992b2.png)
+  > ![Standard Deviation, sum, sample](./img/d40e14ea-3186-4877-937e-c32daac1597a.png)
 * Out of 100 coin flips, what is the probability of more than 55 heads?
+  * **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
+  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
   * Let *X<sub>j</sub>* be the result of the *j<sup>th</sup>* flip, and *X<sub>j</sub>* = 1 for heads and *X<sub>j</sub>* = 0 for tails
   * The sum of all the heads for 100 flips will then be *S = X<sub>1</sub> + X<sub>1</sub> + X<sub>2</sub> + ... + X<sub>100</sub>*
   * Each coin flip is a Bernoulli Trial

@@ -133,7 +133,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   > ![normal density](https://user-images.githubusercontent.com/638189/48657610-7bf01a80-ea01-11e8-850c-54c07d3b309a.png)
 * **Standard normal distribution Z** - a normal distribution where *&mu;* = 0 and *&sigma;* = 1
 * Let *X* be a random variable with *&mu;* mean and *&sigma;* standard deviation. Then:
-  > ![Z](https://user-images.githubusercontent.com/638189/48657572-cc1aad00-ea00-11e8-8f6e-433a358d7377.png)
+  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
 * [The probability that a value](http://courses.atlas.illinois.edu/spring2016/STAT/ST) *z* is between the mean and *Z*
   * *f(z) = &phi;(z) - 1/2* (probability density function pdf)
   * *P(-1 &le; Z &le; 1)* &asymp; 0.6827
@@ -163,7 +163,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   > ![law of large numbers](https://user-images.githubusercontent.com/638189/48669423-6eef2c00-ead2-11e8-8fb2-559bbd693ab3.png)
 * **Central Limit Theorem** - as more averages of independent samples is gathered, the distribution approaches a normal distribution
 * **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
-  > ![Z](https://user-images.githubusercontent.com/638189/48657572-cc1aad00-ea00-11e8-8f6e-433a358d7377.png)
+  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
   * *Z* has a mean of 0 and standard deviation 1
 * Let *S<sub>n</sub>* the the sum of *X<sub>1</sub>, X<sub>1</sub>, ... , X<sub>n</sub>* random variables each with a mean &mu; and a standard deviation *&sigma;*. Then the weighted average of the random variables is:
   > ![clt](https://user-images.githubusercontent.com/638189/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)
@@ -172,7 +172,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * Variance
   > ![Variance Sum, Sample](https://user-images.githubusercontent.com/638189/48675533-fc10a000-eb27-11e8-8ed0-e67c6aa32ed2.png)
 * Standard Deviation
-  > ![Standard Deviation, sum, sample](https://user-images.githubusercontent.com/638189/48675542-1d718c00-eb28-11e8-9da9-2e556ed992b2.png)
+  > ![Standard Deviation, sum, sample](./img/d40e14ea-3186-4877-937e-c32daac1597a.png)
 * CLT: For large *n*,
   > ![large n](https://user-images.githubusercontent.com/638189/48675580-9e308800-eb28-11e8-9f9a-6dc3e99fe996.png)
 
