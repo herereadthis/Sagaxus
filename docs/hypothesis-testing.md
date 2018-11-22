@@ -22,6 +22,42 @@
 * Example: flip a coin 10 times. Let *&theta;* be the probability that a coin flip lands heads.
   * Null Hypothesis *H<sub>0</sub>*  - *&theta;* - 0.5, aka "the coin is fair"
   * Alternative Hypothesis *H<sub>A</sub>* - *&theta;* &ne; 0.5, aka "the coin is rigged"
+  * *p*(*x*|*&theta;* = 0.5) ~ *Bin*(10, 0.5) - Binomial distribution
+  * table for the null distribution
+
+  <table>
+    <tr>
+      <th>*x*</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+    <tr>
+      <td>*p(x|H<sub>0</sub>*)</td>
+      <td>0.0010</td>
+      <td>0.0098</td>
+      <td>0.0439</td>
+      <td>0.1172</td>
+      <td>0.2051</td>
+      <td>0.2461</td>
+      <td>0.2051</td>
+      <td>0.1172</td>
+      <td>0.0439</td>
+      <td>0.0098</td>
+      <td>0.0010</td>
+    <tr>
+  </table>
+
+### Innocent until proven guilty
+
 * In hypothesis testing, we assume the null hypothesis is true
   * If evidence proves otherwise, then we will ***reject*** the null hypothesis
   * If there isn't evidence to prove otherwise, then we will ***fail to reject*** the null hypothesis
