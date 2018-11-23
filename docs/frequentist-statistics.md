@@ -56,9 +56,10 @@
 * **Significance** - *P(reject H<sub>0</sub>|H<sub>0</sub>)* the probability we incorrectly reject H<sub>0</sub>
   * *P(Type I error)*
   * In other words, the probability the test statistic falls within rejection region even though H<sub>0</sub> is true
+  * A significance level of 0.05 doe snot mean the test makes mistakes 5% of the time. It means if *H<sub>0</sub>* is true, then there is a 5% probability that the test will reject it.
 * **Power** - *P(reject H<sub>0</sub>|H<sub>A</sub>)* the probability that correctly reject H<sub>0</sub>
  * 1 - *P(Type II error)*
- * In other
+ * Power if *H<sub>A</sub>* is true, what is the probability of rejecting the null hypothesis?
 * Ideally: a hypothesis test should have a small significance level and a high power level
 * Example: a new drug vs. placebo
   * *H<sub>0</sub>* drug is not better than placebo

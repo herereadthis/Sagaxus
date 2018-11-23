@@ -145,6 +145,14 @@
     > ![iq example](./img/dbd1e14b-6631-478f-b30d-0aa9482b25d7.png)
     * *p = P(Z &ge; 2.4)* = 0.0082
     * Since *p &le; &alpha;* we reject null hypothesis.
+  * Example: a population has a mean *&mu;* variance *&theta;<sup>2</sup>* = 4.
+    * let the sample data be [-1, 1, 2, 3, 6]
+    * Let *H<sub>0</sub> = 0*
+    * Let *H<sub>A</sub> > 0*
+    * At *&alpha; = 0.05*, can we reject *H<sub>0</sub>*?
+    * *x&#x0304;* = 2.2. Use *z* test because the data is a normal distribution
+    > ![upper data example](./img/44f3fb3e-1fed-4251-93d2-6f937cd1397c.png)
+    * *p = P(Z > z) = P(Z > 2.460) = 0.0070
 * **Two-Tailed Test**
   * The null hypothesis is saying the hypothesized mean is equal to the true mean
   * Reject the null hypothesis if *z &le; -z<sub>&alpha;/2</sub>* or *z &ge; z<sub>&alpha;/2</sub>*, where *z<sub>&alpha;/2</sub>* is the *100(1 - &alpha;/2) percentile of the standard normal distribution.
@@ -159,7 +167,7 @@
     * since *-z<sub>0.5</sub>* = 1.649, and the test statistic -0.6376 is not less than that, we cannot reject the null hypothesis.
 * **Upper Tail Proportion Test**
   * expressed as *p &le; p<sub>0</sub>* where *p* is the true population proportion and *p<sub>0</sub>* is hypothesized lower bound.
-  * Example: suppose 12% of apples harvested last year were rotten. From this year's sample of 214 apples, 30 are rotten (14%). With a 95% confidence level, can reject the null hypothesis that the proportion of rotten apples is below 12%?
+  * Example: suppose 12% of apples harvested last year were rotten. From this year's sample of 214 apples, 30 are rotten (14%). With a 5% significance level (*&alpha; = 0.05*), can reject the null hypothesis that the proportion of rotten apples is below 12%?
     > ![apple example](https://user-images.githubusercontent.com/638189/48370363-1e697000-e687-11e8-8a41-0f5a2b54458f.png)
     * Since the test statistic is not greater than *-z<sub>0.5</sub>* = 1.649, we cannot reject the null hypothesis.
 * **Two-Tailed Proportion Test**
@@ -180,6 +188,7 @@
   * Light bulb example: `\frac{9900 - 10000}{120 /  \sqrt{30} } = -4.456`
   * cookie example: `\frac{2.1 - 2}{0.25 /  \sqrt{35} } = 2.366`
   * IQ example: `z = \frac{112 - 100}{15\sqrt{9}} = 2.4 \approx N(0,1)`
+  * Upper data example: `z = \frac{\overline{x} - \mu_{0}}{\sigma/\sqrt{n}} = \frac{2.2 - 0}{2/\sqrt{5}} = 2.2497`
   * Penguin example: `\frac{15.4 - 14.6}{2.5 /  \sqrt{35} } = 1.893`
   * voter example: `\frac{ \frac{85}{148} - 0.6}{   \sqrt{0.6(1 - 0.6)/148}  } =  \frac{  0.57\overline{432} - 0.6}{   \sqrt{0.6 * 0.4/148}  } = -0.638`
   * apple example: `\frac{ \frac{30}{214} - 0.12}{   \sqrt{0.12(1 - 0.12)/214}  } =  \frac{  0.1402 - 0.12}{   \sqrt{0.12 * 0.88/214}  } = 0.909`
