@@ -76,5 +76,33 @@
 
 * Assuming the null hypothesis, what is the probability of seeing data at least as extreme as the experimental data.
 
+## Student *t* distribution
+
+* in a *z*-test, the variance of the population data is known.
+* *&sigma;* isn't know, then we estimate it from the data
+
+* The test statistic *t* (studentized mean) with a sample variance *s<sup>2</sup>*
+  > ![t](./img/36d04a3e-462f-4629-8629-65d9a3acc276.png)
+* variance *s<sup>2</sup>* is:
+  > ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)
+  * The sample variance *s<sup>2</sup>* is an estimate of the true variance *&sigma<sup>2</sup>*
+* Null Distribution *f(t|H<sub>0</sub>)* is the pdf of *T ~ t(n -1)* with *n* - 1 degrees of freedom
+  * Right-side *p = P(T > t|H<sub>0</sub>)*
+  * Left-side *p = P(T < t|H<sub>0</sub>)*
+  * 2-Sided *p = P(|T| > t)*
+* Given a normal distribution with mean *&mu;* and variance *&sigma;<sup>2</sup>*
+  * let the sample data be [-1, 1, 2, 3, 6]
+  * Let *H<sub>0</sub> = 0*
+  * Let *H<sub>A</sub> > 0*
+  * sample mean *x&#x0304;* = 2.2
+  * solving for *s<sup>2</sup>*  6.7
+  > ![t example](./img/bd2c1b0f-c96a-4cb4-b0d5-504b6347b41a.png)
+  * *p = P(T > t) = P(T > 1.9005) = 0.065
+
+
 ## Sources
   * [Are you a Bayesian or a Frequentist?](https://www.behind-the-enemy-lines.com/2008/01/are-you-bayesian-or-frequentist-or.html)
+
+* [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
+  * t: `t = \frac{ \overline{x} - \mu_{0}}{s/\sqrt{n}}`
+  * sample variance: `s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2`

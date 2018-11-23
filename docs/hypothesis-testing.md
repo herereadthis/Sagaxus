@@ -119,12 +119,45 @@
 
 * The test statistic *z* in terms of the sample mean is
   > ![z](https://user-images.githubusercontent.com/638189/48364012-43ed7e00-e675-11e8-89e0-679c221853f8.png)
-* The test statistic *t* in term of the sample mean is
-  > ![t](https://user-images.githubusercontent.com/638189/48366729-b6159100-e67c-11e8-92bc-1c74a3c2ec1d.png)
-  * where *&sigma;<sub>x</sub>* is the standard deviation of the sample
 * The test statistic *z* in terms of sample proportion is
   > ![proportion](https://user-images.githubusercontent.com/638189/48368969-258e7f00-e683-11e8-8fde-7939a1cf4d43.png)
   * where *p<sub>0</sub>* is the true population proportion and *p* is the hypothesized proportion
+* one-tail test
+
+  <table>
+    <tr>
+      <td><em>P(Z > z)</em></td>
+      <td>Z-score</td>
+    </tr>
+    <tr>
+      <td>0.1587</td>
+      <td>1.0000</td>
+    </tr>
+    <tr>
+      <td>0.1000</td>
+      <td>1.2816</td>
+    </tr>
+    <tr>
+      <td>0.0500</td>
+      <td>1.6449</td>
+    </tr>
+    <tr>
+      <td>0.0228</td>
+      <td>2.0000</td>
+    </tr>
+    <tr>
+      <td>0.0200</td>
+      <td>2.0537</td>
+    </tr>
+    <tr>
+      <td>0.0100</td>
+      <td>2.3263</td>
+    </tr>
+    <tr>
+      <td>0.0050</td>
+      <td>2.5758</td>
+    </tr>
+  </table>
 
 * **Lower Tail Test**
   * The hypothesized mean *&mu;<sub>o</sub>* is less than the true population mean *&mu;*.
@@ -152,7 +185,7 @@
     * At *&alpha; = 0.05*, can we reject *H<sub>0</sub>*?
     * *x&#x0304;* = 2.2. Use *z* test because the data is a normal distribution
     > ![upper data example](./img/44f3fb3e-1fed-4251-93d2-6f937cd1397c.png)
-    * *p = P(Z > z) = P(Z > 2.460) = 0.0070
+    * *p = P(Z > z) = P(Z > 2.460) = 0.0070 and *z<sub>0.05</sub>* = 1.645. Reject null hypothesis
 * **Two-Tailed Test**
   * The null hypothesis is saying the hypothesized mean is equal to the true mean
   * Reject the null hypothesis if *z &le; -z<sub>&alpha;/2</sub>* or *z &ge; z<sub>&alpha;/2</sub>*, where *z<sub>&alpha;/2</sub>* is the *100(1 - &alpha;/2) percentile of the standard normal distribution.
@@ -182,7 +215,6 @@
 * [HTML Math Symbols, Math Entities, and ASCII Math Character Code Reference](https://www.toptal.com/designers/htmlarrows/math/)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
   * z: `z = \frac{ \overline{x} -  \mu_{0}}{  \sigma/\sqrt{n} }`
-  * t: `t = \frac{ \overline{x} -  \mu_{0}}{  \sigma_{x}/\sqrt{n} }`
   * proportion: `z = \frac{ \overline{p} - p_{0}}{   \sqrt{p_{0}(1 - p_{0})/n}  }`
   * Sampling Standard Deviation: `\sigma_{ \overline{x} } =  \frac{ \sigma }{ \sqrt{n} }`
   * Light bulb example: `\frac{9900 - 10000}{120 /  \sqrt{30} } = -4.456`
