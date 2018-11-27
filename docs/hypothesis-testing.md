@@ -173,7 +173,7 @@
   * Example: The food label for a bag of cookies says there is at most 2g saturated fat in a single cookie. From a sample of 35 cookies, the average amount of saturated fat is 2.1 grams. Assume the standard deviation of the population is 0.25 grams. Can we reject the null hypothesis with a 0.05 (5%) significance level?
     > ![cookie example](https://user-images.githubusercontent.com/638189/48365826-04756080-e67a-11e8-95a8-36093a2889ed.png)
     * The test statistic of 2.366 means we reject the claim
-  * Example: IQ is a N(100, 15<sup>2</sup) distribution
+  * Example: IQ is a N(100, 15<sup>2</sup>) distribution
     * From a sample of 9 students, the average IQ is 112. Can we reject *H<sub>0</sub>* at a *&alpha;* = 0.05 significance level?
     > ![iq example](./img/dbd1e14b-6631-478f-b30d-0aa9482b25d7.png)
     * *p = P(Z &ge; 2.4)* = 0.0082
