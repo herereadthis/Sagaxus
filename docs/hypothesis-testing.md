@@ -254,6 +254,8 @@
   > ![retail standard error](./img/de9e5c80-f3b7-40df-a2df-d15ee4630e0f.png)
   * Calculate Z-score
   > ![retail z score](./img/6708cbaf-a76c-4901-b376-2e04596304b8.png)
+  * *p*-value: *P(Z < -1.6749)* &approx; 0.0470 or 4.7%
+  * Analysis: If the *H<sub>0</sub> is true, then there is a 4.7% chance that that the difference of means is less than 0.1543. This is unlikely with *&alpha;* = 0.05
 
 ## Sources:
 
