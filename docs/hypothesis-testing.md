@@ -15,7 +15,7 @@
   * **Rejection Region** - where *X* would be in order to reject *H<sub>0</sub>* for *H<sub>A</sub>*
   * **Non-Rejection Region** - where *X* would be in order not to reject *H<sub>0</sub>* for *H<sub>A</sub>*
     - "Do not reject" is not the same as "accept!"
-  * Example: 
+  * Example:
     * A candy machine makes chocolate bars that weight 5g on average. A work claims the machine no longer makes 5g bars.
       * *H<sub>0</sub>*: *&mu; = 5g*
       * *H<sub>A</sub>*: *&mu; &ne; 5g*
@@ -209,6 +209,52 @@
     > ![coin flip example](https://user-images.githubusercontent.com/638189/48370729-22e25880-e688-11e8-86cb-870122e840f2.png)
     * Since the test statistic falls within then critical values of *-z<sub>0.025</sub* = -1.96 and *z<sub>0.025</sub* = 1.96, we cannot reject the null hypothesis.
 
+## Two Population proportions
+
+* **Standard Deviation *&sigma;*** - a measure of the variability of a random variable
+* **Standard Error** - how precise the estimate is
+  * It can be thought of as how precise the mean of the sample is, vs. the true mean of the population
+  * increasing the sample size provides a more specific measure of the true *&sigma;*
+* Sample Mean
+  > ![sample mean](./img/39585ffb-e1b3-4311-bb43-ab1622edd995.png)
+* Variance of Sample Mean
+  > ![sample Variance](./img/281093f1-719b-4b9c-a385-694be8b12a0a.png)
+* Standard error is square root of variance of sample mean
+  > ![Standard error](./img/3a6a65ad-eda6-4562-be0f-6c43945434a0.png)
+  * Note that as the size of the sample *n* increases, the standard error decreases!
+* Recall the standard deviation of a binomial distribution
+  > ![Bernoulli Standard Deviation](./img/d35efa90-8c71-44a5-a4eb-85bb8e291928.png)
+* Therefore the standard error of sample from a binomial distribution is
+  > ![binomial standard error](./img/78d1bde7-8549-4bc6-b24e-f0bec2431972.png)
+* **Spread** the standard error in the distribution of differences between sample proportions.
+  > ![standard error difference](./img/8d081ecf-a26a-4211-aa6f-d8b4f2f1d9c0.png)
+* Difference of means: *p<sub>1</sub> - p<sub>2</sub>*
+* We do not have have the true proportions, so we we have to infer *p<sub>1</sub>* and *p<sub>2</sub>* from the samples, *p&#x0302;<sub>1</sub>* and *p&#x0302;<sub>2</sub>*
+  * let *x<sub>1</sub>* and *x<sub>2</sub>* be the successes in each of the sample populations. then the **pooled proportion** is:
+  > ![pooled proportion](./img/d58d8c6d-ed51-4dc6-9d67-ae51bd121621.png)
+* Use the pooled proportion to estimate the standard error
+  > ![pooled standard error](./img/bc06a723-2acc-4e10-bd28-118a22b1f39a.png)
+* Then the Z-test statistic is
+  > ![z-test 2 populations](./img/da021219-12e9-4ffe-b7e0-33eb2a9b3674.png)
+* Since the null hypothesis *H<sub>0</sub>* says the two proportions should be the same, aka *p&#x0302;<sub>1</sub>* - *p&#x0302;<sub>2</sub>* = 0, we can simplify to
+  > ![z-test 2 population simplified](./img/9177006b-fdb6-4326-8867-d388ea94c5c5.png)
+
+### Example
+
+* the BigBoxRetail company has been accused of not properly giving their employees health insurance.
+  * The claim is only 46% of employees at BigBoxRetail have health insurance, vs. the standard Retail Company average of 66% coverage.
+  * From a sample of 50 employees at BigBoxRetail, 23 are covered.
+  * From a sample of 70 employees at other Retail companies, 23 are covered.
+  * Do employees at BigBoxRetail have less coverage, with 5% level of significance (*&alpha;* = 0.05)?
+  * Calculate Test statistic
+    > ![retail test statistic](./img/fb095eb9-0924-4a21-9ce7-9b7c6a690b13.png)
+  * Calculate pooled proportion
+  > ![retail pooled proportion](./img/c0024136-ca16-4153-83f8-382fe2d3ba3d.png)
+  * Calculate standard error
+  > ![retail standard error](./img/de9e5c80-f3b7-40df-a2df-d15ee4630e0f.png)
+  * Calculate Z-score
+  > ![retail z score](./img/6708cbaf-a76c-4901-b376-2e04596304b8.png)
+
 ## Sources:
 
 * [Hypothesis Testing, R Tutorial](http://www.r-tutor.com/elementary-statistics/hypothesis-testing)
@@ -225,7 +271,25 @@
   * voter example: `\frac{ \frac{85}{148} - 0.6}{   \sqrt{0.6(1 - 0.6)/148}  } =  \frac{  0.57\overline{432} - 0.6}{   \sqrt{0.6 * 0.4/148}  } = -0.638`
   * apple example: `\frac{ \frac{30}{214} - 0.12}{   \sqrt{0.12(1 - 0.12)/214}  } =  \frac{  0.1402 - 0.12}{   \sqrt{0.12 * 0.88/214}  } = 0.909`
   * coin flip example: `\frac{ \frac{12}{20} - 0.5}{   \sqrt{0.5(1 - 0.5)/20}  } =  \frac{  0.6 - 0.5}{   \sqrt{0.25/20}  } = 0.894`
+  * sample mean - `\overline{X} = \frac{1}{n}\sum_{i=1}^{n}X_{i}`
+  * sample Variance - `Var(\overline{X}) = Var\left ( \frac{1}{n}\sum_{i=1}^{n}X_{i} \right )  = \frac{\sigma^{2}}{n}`
+  * standard error: `\sigma^{\overline{X}} = \frac{\sigma}{ \sqrt{n} }`
+  * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)}`
+  * binomial standard error: ` \sigma^{\overline{X}} =\sqrt{\frac{p(1-p)}{n}}`
+  * standard error difference: `\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}`
+  * pooled proportion: `\widehat{p} = \frac{x_1+x_2}{n_1+n_2} `
+  * pooled standard error: `\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n_1}+\frac{\widehat{p}(1-\widehat{p})}{n_2}}`
+  * z-test 2 populations: `Z= \frac{X - \mu}{\sigma} = \frac{(\widehat{p}_1-\widehat{p}_2) - (p_1-p_2)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n_1}+\frac{\widehat{p}(1-\widehat{p})}{n_2}}}  `
+  * z-test 2 population simplified: `Z= \frac{\widehat{p}_1-\widehat{p}_2}{\sqrt{\widehat{p}(1-\widehat{p}) \left ( \frac{1}{n_1} + \frac{1}{n_2} \right )  }}`
+  * retail example:
+    * pooled proportion: `\widehat{p} = \frac{x_1+x_2}{n_1+n_2} = \frac{23+43}{50+70} = 0.55`
+    * test statistic: `X = \widehat{p}_1-\widehat{p}_2 = \frac{23}{50}-\frac{43}{70} \approx -0.1543`
+    * stadard error: `\sigma = \sqrt{0.55*0.45 \left ( \frac{1}{50} + \frac{1}{70} \right ) } \approx 0.0921`
+    * z-score: `Z = \frac{-0.1543}{0.0921} \approx -1.6749`
 * [Intro to Hypothesis testing in Statistics](https://www.youtube.com/watch?v=VK-rnA3-41c)
 * [Hypothesis testing and p-values](https://www.youtube.com/watch?v=-FtlH4svqx4)
 * [Introductin to Hypothesis testing](https://www.youtube.com/watch?v=qsMZ4Zi5Csk)
 * [Null Hypothesis Significance Testing I](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading17b.pdf)
+* [What is the difference between the standard error of the mean and standard deviation?](https://www.investopedia.com/ask/answers/042415/what-difference-between-standard-error-means-and-standard-deviation.asp)
+* [Standard deviation versus standard error](http://thestatsgeek.com/2013/06/30/standard-deviation-versus-standard-error/)
+* [Hypothesis Test for Difference in Two Population Proportions](https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/hypothesis-test-for-difference-in-two-population-proportions-3-of-6/)
