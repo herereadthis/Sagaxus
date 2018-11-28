@@ -68,6 +68,79 @@ How many samples from a population do you need to see whether they possess a par
     > ![55 coin example](./img/e61b6506-ba9c-4133-aff7-f1e82fa0bb7b.png)
     * Another way to think of this problem is 55 is 1 standard deviation over the mean. What is the left tail over 1 standard deviation?
 
+## How big should the sampling size be?
+
+1. Run the test for *n* (e.g. 1000) observations
+2. Run the test until a significant difference is observed
+
+Suppose observations are made on a test after 200 and stopped after 500 observations.
+
+<table>
+    <tr>
+      <th>Phase</th>
+      <th>Scenario 1</th>
+      <th>Scenario 2</th>
+      <th>Scenario 3</th>
+      <th>Scenario 4</th>
+    </tr>
+    <tr>
+      <td>200 observations</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+    </tr>
+    <tr>
+      <td>500 observations</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+    </tr>
+    <tr>
+      <td>End Result</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+    </tr>
+</table>
+
+
+Suppose the test is stopped after something significant happens.
+
+
+<table>
+    <tr>
+      <th>Phase</th>
+      <th>Scenario 1</th>
+      <th>Scenario 2</th>
+      <th>Scenario 3</th>
+      <th>Scenario 4</th>
+    </tr>
+    <tr>
+      <td>200 observations</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+    </tr>
+    <tr>
+      <td>End Result</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td>Stop</td>
+      <td>Stop</td>
+    </tr>
+    <tr>
+      <td>500 observations</td>
+      <td>Don't reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+      <td bgColor="#CCFFCC">Reject <em>H<sub>0</sub></em></td>
+    </tr>
+</table>
+
 ## Sources
 
 * [Critical Values of *z*](http://www.math.armstrong.edu/statsonline/5/5.3.2.html)
@@ -79,5 +152,5 @@ How many samples from a population do you need to see whether they possess a par
   * Example 2: `\frac{0.95 * 0.05}{(\frac{0.05}{1.96})^2}  \approx  73`
   * 55 coin example `P(S > 55) = P\left ( \frac{S-50}{5} > \frac{55-50}{5} \right ) \approx P(Z > 1) = 0.16`
   * margin of error rule of thumb: `ME = 1\pm\sqrt{n}`
-
+* [How Not To Run an A/B Test](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
 `
