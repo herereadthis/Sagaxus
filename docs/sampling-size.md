@@ -141,6 +141,14 @@ Suppose the test is stopped after something significant happens.
     </tr>
 </table>
 
+
+> ![rule of thumb](./img/6021db58-dfd6-4627-b348-fe20164912d7.png)
+
+> ![delta](./img/0dab0e25-4f83-4fb6-80fa-539958a732af.png)
+
+> ![sample size, 2 population means](./img/739f753e-8b54-49c7-95c2-6c481d2aa628.png)
+
+
 ## Sources
 
 * [Critical Values of *z*](http://www.math.armstrong.edu/statsonline/5/5.3.2.html)
@@ -152,5 +160,8 @@ Suppose the test is stopped after something significant happens.
   * Example 2: `\frac{0.95 * 0.05}{(\frac{0.05}{1.96})^2}  \approx  73`
   * 55 coin example `P(S > 55) = P\left ( \frac{S-50}{5} > \frac{55-50}{5} \right ) \approx P(Z > 1) = 0.16`
   * margin of error rule of thumb: `ME = 1\pm\sqrt{n}`
+  * rule of thumb: `n = \frac{16}{\Delta^{2}}`
+  * delta: `\Delta = \frac{\mu_{0} - \mu_{1}}{\sigma} = \frac{\delta}{\sigma}`
+  * sample size, 2 population means: `  n= \frac{2(z_{1-\alpha/2}+z_{1-\beta})^{2}}{\left (  \frac{\mu_{0} - \mu_{1}}{\sigma}  \right )^{2}}`
 * [How Not To Run an A/B Test](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
 `
