@@ -172,6 +172,23 @@ Suppose the test is stopped after something significant happens.
 </table>
 
 
+## power analysis for two independent proportions
+
+## Power Analysis for 2 Independent Proportions
+
+* We want to determine the size of two samples with binomial distributions such that there is a &delta; difference between the two.
+* For example, if sample 1 has probability of 0.1 and we want to [detect a 10% difference](https://signalvnoise.com/posts/3004-ab-testing-tech-note-determining-sample-size) between sample 2, then sample 2 should have a probability of 0.11
+  * **Sensitivity** - the size of the difference
+  * **Power Analysis** - a tool to determine the minimum sample size required to be reasonably confident that a meaningful difference can be detected between two values
+  * **Independent** - these two samples, A and B don't depend on each other
+  * **Proportins** - dealing with binomial distributions
+> ![power analysis sample size](./img/e024f979-3713-4e78-b8ba-95dbfb9d3244.png)
+* Example
+  * With a current conversion rate of 10%, we want to detect a 10% difference
+  * The treatment should at least have a 0.10 * (1 + 0.1) = 0.11 conversion rate
+  * Want a power of 80% (*&beta;* = 0.8) and a 5% significance level (*&alpha;* = 0.05), [we get](https://select-statistics.co.uk/calculators/sample-size-calculator-two-proportions/):
+  > ![power analysis example](./img/3e032b44-760b-4512-80db-da8620a4e918.png)
+
 > ![rule of thumb](./img/6021db58-dfd6-4627-b348-fe20164912d7.png)
 
 > ![delta](./img/0dab0e25-4f83-4fb6-80fa-539958a732af.png)
@@ -192,5 +209,9 @@ Suppose the test is stopped after something significant happens.
   * rule of thumb: `n = \frac{16}{\Delta^{2}}`
   * delta: `\Delta = \frac{\mu_{0} - \mu_{1}}{\sigma} = \frac{\delta}{\sigma}`
   * sample size, 2 population means: `  n= \frac{2(z_{1-\alpha/2}+z_{1-\beta})^{2}}{\left (  \frac{\mu_{0} - \mu_{1}}{\sigma}  \right )^{2}}`
+  * power analysis sample size: `n = (Z_{\alpha/2}+Z_{1-\beta})^{2}* \frac{p_1(1-p_1)+p_2(1-p_2) }{(p_1-p_2)^2}`
+  * power analysis example: `n = (1.96+0.84)^{2}\frac{0.1879}{(0.01)^2}  = 14748`
 * [How Not To Run an A/B Test](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
 * [Sample Size](http://vanbelle.org/chapters%5Cwebchapter2.pdf)
+* [A/B Testing Tech Note: determining sample size](https://signalvnoise.com/posts/3004-ab-testing-tech-note-determining-sample-size)
+* [Comparing Two Proportions – Sample Size](https://select-statistics.co.uk/calculators/sample-size-calculator-two-proportions/)
