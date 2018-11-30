@@ -87,6 +87,7 @@ Other examples:
   * **Feature Implementation** - if we expose something new to the user, we have to make sure it actually works.
   * **Consistency** - Make sure that users see the variant every time they use the application, and make sure they aren't aware other users are seeing something different
   * **Launch events** - make sure the new feature exists if we announce it.
+  * **[Run Experiments Only Once](http://www.evanmiller.org/how-not-to-run-an-ab-test.html) - repeated significance testing increases the chances of a false positive.
 
 ## Multi-Variable Testing (MVT)
 
@@ -112,4 +113,4 @@ Other examples:
   * T-test: `t = \frac{ \overline{ O_{b} } -  \overline{ O_{a} } }{ \widehat{  \sigma_{d} } }`
   * Min Sample Size: `n = \frac{ 16\sigma^2  }{ \Delta^{2} }`
   * Min Sample Size, example: `\frac{ 16 * 30^2  }{ (3.75 * 0.05)^{2}  } = 409600`
-
+* [How Not To Run an A/B Test](http://www.evanmiller.org/how-not-to-run-an-ab-test.html)

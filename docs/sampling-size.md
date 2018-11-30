@@ -142,12 +142,41 @@ Suppose the test is stopped after something significant happens.
 </table>
 
 
+
+
+<table>
+  <tr>
+    <td>Type I Error <em>&alpha;</em></td>
+    <td>Probability of rejecting <em>H<sub>0</sub></em> even though it's true</td>
+  </tr>
+  <tr>
+    <td>Type II Error <em>&beta;</em></td>
+    <td>Probability of not rejecting <em>H<sub>0</sub></em> even though it's false</td>
+  </tr>
+  <tr>
+    <td>1 - <em>&beta;</em></td>
+    <td><strong>Power</strong> - probability of rejecting <em>H<sub>0</sub></em> when it's false</td>
+  </tr>
+  <tr>
+    <td><em>&sigma;<sup>2</sup><sub>0</sub></em> and em>&sigma;<sup>2</sup><sub>A</sub></em></td>
+    <td>Variances of <em>H<sub>0</sub></em> and <em>H<sub>A</sub></em></td>
+  </tr>
+  <tr>
+    <td><em>&mu;<sub>0</sub></em> and <em>&mu;<sub>A</sub></em></td>
+    <td>Means of <em>H<sub>0</sub></em> and <em>H<sub>A</sub></em></td>
+  </tr>
+  <tr>
+    <td><em>n<sub>0</sub></em> and <em>n<sub>A</sub></em></td>
+    <td>Sample sizes of <em>H<sub>0</sub></em> and <em>H<sub>A</sub></em></td>
+  </tr>
+</table>
+
+
 > ![rule of thumb](./img/6021db58-dfd6-4627-b348-fe20164912d7.png)
 
 > ![delta](./img/0dab0e25-4f83-4fb6-80fa-539958a732af.png)
 
 > ![sample size, 2 population means](./img/739f753e-8b54-49c7-95c2-6c481d2aa628.png)
-
 
 ## Sources
 
@@ -164,4 +193,4 @@ Suppose the test is stopped after something significant happens.
   * delta: `\Delta = \frac{\mu_{0} - \mu_{1}}{\sigma} = \frac{\delta}{\sigma}`
   * sample size, 2 population means: `  n= \frac{2(z_{1-\alpha/2}+z_{1-\beta})^{2}}{\left (  \frac{\mu_{0} - \mu_{1}}{\sigma}  \right )^{2}}`
 * [How Not To Run an A/B Test](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
-`
+* [Sample Size](http://vanbelle.org/chapters%5Cwebchapter2.pdf)
