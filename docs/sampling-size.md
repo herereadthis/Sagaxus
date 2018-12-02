@@ -27,7 +27,7 @@ How many samples from a population do you need to see whether they possess a par
   * *p* is the proportion,
   * *n* is sample size,
   * *&sigma;* is standard deviation
-    > ![interval estimation](./img/48491707-2a277480-e7f6-11e8-8632-19a6d0daf3b2.png)
+    > ![interval estimation](./img/75b42372-98a4-4b4c-b7b2-afe749b8ffe4.png)
   * For a binomial distribution, the standard deviation is the square root of the proportion times the inverse proportion
     > ![Margin of Error](./img/dd8573b2-eefb-4d3c-91c6-7bbb32c674d5.png)
   * Usually we don't know what the proportion is, but to maximize the margin of error, the proportion will be 50% to maximize the the formula
