@@ -140,7 +140,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   > ![continuous pdf](https://user-images.githubusercontent.com/638189/48657522-e99b4700-e9ff-11e8-98a2-d0c6386005d0.png)
   * The pdf is always non negative *f(x) &ge; 0*
   * and the pdf across all ranges will equal 1
-  > ![infinity pdf](https://user-images.githubusercontent.com/638189/48522569-2a9c2b80-e847-11e8-9962-081dc473b52a.png)
+  > ![infinity pdf](./img/9efb5908-31e8-4389-ad03-345bf5fdf7d9.png)
   * You have to integrate *f(x)* to get the probability
 * **Median** - the value *x* for X where *P(X &le; x) = 0.5*
   * That is, *X* has equal probability of being above or below the median
@@ -237,7 +237,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
   * discrete standard deviation: `\sigma = \sqrt{Var(X)}`
   * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
-  * infinity pdf: `P( -\infty   \leq X \leq \infty) =  \int_{-\infty}^\infty f(x) dx = 1`
+  * infinity pdf: `{P(-\infty \leq X \leq \infty) = \int_{-\infty}^\infty f(x) dx = 1}`
   * Z: `Z = \frac{X -  \mu }{ \sigma }`
   * Normal density: `f(x) = \phi(z) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}}`
   * expected value, continuous: `E(X) =  \int_a^b xf(x)dx`

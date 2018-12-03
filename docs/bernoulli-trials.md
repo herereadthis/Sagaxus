@@ -1,6 +1,6 @@
 ### Bernoulli Trials, Binomial Distributions
 
-An experiment that only has two possible results, *success* and *failure*, can be called a Bernoulli Trial if:
+An experiment that only has two possible results - *success* and *failure* - is a **Bernoulli Trial** if:
 * The results are mutually exclusive,
 * The probability of these two results do not change each time the experiment is done
 * **Bernoulli Distribution** - a distribution for a random variable defined as
