@@ -37,24 +37,68 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 
 * **Random Variable** - a variable with a value that determined by a chance event.
-* A discrete sample space *&Omega;* is a finite set of outcomes {*&omega;<sub>1</sub>, &omega;<sub>2</sub>...*}. The probability of an outcome *&omega;* is *P(&omega;)*.
+* ** discrete sample space** *&Omega;* is a finite set of outcomes {*&omega;<sub>1</sub>, &omega;<sub>2</sub>...*}. The probability of an outcome *&omega;* is *P(&omega;)*.
 * **Discrete Probability Distribution** - a distribution that can be represented by a table. For example, there are only 4 outcomes from flipping a coin 2 times.
 
-    | Number of Heads, x | Probability P(x) |
-    |--------------------|------------------|
-    | 0                  | 0.25             |
-    | 1                  | 0.5              |
-    | 2                  | 0.25             |
+<table>
+    <tr>
+        <th>Number of Heads, x</th>
+        <th>Probability P(x)</th>
+    </tr>
+    <tr>
+        <td>0</td>
+        <td>0.25</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>0.5</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>0.25</td>
+    </tr>
+</table>
+
+* Note that the sum of all these probabilities equals 0.
 * **Probability Mass Function pmf** - the function for a discrete random variable
   * *p(a) = P(X = a)*, where 0 &le; *p(a)* &le; 1
 * **Cumulative Distribution Function cdf** - the function that gives the total probabilities from minus infinity to *a*
   * *F(a) = P(X ≤ a)*
 * Example: let the sample space *&Omega;* be 2 dice rolls, and let a random variable *M* be the maximum of 2 dice rolls. In other words M(1,4) = 4.
 
-  | value |    *a* | 1    | 2    | 3    | 4     | 5     | 6     |
-  |-------|-------:|------|------|------|-------|-------|-------|
-  | pdf   | *p(a)* | 1/36 | 3/36 | 5/36 |  7/36 |  9/36 | 11/36 |
-  | cdf   | *F(a)* | 1/36 | 4/36 | 9/36 | 16/36 | 25/36 | 36/36 |
+<table>
+    <tr>
+        <th>value</th>
+        <th><em>a</em></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+    </tr>
+    <tr>
+        <td>pdf</td>
+        <td><em>p(a)</em></td>
+        <td>1/36</td>
+        <td>3/36</td>
+        <td>5/36</td>
+        <td>7/36</td>
+        <td>9/36</td>
+        <td>11/36</td>
+    </tr>
+    <tr>
+        <td>cdf</td>
+        <td><em>F(a)</em></td>
+        <td>1/36</td>
+        <td>4/36</td>
+        <td>9/36</td>
+        <td>16/36</td>
+        <td>25/36</td>
+        <td>36/36</td>
+    </tr>
+</table>
+
 
   * *F(a)* only increases. If *a &le; b*, then *F(a) &le; F(b)*
   * 0 &le; *F(a)* &le; 1
@@ -69,7 +113,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 ## Discrete Mean and Variance
 
-* **Discrete Mean** - the mean of a discete random variable X is also known as the **expected value** of X, E(X)
+* **Discrete Mean** - the mean of a discrete random variable X is also known as the **expected value** of X, E(X)
   > ![discrete mean](https://user-images.githubusercontent.com/638189/48657507-96c18f80-e9ff-11e8-90fe-00d8fb4e94bb.png)
   * Expected Value is the sum of every outcome times is probability.
   * For a variable *X* with mean *&mu;<sub>x</sub>* and a variable *Y* with mean *&mu;<sub>y</sub>*:

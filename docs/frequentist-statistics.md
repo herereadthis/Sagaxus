@@ -4,9 +4,16 @@
 * If there is no prior, then we draw inferences from the likelihood function.
 * **Frequentist** - the idea that probabilities present long-term frequencies of repeatable random experiments.
   * Don't use probabilities to quantify degree of belief in hypotheses, so no pdf
+  * The concepts of probability and randomness should only be used to describe sampling from populations, not degree or certainty of belief.
+  * Probability is objective
+  * Bayesian: "The probability of average male height being between 70 and 74 inches is 95%" Frequentist: (height is either in this range or it isn't.)[https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster]
 * Difference
   * Bayesian statistics will put probability distributions on hypotheses and data. Probability is belief
   * Frequentist statistics will put probability on the experimental data. Probability comes from experiments
+* (Another example)[http://www.fharrell.com/post/journey/]
+  * A coin is flipped 100 times and it lands heads 60 times.
+  * Bayesian: What is the probability of landing more than 60 heads *P(X > 59)*?
+  * Frequentist: is the coin fair?
 * **Point Statistic** - a single value computed from data, such as mean or maximum
 * **Interval Statistic** - interval computed from data, such as range
 * **Set Statistic** - a set computed from data. Suppose we have bunch of dice, and each dice has different n sides. Data can be the value of the roll of 1 die picked at random. The Set is determined from the value. If it is 20, obviously the 6-sided die is not part of the set.
@@ -106,3 +113,5 @@
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
   * t: `t = \frac{ \overline{x} - \mu_{0}}{s/\sqrt{n}}`
   * sample variance: `s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2`
+* [What is a confidence interval in layman's terms?](https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster)
+* (My Journey From Frequentist to Bayesian Statistics)[http://www.fharrell.com/post/journey/]
