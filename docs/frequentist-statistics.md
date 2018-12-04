@@ -5,6 +5,7 @@
 * **Frequentist** - the idea that probabilities present long-term frequencies of repeatable random experiments.
   * Don't use probabilities to quantify degree of belief in hypotheses, so no pdf
   * The concepts of probability and randomness should only be used to describe sampling from populations, not degree or certainty of belief.
+  * Only repeatable random events have probabilities e.g., coin flips
   * Probability is objective
   * Bayesian: "The probability of average male height being between 70 and 74 inches is 95%" Frequentist: (height is either in this range or it isn't.)[https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster]
 * Difference
@@ -107,6 +108,11 @@
   * *p = P(T > t) = P(T > 1.9005) = 0.065
 
 
+### Confidence Interval
+
+* A range where over many experiments, will cover the true mean n% of the time.
+* It is incorrect to say the true mean has a n% chance of falling in the range
+
 ## Sources
   * [Are you a Bayesian or a Frequentist?](https://www.behind-the-enemy-lines.com/2008/01/are-you-bayesian-or-frequentist-or.html)
 
@@ -115,3 +121,4 @@
   * sample variance: `s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2`
 * [What is a confidence interval in layman's terms?](https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster)
 * (My Journey From Frequentist to Bayesian Statistics)[http://www.fharrell.com/post/journey/]
+* [Frequentist And Bayesian Approaches In Statistics](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/)

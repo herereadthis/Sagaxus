@@ -55,10 +55,10 @@ is *probability.*
       * What is the probability that a person has the foo gene given that they test positive?
       * Hypothesis: H = person has the foo gene
       * Data: D = the test is positive
-      * Prior - probability of a positive test if you have the gene
-        > ![foo prior](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)
-      * Likelihood - probability of having the gene
-        > ![foo likelihood](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)
+      * Likelihood - probability of a positive test if you have the gene
+        > ![foo likelihood](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)
+      * Prior - probability of having the gene
+        > ![foo prior](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)
       * Evidence - a true positive test for those who have the gene, and a false positive for those who don't have it
         > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)
   * **Base Rate Fallacy**
@@ -123,6 +123,14 @@ is *probability.*
 
 ### Continuous Priors
 
+### Inferential Statistics
+
+[Try to infer these things](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/):
+
+* **Parameter estimation** - some value that determines the properties of the distribution, such as \mu or \sigma
+* **Data Prediction** - use information about sample to predict a random selection
+* **Model comparison** - selecting a model which best explains the observed data, something that postulates the relationship between factors and the data
+
 
 ## Sources
 
@@ -131,10 +139,11 @@ is *probability.*
   * Bayes' Theorem 2: `P(\mathcal{H}|\mathcal{D}) = \frac{P(\mathcal{D}|\mathcal{H})P(\mathcal{H})}{P(\mathcal{D})}`
   * Bayes' Theorem 3: `P(Hypothesis|Data) = \frac{P(Data|Hypothesis)P(Hypothesis)}{P(Data)}`
   * Bayes' Theorem 4: `Posterior = \frac{Prior \times Likelihood}{Evidence}`
-  * Foo prior: `Prior = P(\mathcal{D}|\mathcal{H}) = 0.99`
-  * Foo Likelihood: `Likelihood = P(\mathcal{H}) = 0.002`
+  * Foo Likelihood: `Likelihood = P(\mathcal{D}|\mathcal{H}) = 0.99`
+  * Foo Prior: `Prior = P(\mathcal{H}) = 0.002`
   * Foo Evidence: `{Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}`
   * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)
+* [Frequentist And Bayesian Approaches In Statistics](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/)

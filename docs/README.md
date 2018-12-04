@@ -6,7 +6,9 @@
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
+* [Lindley's Paradox(./lindleys-paradox.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
+* [A/B Testing, Part 2](./ab-testing-part-2.md)
 * [Predictive Analytics](./predictive-analytics.md)
 * Services.
   * [Overview](./services/README.md)
