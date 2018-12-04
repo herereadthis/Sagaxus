@@ -1,6 +1,6 @@
 # Bayesian Statistics
 
-## Statistics Primer
+## Bayesian Statistics
 
 The goal of statistics is to make inferences based on data.
 
@@ -20,22 +20,47 @@ is *probability.*
 
 ## Bayes' Theorem in Statistics
 
-> ![Bayes' Theorem](./img/48657490-7d204800-e9ff-11e8-94ab-b5aec7a3cd00.png)
+* Unknown parameters are treated as having probability distributions
+* Conclusions are subjective and we can update them as new data is collected
+* In Frequents Statistics, conclusions are objective and probability is calculated by analyzing the frequency of events from lots of trials or experiments
+* Bayesian Statistics will [model the parameters](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians) and assign probability to them, while Frequentist Statistists will model the data and assign probability to them
+* **Prior Inference** - (first analyze the sample data and draw a conclusion)[https://www.quora.com/What-are-the-principles-of-Bayesian-statistics]
+* **Posterior Inference** - Then analyze another set of sample data and revise the conclusion
+* **Bayesian Logic** - *use knowledge of prior events to predict future events*
+* Recall Bayes' Theorem
+  > ![Bayes' Theorem](./img/d09541ec-5a36-4035-9cb2-192a52f5324c.png)
+* Switch the letters to H and D
+  > ![Bayes' Theorem 2](./img/3114bc47-2e98-4605-b65e-3a3cc182916e.png)
+* Where H is probability of hypothesis being true, and D is probability of data being true
+  > ![Bayes' Theorem 3](./img/d054ab29-b5f5-4f66-a322-2020b8c1394f.png)
+* Finally, [the application](https://towardsdatascience.com/probability-for-data-science-9770b26643d0) of Bayes' theorem
+  > ![Bayes' Theorem 4](./img/39bf4c25-9038-441b-b090-e1cf4c66247d.png)
 
 * *P(H|D)* - The probability that the hypothesis is true, given the data that is collected
 * Example:
-  * The rate of a disease in a population is 0.002, or 0.2%.
-  * The screening test for a disease has a 1% false positive rate and a 1% false negative rate
+  * The rate of the foo gene in a population is 0.002, or 0.2%.
+  * The screening test for a gene has a 1% false positive rate and a 1% false negative rate
   * *What is the probability that a randomly selected person tests positive?*
-    * In other words, what is the probability that a person has the disease given that they test positive?
-    * Hypothesis: *H* = person has disease
+    * In other words, what is the probability that a person has the gene given that they test positive?
+    * Hypothesis: *H* = person has gene
     * Data: *D* = the test is positive
     * To solve for the right-hand side of Bayes' Theorem:
-      * What is the probability that a person's test is positive, given that they have the disease? 99% (because of the 1% false negative)
-      * What is the probability of having the disease? 0.2%
+      * What is the probability that a person's test is positive, given that they have the gene? 99% (because of the 1% false negative)
+      * What is the probability of having the gene? 0.2%
       * What is the probability of the test being positive?
         * The probability of a true positive + a false positive: 0.99 * 0.002 + 0.01 * 0.998 = 0.01196
       * right-hand side: (0.99 * 0.002)/0.01196 = **0.166**
+
+      * In other words, the probability of having the foo gene is 0.002
+      * What is the probability that a person has the foo gene given that they test positive?
+      * Hypothesis: H = person has the foo gene
+      * Data: D = the test is positive
+      * Prior - probability of a positive test if you have the gene
+        > ![foo prior](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)
+      * Likelihood - probability of having the gene
+        > ![foo likelihood](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)
+      * Evidence - a true positive test for those who have the gene, and a false positive for those who don't have it
+        > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)
   * **Base Rate Fallacy**
     * It's worth pausing on this result for a bit. The probability that a patient who tests positive actually has the disease less than 17%, despite the test being 99% accurate. Why so low?
       * Suppose the population was a thousand people. Then the expected number of people who actually have the disease is 2. Of the remaining 998 people, 1% of them will test positive. which will be about 10 other people.
@@ -102,5 +127,14 @@ is *probability.*
 ## Sources
 
 * [Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
-  * Bayes' Theorem: `P(B|A) = \frac{P(A|B)*P(B)}{P(A)}`
+  * Bayes' Theorem: `P(B|A) = \frac{P(A|B)P(B)}{P(A)}`
+  * Bayes' Theorem 2: `P(\mathcal{H}|\mathcal{D}) = \frac{P(\mathcal{D}|\mathcal{H})P(\mathcal{H})}{P(\mathcal{D})}`
+  * Bayes' Theorem 3: `P(Hypothesis|Data) = \frac{P(Data|Hypothesis)P(Hypothesis)}{P(Data)}`
+  * Bayes' Theorem 4: `Posterior = \frac{Prior \times Likelihood}{Evidence}`
+  * Foo prior: `Prior = P(\mathcal{D}|\mathcal{H}) = 0.99`
+  * Foo Likelihood: `Likelihood = P(\mathcal{H}) = 0.002`
+  * Foo Evidence: `{Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}`
   * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
+* [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
+* [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
+* [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)

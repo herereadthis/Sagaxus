@@ -21,7 +21,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * **Mutually Exclusive** - two events cannot occur at the same time.
   * *A* is independent of *B* if *P(A|B) = P(A)*
 * **Bayes' Theorem**
-  > ![Bayes' Theorem](./img/48657490-7d204800-e9ff-11e8-94ab-b5aec7a3cd00.png)
+  > ![Bayes' Theorem](./img/d09541ec-5a36-4035-9cb2-192a52f5324c.png)
   * Proof (divide both sides by *P(A)*:
     *P(B|A) * P(A) = P(A &cap; B) = P(A|B) * P(B)*
   * Let *H<sub>1</sub>* be the probability that the first coin toss is heads, and let *H<sub>2</sub>* be the probability that all 3 coin tosses are heads.
@@ -183,6 +183,11 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * *P(-1 &le; Z &le; 1)* &asymp; 0.6827
   * *P(-2 &le; Z &le; 2)* &asymp; 0.9545
   * *P(-3 &le; Z &le; 3)* &asymp; 0.9973
+* The mean, median and mode of a normal distribution [are the same](https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/).
+* The curve of a normal distribution is a bell shaped, and it is symmetrical
+  * half the area is left of mean, half is right of mean
+* The area under the curve is 1
+* The curve is entirely defined by its mean and variance
 
 ## Expected Value, Variance, and Standard Deviation for Continuous Random Variables
 
@@ -253,3 +258,4 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
 * [Intruction to probability and statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/)
 * [Variance of Discrete Random Variables](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading5a.pdf)
+* [6 Common Probability Distributions every data science professional should know](https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/)
