@@ -137,7 +137,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 ## Continuous Random Variables
 
 * A random variable X is **continuous** if there is a function *f(x)* such that for any *c &le; d*, the probability density function is:
-  > ![continuous pdf](https://user-images.githubusercontent.com/638189/48657522-e99b4700-e9ff-11e8-98a2-d0c6386005d0.png)
+  > ![continuous pdf](./img/6786b048-ab22-4611-a4e1-6224e33501e9.png)
   * The pdf is always non negative *f(x) &ge; 0*
   * and the pdf across all ranges will equal 1
   > ![infinity pdf](./img/9efb5908-31e8-4389-ad03-345bf5fdf7d9.png)

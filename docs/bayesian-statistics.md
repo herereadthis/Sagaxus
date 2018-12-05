@@ -184,6 +184,22 @@ is *probability.*
 
 ### Continuous Priors
 
+* As usual when going from discrete to continuous, pmf becomes pdf, and sums become integrals
+* **Paramatrized Distribution** - model the random process that creates the data
+* **Hypothesis *&theta;*** - any choice of parameter, such as the probability of success
+* As usual these are the probabilities we want:
+  > ![probabilities1](./img/a45f7547-58a2-4bd7-a0d3-d5007b143668.png)
+  > ![probabilities1](./img/b955318e-13a7-465b-a40f-3a955c0f4e13.png)
+* recall continuous pdf - the probability that *X* is in *[c, d]*
+  > ![continuous pdf](./img/6786b048-ab22-4611-a4e1-6224e33501e9.png)
+* law of total probability for discrete set (remember the coin example above) prior probability of D
+  > ![discrete total probability 1](./img/e788da5e-86dc-408f-88dd-c1ab08c23a92.png)
+  > ![discrete total probability 2](./img/232ca3dd-813b-459e-81f6-ad4556e1ec9f.png)
+* Continuous law of total probability
+  * suppose a parameter *&theta;* in the range of *[a, b]* and a discrete random data *x*.
+  * *&theta;& is random, with a density function *f(&theta;)* and *x* and *&theta;* have likelihood *p(x|&theta;)*
+  > ![continuous total probability](./img/6e426ff6-1955-4ccd-b0fc-6be2962edbac.png)
+
 ### Inferential Statistics
 
 [Try to infer these things](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/):
@@ -205,6 +221,13 @@ is *probability.*
   * Foo Evidence: `{Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}`
   * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
   * coin tree: `\begin{cases}0.4 & A\begin{cases}0.5 & H=0.2\\0.5 & T=0.2\end{cases}\\0.4 & B\begin{cases}0.6 & H=0.24\\0.4 & T=0.16\end{cases}\\0.2 & C\begin{cases}0.9 & H=0.18\\0.1 & T=0.02\end{cases}\end{cases}`
+  * continuous priors
+    * probabilities1: `{P(\mathcal{H}) = p(\theta), P(\mathcal{D}) = p(x)}`
+    * probabilities2: `{P(\mathcal{H}|\mathcal{D}) = p(\theta|x), P(\mathcal{D}|\mathcal{H}) = p(x|\theta)}`
+    * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
+    * discrete total probability 1: `P(\mathcal{D}) = \sum_{i=1}^n P(\mathcal{D}|\mathcal{H}_i)P(\mathcal{H}_i)`
+    * discrete total probability 1: `P(p(x) = \sum_{i=1}^n  p(x|\theta_i)p(\theta_i)`
+    * continuous total probability: `p(x) = \int_a^b p(x|\theta)f(\theta)d(\theta)`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)
