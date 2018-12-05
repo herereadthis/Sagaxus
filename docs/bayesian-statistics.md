@@ -35,6 +35,17 @@ is *probability.*
   > ![Bayes' Theorem 3](./img/d054ab29-b5f5-4f66-a322-2020b8c1394f.png)
 * Finally, [the application](https://towardsdatascience.com/probability-for-data-science-9770b26643d0) of Bayes' theorem
   > ![Bayes' Theorem 4](./img/39bf4c25-9038-441b-b090-e1cf4c66247d.png)
+* **Experiment** - what you do to get the result, e.g, flip a coin, screen a patient
+* **Data** - the result of the experiment, e.g., the screening test is positive, the coin flip is heads
+  * The probability of the data is Type 1
+* **Hypothesis** - the probability itself, e.g, the coin is fair, the test, the patient has the disease
+  * The probability of the hypothesis is Type 2
+  * This probability has a prior *P(H)* (before the data) and posterior *P(H|D)* (after the data)
+* **Prior** = the probability before running the experiment
+* **Likelihood** - same as MLE - assume the hypothesis is true, then what what is the probability of the data? E.g., if the coin is fair, what is the probability of getting heads? If the patient has the disease, what is the probability of testing positive?
+* **Bayes Numerator** - prior &times; likelihood
+* **Posterior** - probability of hypothesis, given the data
+
 
 * *P(H|D)* - The probability that the hypothesis is true, given the data that is collected
 * Example:
@@ -74,18 +85,68 @@ is *probability.*
 
 ### Bayesian Updating
 
-* There are 2 coins:
+#### Above example, again.
+
+* To better understand the information create a **Bayesian Update Table**
+* Let *G<sup>+</sup>* = you have the gene, *G<sup>-</sup>* = you do not have the gene
+* let *x=1* mean the test is positive
+
+<table>
+    <tr>
+        <th>Hypothesis</th>
+        <th>Prior</th>
+        <th>Likelihood</th>
+        <th>Numerator</th>
+        <th>Posterior</th>
+    </tr>
+    <tr>
+        <td><em>&theta;</em></td>
+        <td><em>p(&theta;)</em></td>
+        <td><em>p(x=1|&theta;)</em></td>
+        <td><em>p(x=1|&theta;)p(&theta;)</em></td>
+        <td><em>p(&theta;|x=1)</em></td>
+    </tr>
+    <tr>
+        <td><em>G<sup>+</sup></em></td>
+        <td>0.002</td>
+        <td>0.99</td>
+        <td>0.00198</td>
+        <td>0.16552</td>
+    </tr>
+    <tr>
+        <td><em>G<sup>-</sup></em></td>
+        <td>0.998</td>
+        <td>0.01</td>
+        <td>0.00998</td>
+        <td>0.83445</td>
+    </tr>
+    <tr>
+        <td><em>Total</em></td>
+        <td></td>
+        <td></td>
+        <td>0.01196</td>
+        <td></td>
+    </tr>
+</table>
+
+
+#### Coin example
+
+* There are 3 coins:
   * *A* coins are fair 0.5 probability heads
   * *B* coins have 0.6 probability heads
   * *C* coins have 0.9 probability heads.
   * Suppose there are 5 coins, 2 *A*, 2 *B*, and 1 *C*
   * Pick one coin at random, flip it, and it lands heads.
   * What is the probability that the coin is *A*? or *B* or *C*?
+    > ![coin tree](./img/bbad4e83-2935-4ae3-a3b4-7add6567c6a9.png)
     * Data is the evidence: the evidence is heads
     * In other words, find *P(A|D), P(B|D), P(C|D)
-    * First what is the probability of getting a coin?
+    * First what is the probability of getting a coin? This is prior knowledge.
     * *P(A)* = 0.4, *P(B)* = 0.4, *P(C)* = 0.2
     * Then probability of heads is the probability of getting heads for each coin
+      * In other words, the evidence is the probability of data, e.g., the probability of getting heads
+    * **Bayes' Numerator** - prior &times; likelihood
     * *P(D)* = 0.5*0.4 + 0.6*0.4 + 0.9*0.2 = 0.2 + 0.24 + 0.18 = 0.62
     * Using Bayes' Theorem, *P(A|D) = P(D|A)*P(A)/P(D) = 0.5*0.4/0.62 = 0.3226
     * Similarly, *P(B)* = 0.3871 and *P(C)* = 0.2903
@@ -143,6 +204,7 @@ is *probability.*
   * Foo Prior: `Prior = P(\mathcal{H}) = 0.002`
   * Foo Evidence: `{Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}`
   * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
+  * coin tree: `\begin{cases}0.4 & A\begin{cases}0.5 & H=0.2\\0.5 & T=0.2\end{cases}\\0.4 & B\begin{cases}0.6 & H=0.24\\0.4 & T=0.16\end{cases}\\0.2 & C\begin{cases}0.9 & H=0.18\\0.1 & T=0.02\end{cases}\end{cases}`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)

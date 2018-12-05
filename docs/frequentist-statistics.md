@@ -15,6 +15,8 @@
   * A coin is flipped 100 times and it lands heads 60 times.
   * Bayesian: What is the probability of landing more than 60 heads *P(X > 59)*?
   * Frequentist: Does 60 heads mean the coin is fair?
+  * Bayesian: assign probability to the hypothesis. Frequentist: [test the hypothesis without probability](https://conversionxl.com/blog/bayesian-frequentist-ab-testing/)
+  * Bayesian: what is the probability Version A is better than Version B? Frequentist: Is Version A equal to Version B?
 * **Point Statistic** - a single value computed from data, such as mean or maximum
 * **Interval Statistic** - interval computed from data, such as range
 * **Set Statistic** - a set computed from data. Suppose we have bunch of dice, and each dice has different n sides. Data can be the value of the roll of 1 die picked at random. The Set is determined from the value. If it is 20, obviously the 6-sided die is not part of the set.
