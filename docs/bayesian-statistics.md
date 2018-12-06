@@ -199,6 +199,71 @@ is *probability.*
   * suppose a parameter *&theta;* in the range of *[a, b]* and a discrete random data *x*.
   * *&theta;& is random, with a density function *f(&theta;)* and *x* and *&theta;* have likelihood *p(x|&theta;)*
   > ![continuous total probability](./img/6e426ff6-1955-4ccd-b0fc-6be2962edbac.png)
+  * So now expressed as Bayes' theorem
+  > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)
+* The prior probability is *f(&theta;)d&theta;* so the hypothesis is saying:
+  * **The unknown parameter is an inteval of width *d&theta;* around *&theta;***
+
+#### Flat priors
+
+* **Flat Prior** - assue that every hypothesis is equally probable.
+  * If *&theta;* has a range [0,1] then *f(&theta;)* = 1 is a flat prior
+* Example: suppose a coin has an unknown probability *&theta;* heads.
+  * A coin flip lands heads. 
+  * Assume flat prior
+  * What is posterior probability for *&theta;* (*&theta;* = probability a coin flip lands heads)?
+  * if *&theta;* is 0.5 that means the coin neither favors heads nor tails
+
+
+<table>
+    <tr>
+        <th>hypthesis</th>
+        <th>prior</th>
+        <th>likelihood</th>
+        <th>Bayes numerator</th>
+        <th>posterior</th>
+    </tr>
+    <tr>
+        <td><em>&theta;</em></td>
+        <td><em>f(&theta;)d&theta;</em></td>
+        <td><em>p(x=0|&theta;)</em></td>
+        <td></td>
+        <td><em>f(&theta;|x=0)d&theta;</em></td>
+    </tr>
+    <tr>
+        <td><em>&theta;</em></td>
+        <td><em>1 &times; d&theta;</em></td>
+        <td><em>1 - &theta;</em></td>
+        <td><em>(1 - &theta;)d&theta;</em></td>
+        <td><em>2(1 - &theta;)d&theta;</em></td>
+    </tr>
+    <tr>
+        <td>total</td>
+        <td><img src="./img/9512229a-27f9-427b-900a-751ec28376df.png" /></td>
+        <td></td>
+        <td><img src="./img/267e2aef-1aa3-4d9b-b7ab-34f41198dde5.png" /></td>
+        <td>1</td>
+    </tr>
+</table>
+
+#### Posterior pdf
+
+* If a coin can equally be heads or tails, then find the the probability of landing tails *P(&theta; < 5)* and heads *P(&theta; > 5)*
+  > ![unbiased coin](./img/b3bc445a-7097-40f0-9f2e-a7c2c3c02cdd.png)
+* Okay flipping the coin lands heads. What is probability that the coin favors (biased towards) heads now?
+  * *P(&theta; > 0.5|x=1)*
+  * Prior: *f(&theta;)d&theta; = 1 &times; d&theta;
+  * Likelihood: *&theta;*
+  * Numerator: *&theta; &times; d&theta;*
+  * *p(x = 1)* = *x<sup>2</sup>/2* from 0.5 to 1 = 1/2
+  * Posterior: *&theta; &times; d&theta;* / (1/2) = *2&theta; &times; d&theta;* 
+  > ![posterior flat coin](./img/212fd9ac-0545-4cec-938f-cb31c4a84d3e.png)
+* What is the probability of getting heads again? 
+  * remember the integral of the probability of getting heads, given you got head on the first flip is the integral of *2&theta; &times; d&theta;*  a.k.a. the posterior
+  * That becomes prior of the next round
+  * likelihood of the next round is *p(x<sub>2</sub>=1|&theta;) = &theta;*
+  > ![flip again part 1](./img/10156658-34dd-4ff1-9811-1deac8401d02.png)
+  > ![flip again part 2](./img/1798b3c2-4f33-4365-8312-d0019a4b3030.png)
 
 ### Inferential Statistics
 
@@ -228,6 +293,15 @@ is *probability.*
     * discrete total probability 1: `P(\mathcal{D}) = \sum_{i=1}^n P(\mathcal{D}|\mathcal{H}_i)P(\mathcal{H}_i)`
     * discrete total probability 1: `P(p(x) = \sum_{i=1}^n  p(x|\theta_i)p(\theta_i)`
     * continuous total probability: `p(x) = \int_a^b p(x|\theta)f(\theta)d(\theta)`
+    * continuous bayes: `{f(\theta|x)d\theta = \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}`
+  * flat priors
+    * pior flat: `{\int_a^b f(\theta)d(\theta) = 1}`
+    * flat numerator: `{p(x=0)=\int_a^b (1-\theta)d(\theta) = x - \frac{x^2}{2} \Big|_0^1= 1}`
+  * posterior pdf
+    * unbiased coin: `{P(\theta>.5)=\int_{.5}^1 f(\theta)d(\theta) = \int_{.5}^1 1 \cdot d(\theta) = \theta \Big|_0^1= \frac{1}{2}}`
+    * posterior flat coin: `{P(\theta>.5|x=1)=\int_{.5}^1 f(\theta|x=1)d(\theta) = \int_{.5}^1 2\theta d\theta = \theta^2 \Big|_{.5}^1= \frac{3}{4}}`
+    * flip again part 1: `{P(x_2=1|x_1=1)=\int_{0}^1 p(x_2=1|\theta,x_1=1)f(\theta|x_1=1)d\theta }`
+    * flip again part 2: `{P(x_2=1|x_1=1)=\int_{0}^1 \theta \cdot 2\theta d\theta  = \frac{2\theta^3}{3} \Big|_{0}^1=\frac{2}{3}}`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)
