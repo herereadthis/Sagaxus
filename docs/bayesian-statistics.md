@@ -265,6 +265,15 @@ is *probability.*
   > ![flip again part 1](./img/10156658-34dd-4ff1-9811-1deac8401d02.png)
   > ![flip again part 2](./img/1798b3c2-4f33-4365-8312-d0019a4b3030.png)
 
+## Get BETA
+
+* **Beta Distribution** - beta(a, b) 2-parameter distribution with range [0,1]
+  > ![Beta distribution](./img/56786ea0-b970-49d0-9a4a-b5fc2c891c13.png)
+* *a* and *b* are called **hyperparameters**, they are different than the hypothesis parameter *&theta;*
+* That fraction area is called a normalizing constant
+  > ![normalizing constant](./img/c5d1c8a8-d6a1-4629-ac87-0321d01de1f6.png)
+
+
 ### Inferential Statistics
 
 [Try to infer these things](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/):
@@ -302,6 +311,9 @@ is *probability.*
     * posterior flat coin: `{P(\theta>.5|x=1)=\int_{.5}^1 f(\theta|x=1)d(\theta) = \int_{.5}^1 2\theta d\theta = \theta^2 \Big|_{.5}^1= \frac{3}{4}}`
     * flip again part 1: `{P(x_2=1|x_1=1)=\int_{0}^1 p(x_2=1|\theta,x_1=1)f(\theta|x_1=1)d\theta }`
     * flip again part 2: `{P(x_2=1|x_1=1)=\int_{0}^1 \theta \cdot 2\theta d\theta  = \frac{2\theta^3}{3} \Big|_{0}^1=\frac{2}{3}}`
+  * get beta
+    * beta distribution: `{f(\theta) = \frac{(a+b-1)!}{(a-1)!(b-1)!}\theta^{a-1}(1-\theta)^{b-1}}`
+    * normalizing constant: `{c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)
