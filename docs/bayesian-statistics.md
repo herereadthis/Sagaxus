@@ -360,13 +360,15 @@ is *probability.*
     </tr>
 </table>
 
+* Prior Constant
 > ![c1](./img/e2e7e975-71d0-4a3c-b865-b47531751055.png)<!--
   c_1 = \frac{(a+b-1)!}{(a-1)!(b-1)!} -->
-> ![c2](./img/6f15ce85-f7c5-40ba-be15-bc4f2c547e88.png)<!--
+* Likelihood Constant
+  > ![c2](./img/6f15ce85-f7c5-40ba-be15-bc4f2c547e88.png)<!--
   c_2 = \begin{pmatrix}N \\x \end{pmatrix} = \frac{N!}{x!(N-x)!} -->
-> ![c3](./img/b2e3b028-aa45-465e-840c-be212c0256d8.png)<!--
+* Posterior Constant
+  > ![c3](./img/b2e3b028-aa45-465e-840c-be212c0256d8.png)<!--
   c_3 = \frac{(a+b+N-1)!}{(a+x-1)!(b+N-x-1)!} -->
->
 
 * [Expected Value](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
   > ![beta mean](./img/5d6b37fc-580a-4a9f-a792-efdef29d3811.png)

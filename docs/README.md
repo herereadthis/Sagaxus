@@ -5,6 +5,7 @@
 * [Bernoulli Trials](./bernoulli-trials.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
+* [Probability Intervals](./probability-intervals.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
 * [Lindley's Paradox](./lindleys-paradox.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
