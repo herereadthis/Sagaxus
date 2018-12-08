@@ -114,7 +114,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
 ## Discrete Mean and Variance
 
 * **Discrete Mean** - the mean of a discrete random variable X is also known as the **expected value** of X, E(X)
-  > ![discrete mean](https://user-images.githubusercontent.com/638189/48657507-96c18f80-e9ff-11e8-90fe-00d8fb4e94bb.png)
+  > ![discrete mean](./img/991a07a6-e273-4bb0-abba-b05abf6760e4.png)
   * Expected Value is the sum of every outcome times is probability.
   * For a variable *X* with mean *&mu;<sub>x</sub>* and a variable *Y* with mean *&mu;<sub>y</sub>*:
     * *&mu;<sub>x + y</sub>* = *&mu;<sub>x</sub>* + *&mu;<sub>y</sub>*
@@ -238,7 +238,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * conditional probability: `P(A|B) = \frac{P(A \cap B)}{P(B)}`
   * multiplication rule: `P(A \cap B) = P(A|B) * P(B)`
   * Bayes' Theorem: `P(B|A) = \frac{P(A|B)*P(B)}{P(A)}`
-  * discrete mean: `E(X) = \mu_{x} = \sum_{i=1}^n {x_{i} * P(x_{i}) }`
+  * discrete mean: `E(X) = \mu_{x} = \sum_{i=1}^n p(x_{i}){x_{i} }`
   * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
   * discrete standard deviation: `\sigma = \sqrt{Var(X)}`
   * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
