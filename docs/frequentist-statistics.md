@@ -14,7 +14,7 @@
 * (Another example)[http://www.fharrell.com/post/journey/]
   * A coin is flipped 100 times and it lands heads 60 times.
   * Bayesian: What is the probability of landing more than 60 heads *P(X > 59)*?
-  * Frequentist: Does 60 heads mean the coin is fair?
+  * Frequentist: [Is the coin fair?](http://www.fharrell.com/post/journey/)
   * Bayesian: assign probability to the hypothesis. Frequentist: [test the hypothesis without probability](https://conversionxl.com/blog/bayesian-frequentist-ab-testing/)
   * Bayesian: what is the probability Version A is better than Version B? Frequentist: Is Version A equal to Version B?
 * **Point Statistic** - a single value computed from data, such as mean or maximum
@@ -124,3 +124,4 @@
 * [What is a confidence interval in layman's terms?](https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster)
 * (My Journey From Frequentist to Bayesian Statistics)[http://www.fharrell.com/post/journey/]
 * [Frequentist And Bayesian Approaches In Statistics](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/)
+* [My Journey From Frequentist to Bayesian Statistics](http://www.fharrell.com/post/journey/)

@@ -11,6 +11,7 @@
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
 * [A/B Testing, Part 2](./ab-testing-part-2.md)
 * [Predictive Analytics](./predictive-analytics.md)
+* [r or python](./r-or-python.md)
 * Services.
   * [Overview](./services/README.md)
   * [Optimizely](./services/optimizely.md)

@@ -118,7 +118,8 @@
 ## Tests of population mean
 
 * The test statistic *z* in terms of the sample mean is
-  > ![z](https://user-images.githubusercontent.com/638189/48364012-43ed7e00-e675-11e8-89e0-679c221853f8.png)
+  > ![z](https://user-images.githubusercontent.com/638189/48364012-43ed7e00-e675-11e8-89e0-679c221853f8.png)<!--
+    z = \frac{ \overline{x} -  \mu_{0}}{  \sigma/\sqrt{n} } -->
 * The test statistic *z* in terms of sample proportion is
   > ![proportion](https://user-images.githubusercontent.com/638189/48368969-258e7f00-e683-11e8-8fde-7939a1cf4d43.png)
   * where *p<sub>0</sub>* is the true population proportion and *p* is the hypothesized proportion
@@ -262,7 +263,6 @@
 * [Hypothesis Testing, R Tutorial](http://www.r-tutor.com/elementary-statistics/hypothesis-testing)
 * [HTML Math Symbols, Math Entities, and ASCII Math Character Code Reference](https://www.toptal.com/designers/htmlarrows/math/)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
-  * z: `z = \frac{ \overline{x} -  \mu_{0}}{  \sigma/\sqrt{n} }`
   * proportion: `z = \frac{ \overline{p} - p_{0}}{   \sqrt{p_{0}(1 - p_{0})/n}  }`
   * Sampling Standard Deviation: `\sigma_{ \overline{x} } =  \frac{ \sigma }{ \sqrt{n} }`
   * Light bulb example: `\frac{9900 - 10000}{120 /  \sqrt{30} } = -4.456`

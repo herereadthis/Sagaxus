@@ -174,10 +174,13 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * Range: (-&infin;, &infin;)
 * Notation: *N(&mu;,&sigma;<sup>2</sup>)*
 * Density:
-  > ![normal density](https://user-images.githubusercontent.com/638189/48657610-7bf01a80-ea01-11e8-850c-54c07d3b309a.png)
+  > ![normal density](https://user-images.githubusercontent.com/638189/48657610-7bf01a80-ea01-11e8-850c-54c07d3b309a.png)<!--
+  f(x) = \phi(z) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}} -->
 * **Standard normal distribution Z** - a normal distribution where *&mu;* = 0 and *&sigma;* = 1
 * Let *X* be a random variable with *&mu;* mean and *&sigma;* standard deviation. Then:
-  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
+  > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)<!--
+    Z = \frac{X -  \mu }{ \sigma }
+    -->
 * [The probability that a value](http://courses.atlas.illinois.edu/spring2016/STAT/ST) *z* is between the mean and *Z*
   * *f(z) = &phi;(z) - 1/2* (probability density function pdf)
   * *P(-1 &le; Z &le; 1)* &asymp; 0.6827
@@ -193,9 +196,13 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 * **Expected Value** - measures central tendency
   * *&mu; = E(X)*
-  > ![expected value, continuous](https://user-images.githubusercontent.com/638189/48657589-f8362e00-ea00-11e8-8755-40993607cbcc.png)
+  > ![expected value, continuous](https://user-images.githubusercontent.com/638189/48657589-f8362e00-ea00-11e8-8755-40993607cbcc.png)<!--
+    E(X) =  \int_a^b xf(x)dx
+    -->
 * Expected Value of a standard normal distribution N(0,1) where *&mu; = 0* and *&sigma; = 1*
-  > ![Expected Value standard](https://user-images.githubusercontent.com/638189/48657681-ce7e0680-ea02-11e8-8ea5-ac521c74e5fe.png)
+  > ![Expected Value standard](https://user-images.githubusercontent.com/638189/48657681-ce7e0680-ea02-11e8-8ea5-ac521c74e5fe.png)<!--
+    E(z) = \phi(z) = \frac{1}{ \sqrt{2 \pi } }e^{-z^2/2} \Big|_{-\infty}^{\infty} = 0
+    -->
 * Example: let *X ~ U(0,1)* - for a range [0,1] and a density *f(x) = 1*
   > ![expected value uniform continuous](https://user-images.githubusercontent.com/638189/48657440-b4422980-e9fe-11e8-88ea-73c4f72b9674.png)
   * The range of Z is (-&infin;,&infin;)
@@ -209,19 +216,24 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 * **Law of Large Numbers** - the frequency of an event will converge on the probability of the event as the number of trials increase.
   * The average of many independent samples is close to the average of the population.
-  > ![law of large numbers](https://user-images.githubusercontent.com/638189/48669423-6eef2c00-ead2-11e8-8fb2-559bbd693ab3.png)
+  > ![law of large numbers](https://user-images.githubusercontent.com/638189/48669423-6eef2c00-ead2-11e8-8fb2-559bbd693ab3.png)<!--
+    \lim_{n \rightarrow \infty} P(\left |  \overline{X} - \mu  \right | < a) = 1 -->
 * **Central Limit Theorem** - as more averages of independent samples is gathered, the distribution approaches a normal distribution
 * **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
   > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
   * *Z* has a mean of 0 and standard deviation 1
 * Let *S<sub>n</sub>* the the sum of *X<sub>1</sub>, X<sub>1</sub>, ... , X<sub>n</sub>* random variables each with a mean &mu; and a standard deviation *&sigma;*. Then the weighted average of the random variables is:
-  > ![clt](https://user-images.githubusercontent.com/638189/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)
+  > ![clt](https://user-images.githubusercontent.com/638189/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)<!--
+    \overline{X}_{n} = \frac{S_{n}}{n} = \frac{X_{1} + ... + X_{n}}{n} =  \big(\sum_{i=1}^nX_{i}\big)/n -->
 * Mean
-  > ![Expected Value Sum, Sample](https://user-images.githubusercontent.com/638189/48675521-dbe0e100-eb27-11e8-8fef-85909fae57d5.png)
+  > ![Expected Value Sum, Sample](./img/79ec9ea9-a0cf-4ae2-b199-b69678789f18.png)<!--
+    E(S_{n}) = n\mu, E( \overline{X}_{n}) =\mu -->
 * Variance
-  > ![Variance Sum, Sample](https://user-images.githubusercontent.com/638189/48675533-fc10a000-eb27-11e8-8ed0-e67c6aa32ed2.png)
+  > ![Variance Sum, Sample](https://user-images.githubusercontent.com/638189/48675533-fc10a000-eb27-11e8-8ed0-e67c6aa32ed2.png)<!--
+    Var(S_{n}) = n\sigma^2, Var( \overline{X}_{n}) =\frac{\sigma^2}{n} -->
 * Standard Deviation
-  > ![Standard Deviation, sum, sample](./img/d40e14ea-3186-4877-937e-c32daac1597a.png)
+  > ![Standard Deviation, sum, sample](./img/d40e14ea-3186-4877-937e-c32daac1597a.png)<!--
+    \sigma_{S_{n}} =\sqrt{n}\sigma, \sigma_{\overline{X}_{n}} =\frac{\sigma}{\sqrt{n}} -->
 * CLT: For large *n*,
   > ![large n](https://user-images.githubusercontent.com/638189/48675580-9e308800-eb28-11e8-9f9a-6dc3e99fe996.png)
 
@@ -243,16 +255,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * discrete standard deviation: `\sigma = \sqrt{Var(X)}`
   * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
   * infinity pdf: `{P(-\infty \leq X \leq \infty) = \int_{-\infty}^\infty f(x) dx = 1}`
-  * Z: `Z = \frac{X -  \mu }{ \sigma }`
-  * Normal density: `f(x) = \phi(z) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}}`
-  * expected value, continuous: `E(X) =  \int_a^b xf(x)dx`
-  * expected value, standard: `E(z) = \phi(z) = \frac{1}{ \sqrt{2 \pi } }e^{-z^2/2} \Big|_{-\infty}^{\infty} = 0`
   * expected value uniform continuous: `E(X) = \int_{0}^{1}xdx = \frac{x^2}{2}  \Big|_0^1 = \frac{1}{2}`
-  * law of large numbers: `\lim_{n \rightarrow \infty} P(\left |  \overline{X} - \mu  \right | < a) = 1 `
-  * Clt: ` \overline{X}_{n} = \frac{S_{n}}{n} = \frac{X_{1} + ... + X_{n}}{n} =  \big(\sum_{i=1}^nX_{i}\big)/n`
-  * Expected Value Sum, Sample: `E(S_{n}) = n\mu, E( \overline{X}_{n}) =\mu`
-  * Variance, Sum, Sample: `Var(S_{n}) = n\sigma^2, Var( \overline{X}_{n}) =\frac{\sigma^2}{n}`
-  * Standard Deviation Sum, sample: `\sigma_{S_{n}} =\sqrt{n}\sigma, \sigma_{\overline{X}_{n}} =\frac{\sigma}{\sqrt{n}}`
   * large n: `\overline{Xn} \approx N(\mu, \frac{\sigma^2}{n}), S_n \approx N(n\mu, n\sigma^2), Zn \approx N(0,1))`
 * [Better Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
