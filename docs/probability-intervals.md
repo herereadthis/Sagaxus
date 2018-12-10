@@ -1,4 +1,4 @@
-# Probability Intervals
+# Probability Intervals, Bayesian Statistics part II
 
 * **p-probability interval** - a interval [a,b] for *&theta;* where
   > ![interval](./img/4865af0d-307d-476f-9047-37df1fce8622.png)<!--
@@ -18,6 +18,16 @@
 ## What about priors?
 
 * **subjective probability intervals** - If we do not have a pmf or pdf, or if we have no priors, we can construct a prior for &theta;
+
+
+## Random Walk
+
+* Choose *N* sample size
+* As users access the feature, 50% will see control, 50% will see Treatment
+* Let *T* be the number of successes in treatment group
+* Let *C* be the number of successes in control group
+* If *T-C = 2 * sqrt(N)* stop the test. The treatment is better
+* If T+C = N stop the test. No Winner
 
 
 * Probability Treatment is better than control

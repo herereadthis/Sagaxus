@@ -278,10 +278,14 @@ is *probability.*
     * The batting average of this player is a [beta distribution](http://varianceexplained.org/statistics/beta_distribution_and_baseball/) *beta(80,220)*
 
 * **Beta Distribution** - beta(a, b) 2-parameter distribution with range [0,1]
-  > ![Beta distribution](./img/56786ea0-b970-49d0-9a4a-b5fc2c891c13.png)
+  > ![Beta distribution](./img/56786ea0-b970-49d0-9a4a-b5fc2c891c13.png)<!--
+    {f(\theta) = \frac{(a+b-1)!}{(a-1)!(b-1)!}\theta^{a-1}(1-\theta)^{b-1}}
+    -->
 * *a* and *b* are called **hyperparameters**, they are different than the hypothesis parameter *&theta;*
 * That fraction area is called a normalizing constant
-  > ![normalizing constant](./img/c5d1c8a8-d6a1-4629-ac87-0321d01de1f6.png)
+  > ![normalizing constant](./img/c5d1c8a8-d6a1-4629-ac87-0321d01de1f6.png)<!--
+    {c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}
+    -->
 * What is the probability of getting 8 heads and 4 tails from a coin flip?
   * n = 8 + 4 = 12
   * This is a binomial distribution
@@ -422,7 +426,7 @@ is *probability.*
     * flip again part 1: `{P(x_2=1|x_1=1)=\int_{0}^1 p(x_2=1|\theta,x_1=1)f(\theta|x_1=1)d\theta }`
     * flip again part 2: `{P(x_2=1|x_1=1)=\int_{0}^1 \theta \cdot 2\theta d\theta  = \frac{2\theta^3}{3} \Big|_{0}^1=\frac{2}{3}}`
   * get beta
-    * beta distribution: `{f(\theta) = \frac{(a+b-1)!}{(a-1)!(b-1)!}\theta^{a-1}(1-\theta)^{b-1}}`
+    * beta distribution: ``
     * normalizing constant: `{c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}`
     * beta posterior: `c_2\int_0^1 \theta^{a-1}(1-\theta)^{b-1}d\theta`
     * beta mean: `E(\theta) = \mu = \frac{a}{a+b}`
