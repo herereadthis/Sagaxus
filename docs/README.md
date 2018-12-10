@@ -6,6 +6,7 @@
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
 * [Probability Intervals](./probability-intervals.md)
+* [Markov Chain Monte Carlo](./mcmc.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
 * [Lindley's Paradox](./lindleys-paradox.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
@@ -14,7 +15,8 @@
 * [r or python](./r-or-python.md)
 * Services.
   * [Overview](./services/README.md)
-  * [Optimizely](./services/optimizely.md)
+  * [VWO](https://vwo.com/) Stats engine developed by [Chris Stucchio](https://www.chrisstucchio.com/) with Bayesian inference
+  * [Optimizely](./services/optimizely.md) According to Evan Miller, they use [Sequential probability ratio test](https://en.wikipedia.org/wiki/Sequential_probability_ratio_test) for their "Stats Engine"
 * Libraries
   * [NumPy](./libraries/numpy.md)
   * [Pandas](./libraries/pandas.md)
