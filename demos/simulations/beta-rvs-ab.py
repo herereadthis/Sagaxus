@@ -8,10 +8,10 @@ simulations = 100000
 p_success, p_sample = 40, 200
 p_miss = p_sample - p_success
 # control
-c_success, c_sample  = 18, 100
+c_success, c_sample  = 35, 200
 c_miss = c_sample - c_success
 # treatment
-t_success, t_sample = 28, 100
+t_success, t_sample = 54, 200
 t_miss = t_sample - t_success
 
 control = np.array(beta.rvs(c_success + p_success, c_miss + p_miss, size=simulations))
