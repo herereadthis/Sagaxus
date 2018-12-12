@@ -202,7 +202,9 @@
 * **Upper Tail Proportion Test**
   * expressed as *p &le; p<sub>0</sub>* where *p* is the true population proportion and *p<sub>0</sub>* is hypothesized lower bound.
   * Example: suppose 12% of apples harvested last year were rotten. From this year's sample of 214 apples, 30 are rotten (14%). With a 5% significance level (*&alpha; = 0.05*), can reject the null hypothesis that the proportion of rotten apples is below 12%?
-    > ![apple example](https://user-images.githubusercontent.com/638189/48370363-1e697000-e687-11e8-8a41-0f5a2b54458f.png)
+    > ![apple example](https://user-images.githubusercontent.com/638189/48370363-1e697000-e687-11e8-8a41-0f5a2b54458f.png)<!--
+      \frac{ \frac{30}{214} - 0.12}{   \sqrt{0.12(1 - 0.12)/214}  } =  \frac{  0.1402 - 0.12}{   \sqrt{0.12 * 0.88/214}  } = 0.909
+      -->
     * Since the test statistic is not greater than *-z<sub>0.5</sub>* = 1.649, we cannot reject the null hypothesis.
 * **Two-Tailed Proportion Test**
   * expressed as *p = p<sub>0</sub>* where *p* is the true population proportion and *p<sub>0</sub>* is hypothesized lower bound.
@@ -232,29 +234,39 @@
 * Difference of means: *p<sub>1</sub> - p<sub>2</sub>*
 * We do not have have the true proportions, so we we have to infer *p<sub>1</sub>* and *p<sub>2</sub>* from the samples, *p&#x0302;<sub>1</sub>* and *p&#x0302;<sub>2</sub>*
   * let *x<sub>1</sub>* and *x<sub>2</sub>* be the successes in each of the sample populations. then the **pooled proportion** is:
-  > ![pooled proportion](./img/d58d8c6d-ed51-4dc6-9d67-ae51bd121621.png)
+  > ![pooled proportion](./img/d58d8c6d-ed51-4dc6-9d67-ae51bd121621.png)<!--
+        \widehat{p} = \frac{x_1+x_2}{n_1+n_2}
+    -->
 * Use the pooled proportion to estimate the standard error
   > ![pooled standard error](./img/bc06a723-2acc-4e10-bd28-118a22b1f39a.png)
 * Then the Z-test statistic is
-  > ![z-test 2 populations](./img/da021219-12e9-4ffe-b7e0-33eb2a9b3674.png)
+  > ![z-test 2 populations](./img/da021219-12e9-4ffe-b7e0-33eb2a9b3674.png)<!--
+    Z= \frac{X - \mu}{\sigma} = \frac{(\widehat{p}_1-\widehat{p}_2) - (p_1-p_2)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n_1}+\frac{\widehat{p}(1-\widehat{p})}{n_2}}}
+    -->
 * Since the null hypothesis *H<sub>0</sub>* says the two proportions should be the same, aka *p&#x0302;<sub>1</sub>* - *p&#x0302;<sub>2</sub>* = 0, we can simplify to
-  > ![z-test 2 population simplified](./img/9177006b-fdb6-4326-8867-d388ea94c5c5.png)
+  > ![z-test 2 population simplified](./img/9177006b-fdb6-4326-8867-d388ea94c5c5.png)<!--
+    Z= \frac{\widehat{p}_1-\widehat{p}_2}{\sqrt{\widehat{p}(1-\widehat{p}) \left ( \frac{1}{n_1} + \frac{1}{n_2} \right )  }}
+    -->
 
 ### Example
 
 * the BigBoxRetail company has been accused of not properly giving their employees health insurance.
   * The claim is only 46% of employees at BigBoxRetail have health insurance, vs. the standard Retail Company average of 66% coverage.
   * From a sample of 50 employees at BigBoxRetail, 23 are covered.
-  * From a sample of 70 employees at other Retail companies, 23 are covered.
+  * From a sample of 70 employees at other Retail companies, 43 are covered.
   * Do employees at BigBoxRetail have less coverage, with 5% level of significance (*&alpha;* = 0.05)?
   * Calculate Test statistic
-    > ![retail test statistic](./img/fb095eb9-0924-4a21-9ce7-9b7c6a690b13.png)
+    > ![retail test statistic](./img/fb095eb9-0924-4a21-9ce7-9b7c6a690b13.png)<!--
+      X = \widehat{p}_1-\widehat{p}_2 = \frac{23}{50}-\frac{43}{70} \approx -0.1543
+      -->
   * Calculate pooled proportion
   > ![retail pooled proportion](./img/c0024136-ca16-4153-83f8-382fe2d3ba3d.png)
   * Calculate standard error
   > ![retail standard error](./img/de9e5c80-f3b7-40df-a2df-d15ee4630e0f.png)
   * Calculate Z-score
-  > ![retail z score](./img/6708cbaf-a76c-4901-b376-2e04596304b8.png)
+  > ![retail z score](./img/6708cbaf-a76c-4901-b376-2e04596304b8.png)<!--
+    Z = \frac{-0.1543}{0.0921} \approx -1.6749
+    -->
   * *p*-value: *P(Z < -1.6749)* &approx; 0.0470 or 4.7%
   * Analysis: If the *H<sub>0</sub> is true, then there is a 4.7% chance that that the difference of means is less than 0.1543. This is unlikely with *&alpha;* = 0.05
 
@@ -271,7 +283,6 @@
   * Upper data example: `z = \frac{\overline{x} - \mu_{0}}{\sigma/\sqrt{n}} = \frac{2.2 - 0}{2/\sqrt{5}} = 2.2497`
   * Penguin example: `\frac{15.4 - 14.6}{2.5 /  \sqrt{35} } = 1.893`
   * voter example: `\frac{ \frac{85}{148} - 0.6}{   \sqrt{0.6(1 - 0.6)/148}  } =  \frac{  0.57\overline{432} - 0.6}{   \sqrt{0.6 * 0.4/148}  } = -0.638`
-  * apple example: `\frac{ \frac{30}{214} - 0.12}{   \sqrt{0.12(1 - 0.12)/214}  } =  \frac{  0.1402 - 0.12}{   \sqrt{0.12 * 0.88/214}  } = 0.909`
   * coin flip example: `\frac{ \frac{12}{20} - 0.5}{   \sqrt{0.5(1 - 0.5)/20}  } =  \frac{  0.6 - 0.5}{   \sqrt{0.25/20}  } = 0.894`
   * sample mean - `\overline{X} = \frac{1}{n}\sum_{i=1}^{n}X_{i}`
   * sample Variance - `Var(\overline{X}) = Var\left ( \frac{1}{n}\sum_{i=1}^{n}X_{i} \right )  = \frac{\sigma^{2}}{n}`
@@ -279,15 +290,10 @@
   * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)}`
   * binomial standard error: ` \sigma^{\overline{X}} =\sqrt{\frac{p(1-p)}{n}}`
   * standard error difference: `\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}`
-  * pooled proportion: `\widehat{p} = \frac{x_1+x_2}{n_1+n_2} `
   * pooled standard error: `\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n_1}+\frac{\widehat{p}(1-\widehat{p})}{n_2}}`
-  * z-test 2 populations: `Z= \frac{X - \mu}{\sigma} = \frac{(\widehat{p}_1-\widehat{p}_2) - (p_1-p_2)}{\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n_1}+\frac{\widehat{p}(1-\widehat{p})}{n_2}}}  `
-  * z-test 2 population simplified: `Z= \frac{\widehat{p}_1-\widehat{p}_2}{\sqrt{\widehat{p}(1-\widehat{p}) \left ( \frac{1}{n_1} + \frac{1}{n_2} \right )  }}`
   * retail example:
     * pooled proportion: `\widehat{p} = \frac{x_1+x_2}{n_1+n_2} = \frac{23+43}{50+70} = 0.55`
-    * test statistic: `X = \widehat{p}_1-\widehat{p}_2 = \frac{23}{50}-\frac{43}{70} \approx -0.1543`
     * stadard error: `\sigma = \sqrt{0.55*0.45 \left ( \frac{1}{50} + \frac{1}{70} \right ) } \approx 0.0921`
-    * z-score: `Z = \frac{-0.1543}{0.0921} \approx -1.6749`
 * [Intro to Hypothesis testing in Statistics](https://www.youtube.com/watch?v=VK-rnA3-41c)
 * [Hypothesis testing and p-values](https://www.youtube.com/watch?v=-FtlH4svqx4)
 * [Introductin to Hypothesis testing](https://www.youtube.com/watch?v=qsMZ4Zi5Csk)

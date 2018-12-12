@@ -182,7 +182,9 @@ Suppose the test is stopped after something significant happens.
   * **Power Analysis** - a tool to determine the minimum sample size required to be reasonably confident that a meaningful difference can be detected between two values
   * **Independent** - these two samples, A and B don't depend on each other
   * **Proportins** - dealing with binomial distributions
-> ![power analysis sample size](./img/e024f979-3713-4e78-b8ba-95dbfb9d3244.png)
+> ![power analysis sample size](./img/e024f979-3713-4e78-b8ba-95dbfb9d3244.png)<!--
+  n = (Z_{\alpha/2}+Z_{1-\beta})^{2}* \frac{p_1(1-p_1)+p_2(1-p_2) }{(p_1-p_2)^2}
+  -->
 * Example
   * With a current conversion rate of 10%, we want to detect a 10% difference
   * The treatment should at least have a 0.10 * (1 + 0.1) = 0.11 conversion rate
@@ -209,7 +211,6 @@ Suppose the test is stopped after something significant happens.
   * rule of thumb: `n = \frac{16}{\Delta^{2}}`
   * delta: `\Delta = \frac{\mu_{0} - \mu_{1}}{\sigma} = \frac{\delta}{\sigma}`
   * sample size, 2 population means: `  n= \frac{2(z_{1-\alpha/2}+z_{1-\beta})^{2}}{\left (  \frac{\mu_{0} - \mu_{1}}{\sigma}  \right )^{2}}`
-  * power analysis sample size: `n = (Z_{\alpha/2}+Z_{1-\beta})^{2}* \frac{p_1(1-p_1)+p_2(1-p_2) }{(p_1-p_2)^2}`
   * power analysis example: `n = (1.96+0.84)^{2}\frac{0.1879}{(0.01)^2}  = 14748`
 * [How Not To Run an A/B Test](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)
 * [Sample Size](http://vanbelle.org/chapters%5Cwebchapter2.pdf)
