@@ -6,21 +6,20 @@ from scipy.stats import binom
 
 if __name__ == '__main__':
     probability_input = 'what is the probability, in decimals? '
-    probability = input(probability_input)
+    probability = float(input(probability_input))
 
     if probability > 1 or probability <= 0:
         raise ValueError('probability must be decimal between 0 and 1.')
 
     population_input = 'what is the size of the set or population? '
-    population = input(population_input)
+    population = int(input(population_input))
 
     if population < 2:
         raise ValueError('Population must be greater than 1.')
 
     iterate_input = 'Do you want to run all success amounts? [y]/n '
-    iterate = str(raw_input(iterate_input)).lower()
+    iterate = str(input(iterate_input)).lower() or 'y'
 
-    print(iterate)
     if iterate == 'y':
         iterate = True
     else: 
@@ -28,7 +27,7 @@ if __name__ == '__main__':
 
     if iterate == False:
         success_input = 'how many success to obtain from the population? ' 
-        success = input(success_input)
+        success = int(input(success_input))
 
         if success > population:
             raise ValueError('Number of successes must be less than the size of population.')

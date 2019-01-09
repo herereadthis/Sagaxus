@@ -5,6 +5,7 @@
 * [Bernoulli Trials](./bernoulli-trials.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
+* [Bayesian Programming](./bayesian-programming.md)
 * [Probability Intervals](./probability-intervals.md)
 * [Markov Chain Monte Carlo](./mcmc.md)
 * [Frequentist Statistics](./frequentist-statistics.md)

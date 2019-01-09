@@ -15,7 +15,7 @@ if __name__ == '__main__':
     uplift_default = 10
 
     p1_input = 'What is the current conversion rate (p < 1)? '
-    p1 = input(p1_input)
+    p1 = float(input(p1_input))
     alpha_input = 'what is the desired significance [{0}]? '.format(alpha_default)
     alpha = float(raw_input(alpha_input) or alpha_default)
     beta_input = 'what is the desired significance [{0}]? '.format(beta_default)
