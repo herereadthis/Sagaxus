@@ -3,6 +3,7 @@
 * [Baseline Primer](./baseline-primer.md)
 * [Sampling Size](./sampling-size.md)
 * [Bernoulli Trials](./bernoulli-trials.md)
+* [Poisson Distribution](./poisson.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
 * [Bayesian Programming](./bayesian-programming.md)
