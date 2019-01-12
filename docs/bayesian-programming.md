@@ -14,3 +14,10 @@ Notes from Probabilistic Programming and Bayesian Methods for Hackers
   {\lambda = \begin{cases}\lambda_1 & t < \tau\\\lambda_2 & t \ge\tau\end{cases}}
   -->
 * If no change occurred, then both lambdas are equal, and the posterior distributions for each should be equal.
+* Let the prior probability each <em>&lambda;</em> be itself an exponential distribution with hyper-parameter <em>&alpha;</em>
+* Rule of thumb: set the exponential parameter equal to the inverse of the average of the count data.
+* When does <strong>&tau;</strong> occur? Since we don't know, assign every day equal probablity (uniform)
+  * <em>&tau; ~ U(1,70)</em>
+  * There are 70 days, so <em>P(&tau; = k) = 1/70</em>
+
+* Python: refer to [015-poisson.py](../demos/bayesian-programming/015-pymc.py)
