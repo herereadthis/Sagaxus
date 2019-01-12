@@ -4,6 +4,7 @@
 * [Sampling Size](./sampling-size.md)
 * [Bernoulli Trials](./bernoulli-trials.md)
 * [Poisson Distribution](./poisson.md)
+* [Exponential Distribution](./exponential.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
 * [Bayesian Programming](./bayesian-programming.md)

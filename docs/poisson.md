@@ -1,3 +1,4 @@
+
 # Poisson Distribution
 
 A Poisson distribution measures probability of events when you know how often the event has occurred. In other words, poisson process is the probability of a number of events occurring in a fixed interval. Examples:
