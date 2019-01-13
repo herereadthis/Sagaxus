@@ -1,12 +1,14 @@
 # PyMC
 
+## PyMC2
+
 There are <em>parent</em> and <em>child</em> variables
 * <em>Parent</em> variables influence another variable.
 * <em>Child</em> variables are affected by other variables.
 * A variable can be both <em>parent</em> and <em>child</em>.
 
 ```python
-import pymc3 as pm
+import pymc as pm
 
 parameter = pm.Exponential('poisson_param', 1)
 # data_generator is influenced by parameter, so parameter is a parent and data_generator is a child varable.
@@ -53,13 +55,17 @@ Use the `size` argument to create multivariate arrays. You need to do this for p
 * Multivariate arrays will behave like numpy arrays
 
 ```python
-import pymc3 as pm
+import pymc as pm
 # instead of doing this:
 beta_1 = pm.Uniform('beta_1', 0, 1)
 beta_2 = pm.Uniform('beta_2', 0, 1)
 # do this:
 betas = pm.Unifrom('betas', 0, 1, size=2)
 ```
+
+## PyMC3
+
+
 
 
 ## Sources
