@@ -21,3 +21,6 @@ Notes from Probabilistic Programming and Bayesian Methods for Hackers
   * There are 70 days, so <em>P(&tau; = k) = 1/70</em>
 
 * Python: refer to [015-poisson.py](../demos/bayesian-programming/015-pymc.py)
+
+* PyMC notes in [libraries doc: PyMC](./libraries/pymc.md)
+

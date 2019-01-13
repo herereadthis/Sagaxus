@@ -23,6 +23,7 @@
 * Libraries
   * [NumPy](./libraries/numpy.md)
   * [Pandas](./libraries/pandas.md)
+  * [PyMC](./libraries/pymc.md)
   * [React A/B Test](./libraries/react-ab-test.md)
   * [Sixpack](./libraries/sixpack.md)
   * [json-rules-engine](./libraries/json-rules-engine.md)
