@@ -6,5 +6,7 @@ with pm.Model() as model:
 with model:
     print(my_discrete_uniform_var.tag.test_value)
 
-# this seems to work too
+# you can examine a variable outside its model context once the variable has been defined.
+print(my_discrete_uniform_var.tag.test_value)
+# test value does not change if you sample it again.
 print(my_discrete_uniform_var.tag.test_value)
