@@ -62,6 +62,38 @@ foo.shape = (3,2)
 print(foo)
 ```
 
+`reshape` will resize an array
+
+```python
+import numpy as np
+
+foo = np.array([[1,2,3], [4,5,6]])
+bar = foo.reshape(3,2)
+# output: [[1,2],[3,4],[5,6]]
+```
+
+`flatten()` will flatten an array
+
+```python
+import numpy as np
+
+foo = np.array([[1,2,3], [4,5,6]])
+bar = foo.flatten()
+# output: [[1,2],[3,4],[5,6]]
+```
+
+`T` - transpose an array also `numpy.transpose()`
+
+```python
+import numpy as np
+
+foo = np.array([[1,2,3], [4,5,6]])
+bar = foo.T
+# same result
+bar = np.transpose(foo)
+# output: [[1,2],[3,4],[5,6]]
+print(bar)
+```
 
 `ndim` attribute returns the number of array dimensions
 
@@ -168,8 +200,59 @@ print(foo[1,...])
 
 # get second column and any column after that [[2,3],[5,6],[8,9]]
 print(foo[...,1:])
+```
+
+* Indexing you can get elements from an array based on its dimension index
+
+```python
+# get elements at (0,0, (1,1), and (2,0)
+foo = np.array([1,2],[3,4],[5,6])
+bar = foo[[0,1,2],[0,1,0]]
+# output: [1, 4, 5]
+print(bar)
+```
+
+Use an array to get an array from the array say what?
+
+```python
+foo = np.array([[1,2,3],[4,5,6],[7,8,9]])
+rows = np.array([[0,1],[1,2]])
+cols = np.array([[2,2],[0,1]])
+bar = foo[rows, cols]
+# output: [[3,6],[4,8]]
+print(bar)
+```
+
+Boolean indexing: return values passing `True` for some condition.
+
+```python
+import numpy as np
+foo = np.array([[1,2,3],[4,5,6],[7,8,9]])
+bar = foo[foo > 5]
+# output: [6, 7, 8, 9]
+print(bar)
+```
+
+`numpy.nditer` iterates over an array.
+
+
+```python
+import numpy as np
+foo = np.arange(0,18,2)
+# output: [[ 0,  2,  4,  6,  8, 10, 12, 14, 16]]
+print(foo)
+foo.reshape(3,3)
+# output: [[0,2,4],[6,8,10],[12,14,16]]
+
+for x in np.nditer(foo):
+    print(x)
 
 ```
+
+### Statistics
+
+
+
 
 ## Sources
 
