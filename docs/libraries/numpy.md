@@ -252,7 +252,63 @@ for x in np.nditer(foo):
 ### Statistics
 
 
+* `numpy.amin()` - returns minimum at axis
+* `numpy.amax()` - returns maximum at axis
 
+```python
+import numpy as np
+foo = np.array([[3,7,5],[8,4,3],[2,4,9]])
+
+# minimum of the flattened array: 2
+print(np.amin(foo))
+
+# minimum on first axis: [2, 4, 3]
+print(np.amin(a,0))
+print(np.amin(a, axis=0))
+
+# minimum on second axis: [3, 3, 2]
+print(np.amin(a,1))
+
+# maximum of the flattened array: 9
+print(np.amax(foo))
+
+# maximum on first axis: [8, 7, 9])
+print(np.amax(a,0))
+
+# maximum on second axis: [7, 8, 9]
+print(np.amax(a,1))
+```
+
+
+* `numpy.median()` - returns median at axis
+* `numpy.mean()` - returns mean at axis
+* `numpy.average()` - returns a weighted average, given an array
+
+```python
+import numpy as np
+foo = np.array([1,2,3,4])
+bar = np.array([4,3,2,1])
+
+# output: 2.5
+print(np.average(foo))
+
+#output: 2
+print(np.average(foo, weights=bar))
+```
+
+* `numpy.std()` - returns standard deviation
+* `numpy.var()` - returns variance
+
+```python
+import numpy as np
+foo = np.array([1,2,3,4])
+
+# output: 1.118033988749895
+print(np.std(foo))
+
+# output: 1.25
+print(np.var(foo))
+```
 
 ## Sources
 
