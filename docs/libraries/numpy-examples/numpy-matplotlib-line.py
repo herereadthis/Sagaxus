@@ -1,3 +1,6 @@
+'''
+Create a line with numpy and matplotlib
+'''
 import numpy as np 
 from matplotlib import pyplot as plt 
 

@@ -338,6 +338,51 @@ plt.plot(x,y, 'ob')
 plt.show()
 ```
 
+* Create a sine wave
+
+```python
+import numpy as np 
+import matplotlib.pyplot as plt  
+
+# Compute the x and y coordinates for points on a sine curve 
+x = np.arange(0, 3 * np.pi, 0.1) 
+y = np.sin(x) 
+plt.title('sine wave form') 
+
+plt.plot(x, y, ':r') 
+plt.show() 
+```
+
+* `pyplot.subplot()` - use to plot multiple things in one output
+
+```python
+import numpy as np 
+import matplotlib.pyplot as plt  
+   
+# x-points are for 2 pi
+x = np.arange(0, 2 * np.pi, 0.1) 
+
+# subplot 1: sine wave
+y_sin = np.sin(x) 
+# subplot 2: cosine wave
+y_cos = np.cos(x)  
+
+# Create a subplot grid height: 2, width: 1, and active
+plt.subplot(2, 1, 1)
+plt.plot(x, y_sin, ':b') 
+plt.title('Sine')  
+   
+# Second subplot for cosine wave
+plt.subplot(2, 1, 2) 
+plt.plot(x, y_cos, ':r') 
+plt.title('Cosine')  
+   
+# Show the figure. 
+plt.show()
+```
+
+* `pyplot.bar()` - create bar graphs
+
 ## Sources
 
 * [NumPy Tutorial](https://www.tutorialspoint.com/numpy)

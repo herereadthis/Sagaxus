@@ -100,3 +100,8 @@
         </tr>
     </tbody>
 </table>
+
+```python
+# plot style: o=circle, b=blue
+plt.plot(x,y,"ob")
+```
