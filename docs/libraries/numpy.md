@@ -249,6 +249,8 @@ for x in np.nditer(foo):
 
 ```
 
+`numpy.load()` loads an array from a file.
+
 ### Statistics
 
 
