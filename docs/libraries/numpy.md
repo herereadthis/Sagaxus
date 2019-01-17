@@ -381,7 +381,30 @@ plt.title('Cosine')
 plt.show()
 ```
 
-* `pyplot.bar()` - create bar graphs
+* `np.histogram()`
+
+```python
+import numpy as np 
+   
+foo_data = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27]) 
+# np.histogram(foo_data, bins = [0,20,40,60,80,100]) 
+# np.histogram gives back a tuple: the count in each bin, and the bins
+histogram_data = np.histogram(foo_data, bins = [0,20,40,60,80,100]) 
+
+hist = histogram_data[0]
+bins = histogram_data[1]
+
+# output: [3 4 5 2 1]
+print(hist)
+# output: [  0  20  40  60  80 100]
+print(bins)
+```
+
+1. [Line Graph](./numpy-examples/numpy-matplotlib-line.py)
+2. [Sine Wave](./numpy-examples/numpy-matplotlib-sine.py)
+3. [Multiple subplots](./numpy-examples/numpy-matplotlib-subplot.py)
+4. [Bar Graph](./matplotlib-examples/matplotlib-01-bar.py)
+5. [Histogram](./matplotlib-examples/matplotlib-02-histogram.py)
 
 ## Sources
 
