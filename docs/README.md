@@ -8,6 +8,7 @@
 * [Hypothesis Testing](./hypothesis-testing.md)
 * [Bayesian Statistics](./bayesian-statistics.md)
 * [Bayesian Programming](./bayesian-programming.md)
+* [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
 * [Probability Intervals](./probability-intervals.md)
 * [Markov Chain Monte Carlo](./mcmc.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
