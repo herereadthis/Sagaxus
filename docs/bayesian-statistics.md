@@ -23,7 +23,7 @@
 * <strong>Social Science</strong> - proportion of people who would respond &ldquo;yes&rdquo; on a survey question
 * <strong>Medicine</strong> - proportion of patients who recover after taking a drug
 * <strong>Finance</strong> - proportion of transactions that fail audits
-* <strong>A/B Testing/strong> - proportion of users who click a button when using an application
+* <strong>A/B Testing</strong> - proportion of users who click a button when using an application
 
 ### Bayes&rsquo; Theorem
 
@@ -31,13 +31,21 @@
 * **Posterior Inference** - Then analyze another set of sample data and revise the conclusion
 * **Bayesian Logic** - *use knowledge of prior events to predict future events*
 * Recall Bayes' Theorem
-  > ![Bayes' Theorem](./img/d09541ec-5a36-4035-9cb2-192a52f5324c.png)
+  > ![Bayes' Theorem](./img/d09541ec-5a36-4035-9cb2-192a52f5324c.png)<!--
+    {P(B|A) = \frac{P(A|B)P(B)}{P(A)}}
+    -->
 * Switch the letters to H and D
-  > ![Bayes' Theorem 2](./img/3114bc47-2e98-4605-b65e-3a3cc182916e.png)
+  > ![Bayes' Theorem 2](./img/3114bc47-2e98-4605-b65e-3a3cc182916e.png)<!--
+    {P(\mathcal{H}|\mathcal{D}) = \frac{P(\mathcal{D}|\mathcal{H})P(\mathcal{H})}{P(\mathcal{D})}}
+    -->
 * Where H is probability of hypothesis being true, and D is probability of data being true
-  > ![Bayes' Theorem 3](./img/d054ab29-b5f5-4f66-a322-2020b8c1394f.png)
+  > ![Bayes' Theorem 3](./img/d054ab29-b5f5-4f66-a322-2020b8c1394f.png)<!--
+    {P(Hypothesis|Data) = \frac{P(Data|Hypothesis)P(Hypothesis)}{P(Data)}}
+    -->
 * Finally, [the application](https://towardsdatascience.com/probability-for-data-science-9770b26643d0) of Bayes' theorem
-  > ![Bayes' Theorem 4](./img/39bf4c25-9038-441b-b090-e1cf4c66247d.png)
+  > ![Bayes' Theorem 4](./img/39bf4c25-9038-441b-b090-e1cf4c66247d.png)<!--
+    {Posterior = \frac{Likelihood \times Prior}{Evidence}}
+    -->
 * **Experiment** - what you do to get the result, e.g, flip a coin, screen a patient
 * **Data** - the result of the experiment, e.g., the screening test is positive, the coin flip is heads
   * The probability of the data is Type 1
@@ -70,11 +78,17 @@
       * Hypothesis: H = person has the foo gene
       * Data: D = the test is positive
       * Likelihood - probability of a positive test if you have the gene
-        > ![foo likelihood](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)
+        > ![foo likelihood](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)<!--
+          {Likelihood = P(\mathcal{D}|\mathcal{H}) = 0.99}
+          -->
       * Prior - probability of having the gene
-        > ![foo prior](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)
+        > ![foo prior](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)<!--
+          {Prior = P(\mathcal{H}) = 0.002}
+          -->
       * Evidence - a true positive test for those who have the gene, and a false positive for those who don't have it
-        > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)
+        > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)<!--
+          {Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}
+          -->
   * **Base Rate Fallacy**
     * It's worth pausing on this result for a bit. The probability that a patient who tests positive actually has the disease less than 17%, despite the test being 99% accurate. Why so low?
       * Suppose the population was a thousand people. Then the expected number of people who actually have the disease is 2. Of the remaining 998 people, 1% of them will test positive. which will be about 10 other people.
@@ -142,7 +156,9 @@
   * Suppose there are 5 coins, 2 *A*, 2 *B*, and 1 *C*
   * Pick one coin at random, flip it, and it lands heads.
   * What is the probability that the coin is *A*? or *B* or *C*?
-    > ![coin tree](./img/bbad4e83-2935-4ae3-a3b4-7add6567c6a9.png)
+    > ![coin tree](./img/bbad4e83-2935-4ae3-a3b4-7add6567c6a9.png)<!--
+      {\begin{cases}0.4 & A\begin{cases}0.5 & H=0.2\\0.5 & T=0.2\end{cases}\\0.4 & B\begin{cases}0.6 & H=0.24\\0.4 & T=0.16\end{cases}\\0.2 & C\begin{cases}0.9 & H=0.18\\0.1 & T=0.02\end{cases}\end{cases}}
+      -->
     * Data is the evidence: the evidence is heads
     * In other words, find *P(A|D), P(B|D), P(C|D)
     * First what is the probability of getting a coin? This is prior knowledge.
@@ -178,7 +194,9 @@
   * So posterior odds are 10 times larger than prior odds.
   * Note that the odds are still very tiny.
 * **Bayes Factor** the order of magnitude that the posterior odds  is greater than prior odds.
-  > ![Bayes Factor](./img/40e0ca48-66eb-418d-8d03-7ade5be645aa.png)
+  > ![Bayes Factor](./img/40e0ca48-66eb-418d-8d03-7ade5be645aa.png)<!--
+    BF = \frac{P(D|H)}{P(D|H^{c})}
+    -->
   * for a hypothesis *H* and data *D*
   * posterior odds = BF * prior odds
   * *BF > 1* - data provides evidence for hypothesis
@@ -191,19 +209,35 @@
 * **Paramatrized Distribution** - model the random process that creates the data
 * **Hypothesis *&theta;*** - any choice of parameter, such as the probability of success
 * As usual these are the probabilities we want:
-  > ![probabilities1](./img/a45f7547-58a2-4bd7-a0d3-d5007b143668.png)
-  > ![probabilities1](./img/b955318e-13a7-465b-a40f-3a955c0f4e13.png)
+  > ![probabilities1](./img/a45f7547-58a2-4bd7-a0d3-d5007b143668.png)<!--
+    {\begin{cases}
+    P(\mathcal{H}) = p(\theta)
+    \\P(\mathcal{D}) = p(x)
+    \\P(\mathcal{D}|\mathcal{H}) = p(x|\theta)
+    \\P(\mathcal{H}|\mathcal{D}) = p(\theta|x)
+    \end{cases}}
+    -->
 * recall continuous pdf - the probability that *X* is in *[c, d]*
-  > ![continuous pdf](./img/6786b048-ab22-4611-a4e1-6224e33501e9.png)
+  > ![continuous pdf](./img/6786b048-ab22-4611-a4e1-6224e33501e9.png)<!--
+    {P(c \leq d) = \int_c^d f(x)dx}
+    -->
 * law of total probability for discrete set (remember the coin example above) prior probability of D
-  > ![discrete total probability 1](./img/e788da5e-86dc-408f-88dd-c1ab08c23a92.png)
-  > ![discrete total probability 2](./img/232ca3dd-813b-459e-81f6-ad4556e1ec9f.png)
+  > ![discrete total probability 1](./img/e788da5e-86dc-408f-88dd-c1ab08c23a92.png)<!--
+    {P(\mathcal{D}) = \sum_{i=1}^n P(\mathcal{D}|\mathcal{H}_i)P(\mathcal{H}_i)}
+    -->
+  > ![discrete total probability 2](./img/232ca3dd-813b-459e-81f6-ad4556e1ec9f.png)<!--
+    {p(x) = \sum_{i=1}^n  p(x|\theta_i)p(\theta_i)}
+    -->
 * Continuous law of total probability
   * suppose a parameter *&theta;* in the range of *[a, b]* and a discrete random data *x*.
   * *&theta;& is random, with a density function *f(&theta;)* and *x* and *&theta;* have likelihood *p(x|&theta;)*
-  > ![continuous total probability](./img/6e426ff6-1955-4ccd-b0fc-6be2962edbac.png)
+  > ![continuous total probability](./img/6e426ff6-1955-4ccd-b0fc-6be2962edbac.png)<!--
+    p(x) = \int_a^b p(x|\theta)f(\theta)d(\theta)
+    -->
   * So now expressed as Bayes' theorem
-  > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)
+  > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)<!--
+    {f(\theta|x)d\theta = \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}
+    -->
 * The prior probability is *f(&theta;)d&theta;* so the hypothesis is saying:
   * **The unknown parameter is an inteval of width *d&theta;* around *&theta;***
 
@@ -242,9 +276,19 @@
     </tr>
     <tr>
         <td>total</td>
-        <td><img src="./img/9512229a-27f9-427b-900a-751ec28376df.png" /></td>
+        <td>
+          <img src="./img/9512229a-27f9-427b-900a-751ec28376df.png" />
+          <!--
+          {\int_a^b f(\theta)d(\theta) = 1}
+          -->
+        </td>
         <td></td>
-        <td><img src="./img/267e2aef-1aa3-4d9b-b7ab-34f41198dde5.png" /></td>
+        <td>
+          <img src="./img/267e2aef-1aa3-4d9b-b7ab-34f41198dde5.png" />
+          <!--
+          {p(x=0)=\int_a^b (1-\theta)d(\theta) = x - \frac{x^2}{2} \Big|_0^1= 1}
+          -->
+        </td>
         <td>1</td>
     </tr>
 </table>
@@ -252,7 +296,9 @@
 #### Posterior pdf
 
 * If a coin can equally be heads or tails, then find the the probability of landing tails *P(&theta; < 5)* and heads *P(&theta; > 5)*
-  > ![unbiased coin](./img/b3bc445a-7097-40f0-9f2e-a7c2c3c02cdd.png)
+  > ![unbiased coin](./img/b3bc445a-7097-40f0-9f2e-a7c2c3c02cdd.png)<!--
+    {P(\theta>.5)=\int_{.5}^1 f(\theta)d(\theta) = \int_{.5}^1 1 \cdot d(\theta) = \theta \Big|_0^1= \frac{1}{2}}
+
 * Okay flipping the coin lands heads. What is probability that the coin favors (biased towards) heads now?
   * *P(&theta; > 0.5|x=1)*
   * Prior: *f(&theta;)d&theta; = 1 &times; d&theta;
@@ -260,14 +306,19 @@
   * Numerator: *&theta; &times; d&theta;*
   * *p(x = 1)* = *x<sup>2</sup>/2* from 0.5 to 1 = 1/2
   * Posterior: *&theta; &times; d&theta;* / (1/2) = *2&theta; &times; d&theta;* 
-  > ![posterior flat coin](./img/212fd9ac-0545-4cec-938f-cb31c4a84d3e.png)
+  > ![posterior flat coin](./img/212fd9ac-0545-4cec-938f-cb31c4a84d3e.png)<!--
+    {P(\theta>.5|x=1)=\int_{.5}^1 f(\theta|x=1)d(\theta) = \int_{.5}^1 2\theta d\theta = \theta^2 \Big|_{.5}^1= \frac{3}{4}}
+    -->
 * What is the probability of getting heads again? 
   * remember the integral of the probability of getting heads, given you got head on the first flip is the integral of *2&theta; &times; d&theta;*  a.k.a. the posterior
   * That becomes prior of the next round
   * likelihood of the next round is *p(x<sub>2</sub>=1|&theta;) = &theta;*
-  > ![flip again part 1](./img/10156658-34dd-4ff1-9811-1deac8401d02.png)
-  > ![flip again part 2](./img/1798b3c2-4f33-4365-8312-d0019a4b3030.png)
-
+  > ![flip again part 1](./img/10156658-34dd-4ff1-9811-1deac8401d02.png)<!--
+    {P(x_2=1|x_1=1)=\int_{0}^1 p(x_2=1|\theta,x_1=1)f(\theta|x_1=1)d\theta }
+    -->
+  > ![flip again part 2](./img/1798b3c2-4f33-4365-8312-d0019a4b3030.png)<!--
+    {{P(x_2=1|x_1=1)=\int_{0}^1 \theta \cdot 2\theta d\theta = \frac{2\theta^3}{3} \Big|_{0}^1=\frac{2}{3}}}
+    -->
 
 ### Inferential Statistics
 
@@ -277,35 +328,9 @@
 * **Data Prediction** - use information about sample to predict a random selection
 * **Model comparison** - selecting a model which best explains the observed data, something that postulates the relationship between factors and the data
 
-
 ## Sources
 
 * [Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
-  * Bayes' Theorem: `P(B|A) = \frac{P(A|B)P(B)}{P(A)}`
-  * Bayes' Theorem 2: `P(\mathcal{H}|\mathcal{D}) = \frac{P(\mathcal{D}|\mathcal{H})P(\mathcal{H})}{P(\mathcal{D})}`
-  * Bayes' Theorem 3: `P(Hypothesis|Data) = \frac{P(Data|Hypothesis)P(Hypothesis)}{P(Data)}`
-  * Bayes' Theorem 4: `Posterior = \frac{Prior \times Likelihood}{Evidence}`
-  * Foo Likelihood: `Likelihood = P(\mathcal{D}|\mathcal{H}) = 0.99`
-  * Foo Prior: `Prior = P(\mathcal{H}) = 0.002`
-  * Foo Evidence: `{Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}`
-  * Bayes Factor: `BF = \frac{P(D|H)}{P(D|H^{c})}`
-  * coin tree: `\begin{cases}0.4 & A\begin{cases}0.5 & H=0.2\\0.5 & T=0.2\end{cases}\\0.4 & B\begin{cases}0.6 & H=0.24\\0.4 & T=0.16\end{cases}\\0.2 & C\begin{cases}0.9 & H=0.18\\0.1 & T=0.02\end{cases}\end{cases}`
-  * continuous priors
-    * probabilities1: `{P(\mathcal{H}) = p(\theta), P(\mathcal{D}) = p(x)}`
-    * probabilities2: `{P(\mathcal{H}|\mathcal{D}) = p(\theta|x), P(\mathcal{D}|\mathcal{H}) = p(x|\theta)}`
-    * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
-    * discrete total probability 1: `P(\mathcal{D}) = \sum_{i=1}^n P(\mathcal{D}|\mathcal{H}_i)P(\mathcal{H}_i)`
-    * discrete total probability 1: `P(p(x) = \sum_{i=1}^n  p(x|\theta_i)p(\theta_i)`
-    * continuous total probability: `p(x) = \int_a^b p(x|\theta)f(\theta)d(\theta)`
-    * continuous bayes: `{f(\theta|x)d\theta = \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}`
-  * flat priors
-    * pior flat: `{\int_a^b f(\theta)d(\theta) = 1}`
-    * flat numerator: `{p(x=0)=\int_a^b (1-\theta)d(\theta) = x - \frac{x^2}{2} \Big|_0^1= 1}`
-  * posterior pdf
-    * unbiased coin: `{P(\theta>.5)=\int_{.5}^1 f(\theta)d(\theta) = \int_{.5}^1 1 \cdot d(\theta) = \theta \Big|_0^1= \frac{1}{2}}`
-    * posterior flat coin: `{P(\theta>.5|x=1)=\int_{.5}^1 f(\theta|x=1)d(\theta) = \int_{.5}^1 2\theta d\theta = \theta^2 \Big|_{.5}^1= \frac{3}{4}}`
-    * flip again part 1: `{P(x_2=1|x_1=1)=\int_{0}^1 p(x_2=1|\theta,x_1=1)f(\theta|x_1=1)d\theta }`
-    * flip again part 2: `{P(x_2=1|x_1=1)=\int_{0}^1 \theta \cdot 2\theta d\theta  = \frac{2\theta^3}{3} \Big|_{0}^1=\frac{2}{3}}`
 * [What are the principles of Bayesian statistics?](https://www.quora.com/What-are-the-principles-of-Bayesian-statistics)
 * [Probability for Data Science](https://towardsdatascience.com/probability-for-data-science-9770b26643d0)
 * [What is the difference between Bayesian and frequentist statisticians?](https://www.quora.com/What-is-the-difference-between-Bayesian-and-frequentist-statisticians)
