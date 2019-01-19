@@ -2,11 +2,6 @@
 
 ## Introduction
 
-* <strong>Bayesian Statistics</strong> - a particulat approach to applying probability to statistical prolems by providing mathematical tools to update prior beliefs about random events based on new data.
-* <strong>Bayesian Inference</strong> - probabiity is a measure of the believability or confidence about the occurance of an event.
-  * Try to define uncertainty
-* <strong>Frequentist Statistics</strong> - probability is a measure of the frequency of particular random events occuring over repeated trials
-  * Try to eliminate uncertainty with estimates
 
 * Recall Bayes' Theorem
   > ![Bayes' Theorem](../img/d09541ec-5a36-4035-9cb2-192a52f5324c.png)<!--
@@ -22,20 +17,13 @@
     -->
 * Finally, the application of Bayes' theorem
   > ![Bayes' Theorem 4](../img/39bf4c25-9038-441b-b090-e1cf4c66247d.png)<!--
-    {Posterior = \frac{Prior \times Likelihood}{Evidence}}
+    {Posterior = \frac{Likelihood \times Prior}{Evidence}}
     -->
 
 * [Examle 1](./example-01.py) - coin flips with simulation
 
 ## Bayesian Inference of a Binomial Proportion
 
-### Inference Examples
-
-* <strong>Engineering</strong> - proportion of widgets that have a defect after fabrication
-* <strong>Social Science</strong> - proportion of people who would respond &ldquo;yes&rdquo; on a survey question
-* <strong>Medicine</strong> - proportion of patients who recover after taking a drug
-* <strong>Finance</strong> - proportion of transactions that fail audits
-* <strong>A/B Testing/strong> - proportion of users who click a button when using an application
 
 ### Bayesian Approach
 

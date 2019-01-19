@@ -6,11 +6,13 @@
 * [Poisson Distribution](./poisson.md)
 * [Exponential Distribution](./exponential.md)
 * [Hypothesis Testing](./hypothesis-testing.md)
-* [Bayesian Statistics](./bayesian-statistics.md)
-* [Bayesian Programming](./bayesian-programming.md)
-* [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
+* Bayesian Statistics
+  * [Beta Distribution](./beta.md)
+  * [Bayesian Statistics](./bayesian-statistics.md)
+  * [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
+  * [Bayesian Programming](./bayesian-programming.md)
+  * [Markov Chain Monte Carlo](./mcmc.md)
 * [Probability Intervals](./probability-intervals.md)
-* [Markov Chain Monte Carlo](./mcmc.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
 * [Lindley's Paradox](./lindleys-paradox.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
