@@ -235,9 +235,10 @@
     p(x) = \int_a^b p(x|\theta)f(\theta)d(\theta)
     -->
   * So now expressed as Bayes' theorem
-  > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)<!--
-    {f(\theta|x)d\theta = \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}
-    -->
+    > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)<!--
+      {f(\theta|x)d\theta =
+      \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}
+      -->
 * The prior probability is *f(&theta;)d&theta;* so the hypothesis is saying:
   * **The unknown parameter is an inteval of width *d&theta;* around *&theta;***
 

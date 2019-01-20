@@ -1,4 +1,22 @@
-# Markov Chain Monte Calo 
+# Markov Chain Monte Carlo (MCMC)
+
+* It's easy when the likelihood function is a binomial distribution and the prior is a Beta distibution. The posterior is also a Beta distribution. The prior is a <strong>conjugate prior</strong>
+* Not all models can use conjugate priors, so calculating the posterior will have to approximated.
+  * Example: <strong>Bayesian Hierachal Modeling</strong> - a statistical model with multiple levels and is basically intractable using analytical methods
+* <strong>Markov Chain Monte Carlo (MCMC) - a family of algorithms that help approximate the posterior distribution from Bayesian Statistics.
+* Recall Bayes&rsquo; Theorem for continuous priors:
+  > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)<!--
+    {f(\theta|x)d\theta =
+    \frac{p(x|\theta)f(\theta)d\theta}{\int_a^b p(x|\theta)f(\theta)d(\theta)}}
+    -->
+  * Sometimes it&rsquo;s too difficult to solve for the denominator.
+* If a model has many parameters, integrals will have to be solved over multiple dimensions, which leads to:
+  * <strong>Curse of Dimensionality</strong> - as integral dimensions increase, the volume space becomes so vast that any data becomes insignificant, e.g., we would need a whole lot more data.
+* Basic idea:
+  * Sample the posterior distribution by combining a random search (Monte Carlo) with
+  * A mechanism for moving around that is memoryless (Markov Chain)
+
+## Monte Carlo Example
 
 * Suppose there are two samples, control and treatment
   * Control has 35 conversions from 200 users
@@ -63,3 +81,4 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 * [how to implement these 5 powerful probability distributions in Python](https://bigdata-madesimple.com/how-to-implement-these-5-powerful-probability-distributions-in-python/)
 * [Python histogram outline](https://stackoverflow.com/questions/42741687/python-histogram-outline)
 * [How to plot empirical cdf in matplotlib in Python?](https://stackoverflow.com/questions/3209362/how-to-plot-empirical-cdf-in-matplotlib-in-python)
+* [Markov Chain Monte Carlo for Bayesian Inference - The Metropolis Algorithm](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)

@@ -9,9 +9,9 @@
 * Bayesian Statistics
   * [Bayesian Statistics](./bayesian-statistics.md)
   * [Beta Distribution](./beta.md)
+  * [Markov Chain Monte Carlo](./mcmc.md)
   * [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
   * [Bayesian Programming](./bayesian-programming.md)
-  * [Markov Chain Monte Carlo](./mcmc.md)
 * [Probability Intervals](./probability-intervals.md)
 * [Frequentist Statistics](./frequentist-statistics.md)
 * [Lindley's Paradox](./lindleys-paradox.md)
