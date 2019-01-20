@@ -11,14 +11,20 @@ An experiment that only has two possible results - *success* and *failure* - is 
   > ![Success Probability Function](./img/9f2cb1c2-bb2a-4ac1-8089-7996f6ab8c94.png)
   * The probability of failure *1 - p* is sometimes called *q*
 * Cumulative Distribution Function:
-    > ![Distribution Function](./img/78111350-ec3e-46c6-9fd3-a44cb923da9f.png)
+    > ![Distribution Function](./img/78111350-ec3e-46c6-9fd3-a44cb923da9f.png)<!--
+      F(x) =\begin{cases}0 & x < 0\\1 - p & 0  \leq x < 1\\1 & x  \geq 1\end{cases}
+      -->
 * **Binomial Coefficient** - the number of ways of picking *k* unordered outcomes from *n* possibilities, or "*n* choose *k*"
   > ![Binomial Coefficient](./img/f1166446-ab18-4655-93a3-7b8ab9d1bc5e.png)
   * For example, <sub>4</sub>C<sub>2</sub> = 6
   * From a set of 4 numbers {1, 2, 3, 4} choosing 2 unordered numbers  will yield 6 subsets {1,2}, {1,3}, {1,4}, {2,3}, {2,4}, {3,4}
 * **Binomial Distribution** is the model for *n* independent Bernoulli trials with a *p* probability, then `X ~ Bin(n,p)`
   * Therefore *Bin(1,p) = Ber(p)*
-  > ![Binomial Distribution](./img/ee2f4eba-449d-4790-bdbf-9d53da126aa6.png)
+  > ![Binomial Distribution](./img/ee2f4eba-449d-4790-bdbf-9d53da126aa6.png)<!--
+    {P(X = k) =
+    \begin{pmatrix}n \\k \end{pmatrix}p^{k}(1-p)^{n-k} =
+    \big({\frac{n!}{k!(n - k)!}}\big)p^{k}(1-p)^{n-k}}
+    -->
 * **Mean** of a Bernoulli Trial is its probability *&mu; = p*
 * **Expected Value** of a Bernoulli Trial is *E(X) = 0(1-p) + 1(p) = p*
 * **Expected Value** of a Binomial distribution is *E(X) = np*
@@ -75,9 +81,7 @@ An experiment that only has two possible results - *success* and *failure* - is 
   * Bernoulli random variable: `X =\begin{cases}1 & success\\0 & failure\end{cases}`
   * Failure Probability: `P(X = 0) = 1 - p`
   * Success Probability: `P(X = 1) = p`
-  * Distribution Function: `F(x) =\begin{cases}0 & x < 0\\1 - p & 0  \leq x < 1\\1 & x  \geq 1\end{cases}`
   * Binomial Coefficient: `_nC_k =  \begin{pmatrix}n \\k \end{pmatrix} = \frac{n!}{k!(n - k)!}`
-  * Binomial Distribution: `P(X = k) = \begin{pmatrix}n \\k \end{pmatrix}p^{k}(1-p)^{n-k}     =   \big({\frac{n!}{k!(n - k)!}}\big)p^{k}(1-p)^{n-k}`
   * Bernoulli Variance: `Var(X) = p(1 - p)`
   * Bernoulli Standard Deviation: `\sigma =  \sqrt{p(1-p)}`
   * Coin flip example: `(\frac{5}{3})0.5^3(1 - 0.5)^{5 - 3} = (\frac{5}{3})0.5^3(0.5)^{2} = 0.05208 \overline{3} `

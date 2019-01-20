@@ -16,6 +16,8 @@
     * Suppose last season a player had 80 hits and 220 outs for a total of 300 at-bats
     * The batting average of this player is a [beta distribution](http://varianceexplained.org/statistics/beta_distribution_and_baseball/) *beta(80,220)*
 
+### The Beta Distribution and its measures
+
 * **Beta Distribution** - beta(a, b) 2-parameter distribution with range [0,1]
   > ![Beta distribution](./img/56786ea0-b970-49d0-9a4a-b5fc2c891c13.png)<!--
     {f(\theta) = \frac{(a+b-1)!}{(a-1)!(b-1)!}\theta^{a-1}(1-\theta)^{b-1}}
@@ -25,14 +27,49 @@
   > ![normalizing constant](./img/c5d1c8a8-d6a1-4629-ac87-0321d01de1f6.png)<!--
     {c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}
     -->
-* Beta mean
-  > ![beta mean](./img/cc95317e-c7b9-4418-8e3b-63d6d0d53000.png)<!--
-    {E(X) = \mu = \frac{\alpha}{\alpha + \beta}}
+* Beta Mean: [Expected Value](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
+  > ![beta mean](./img/5d6b37fc-580a-4a9f-a792-efdef29d3811.png)<!--
+    E(\theta) = \mu = \frac{a}{a+b}
     -->
+* Variance
+  > ![beta variance](./img/e02cd9d5-1f08-47fa-aaf7-df630154d91f.png)<!--
+    \sigma^2  = \frac{a\cdot b}{(a+b)^2(a + b + 1)}
+    -->
+* Mode: aka what is peak of the curve?
+  > ![beta mode](./img/f2b2fc98-70aa-45dc-8932-4481bb377b43.png)<!--
+    \gamma  = \frac{a-1}{a+b-2}
+    -->
+* Solve for <em>&alpha;</em>
+  > ![beta alpha](./img/592ddcea-1109-49a2-9f16-69c482c3a74e.png)<!--
+    {\alpha = \left(\frac{1-\mu}{\sigma^2} - \frac{1}{\mu} \right) \mu^2}
+    -->
+* Solve for <em>&beta;</em>
+  > ![beta beta](./img/784e6d37-cf87-45bf-a187-2d859b7041ac.png)<!--
+    {\beta = \alpha\left( \frac{1}{\mu} - 1 \right)}
+    -->
+
+#### A note about standard deviation of beta
+
+* Recall the standard deviation of a uniform distribution
+  > ![uniform standard deviation](./img/589ca684-1b99-4c60-a24f-97747494db3e.png)<!--
+    \sigma = \frac{b-a}{\sqrt{12}}
+    -->
+* In a beta distribiton the hypothesis <em>&theta;</em> is between 0 and 1. Therefore, a uniform prior is:
+  > ![uniform prior standard deviation](./img/589ca684-1b99-4c60-a24f-97747494db3e.png)<!--
+    \sigma = \frac{1 - 0}{\sqrt{12}} = 0.28868
+    -->
+* Therefore, (while possible) a beta distribution should not have a standard deviation greater than 0.28868 because a uniform prior has no beliefs
+
+### Example: coin flips
+
 * What is the probability of getting 8 heads and 4 tails from a coin flip?
   * n = 8 + 4 = 12
   * This is a binomial distribution
-  > ![Binomial Distribution](./img/ee2f4eba-449d-4790-bdbf-9d53da126aa6.png)
+  > ![Binomial Distribution](./img/ee2f4eba-449d-4790-bdbf-9d53da126aa6.png)<!--
+    {P(X = k) =
+    \begin{pmatrix}n \\k \end{pmatrix}p^{k}(1-p)^{n-k} =
+    \big({\frac{n!}{k!(n - k)!}}\big)p^{k}(1-p)^{n-k}}
+    }
   * The posterior pdf for a binomial distribution is also a binomial distribution since we are still dealing with bernoulli trials
   * If we solve for the posterior with *&theta;* from 0 to 1, the answer must be 1 - that is the normalizing constant
   > ![Beta Posterior](./img/c7b2de3b-bc90-46df-a92e-678e4a4fc2c4.png)
@@ -117,12 +154,6 @@
   > ![c3](./img/b2e3b028-aa45-465e-840c-be212c0256d8.png)<!--
   c_3 = \frac{(a+b+N-1)!}{(a+x-1)!(b+N-x-1)!} -->
 
-* [Expected Value](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
-  > ![beta mean](./img/5d6b37fc-580a-4a9f-a792-efdef29d3811.png)
-* Variance
-  > ![beta variance](./img/e02cd9d5-1f08-47fa-aaf7-df630154d91f.png)
-* Mode peak of the curve
-  > ![beta mode](./img/f2b2fc98-70aa-45dc-8932-4481bb377b43.png)
   * notice that the peak of the curve approaches the expected value as the hyperparamters get larger
 
 ### Conjuate Priors
@@ -147,9 +178,6 @@
     * beta distribution: ``
     * normalizing constant: `{c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}`
     * beta posterior: `c_2\int_0^1 \theta^{a-1}(1-\theta)^{b-1}d\theta`
-    * beta mean: `E(\theta) = \mu = \frac{a}{a+b}`
-    * beta variance: `\sigma^2  = \frac{a\cdot b}{(a+b)^2(a + b + 1)}`
-    * beta mode: `\gamma  = \frac{a-1}{a+b-2}`
 * [Beta Distributions](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading14a.pdf)
 * [Beta Distribution](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
 * [Understanding the beta distribution (using baseball statistics)](http://varianceexplained.org/statistics/beta_distribution_and_baseball/)

@@ -157,7 +157,33 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * Range: *[a, b]*
   * Notation: *U(a, b)*
   * Density: *f(x) = 1/(b - a)* for *a &le; x &le; b*
-  * Distribution: *F(x) = (x - a)/(b - a)* for *a &le; x &le; b*
+  * Density (PDF):
+    > ![uniform density](./img/35bdff7e-46b5-4892-b9e5-387db1468bc1.png)<!--
+      f(x) =\begin{cases}
+      \frac{1}{b-a} & x \in [a, b]
+      \\0 & otherwise
+      \end{cases}
+      -->
+  * Distribution (CDF):
+    > ![uniform distribution](./img/a3763022-a4a3-4d83-adde-5ab0253bd1d0.png)<!--
+      F(x) =\begin{cases}
+      0 & x < a
+      \\\frac{x-a}{b-a} & x \in [a, b]
+      \\1 & x \ge b
+      \end{cases}
+      -->
+  * Mean:
+    > ![uniform mean](./img/afbf4399-4523-4ea9-b251-a126927e3145.png)<!--
+      \mu = \frac{1}{2}(a + b)
+      -->
+  * Variance:
+    > ![uniform variance](./img/42a1b621-535d-470d-8c09-87c6e7ff96e0.png<!--
+      \sigma^2 = \frac{1}{12}(b-a)^2
+      -->
+  * Standard Deviation:
+    > ![uniform standard deviation](./img/589ca684-1b99-4c60-a24f-97747494db3e.png)<!--
+      \sigma = \frac{b-a}{\sqrt{12}}
+      -->
   * an example of uniform distribution is throwing darts at a dartboard and getting the angle drawn from a vertical line to the center to the dart
 * **Exponential Distribution** - the probability of and outcome gets larger as *x* increases
   * Parameter: *&lambda;*

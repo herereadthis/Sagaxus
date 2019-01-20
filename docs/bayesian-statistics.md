@@ -211,10 +211,10 @@
 * As usual these are the probabilities we want:
   > ![probabilities1](./img/a45f7547-58a2-4bd7-a0d3-d5007b143668.png)<!--
     {\begin{cases}
-    P(\mathcal{H}) = p(\theta)
-    \\P(\mathcal{D}) = p(x)
-    \\P(\mathcal{D}|\mathcal{H}) = p(x|\theta)
-    \\P(\mathcal{H}|\mathcal{D}) = p(\theta|x)
+    P(\mathcal{H}) & p(\theta)
+    \\P(\mathcal{D}) & p(x)
+    \\P(\mathcal{D}|\mathcal{H}) & p(x|\theta)
+    \\P(\mathcal{H}|\mathcal{D}) & p(\theta|x)
     \end{cases}}
     -->
 * recall continuous pdf - the probability that *X* is in *[c, d]*
