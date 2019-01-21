@@ -9,6 +9,8 @@
 * Bayesian Statistics
   * [Bayesian Statistics](./bayesian-statistics.md)
   * [Beta Distribution](./beta.md)
+  * [Monte Carlo](./monte-carlo.md) and Python simulations
+  * [Markov Chains](./markov-chains.md)
   * [Markov Chain Monte Carlo](./mcmc.md)
   * [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
   * [Bayesian Programming](./bayesian-programming.md)

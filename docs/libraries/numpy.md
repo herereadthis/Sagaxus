@@ -251,6 +251,27 @@ for x in np.nditer(foo):
 
 `numpy.load()` loads an array from a file.
 
+`numpy.matmul()` multiply two matrices
+
+* [numpy multiply example](numpy-examples/numpy-multiply.py)
+
+```python
+import numpy as np
+
+a = [
+    [.25, .20, .25, .30],
+    [.20, .30, .25, .30],
+    [.25, .20, .40, .10],
+    [.30, .30, .10, .30]
+]
+
+b = [[.25], [.20], [.25], [.30]]
+
+# output: [[0.255], [0.2625], [0.2325], [0.25]]
+product = np.matmul(a,b)
+print(product)
+```
+
 ### Statistics
 
 
