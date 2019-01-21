@@ -59,6 +59,16 @@
 
 ## Non-bullshit explanation (approach #2)
 
+* [MCMC attempts to draw from a distribution efficiently](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/).
+* Suppose there is a black box which estimates the probablity of what baby name you will choose for your child.
+  * Pick a name randomly and the black box will give you the probability of you choosing that name for your child.
+  * Some names will have higher probability of being the chosen name, some names will have very very low probablity of being the chosen name.
+  * Suppose the process of choosing names randomly was a uniform process. Then the generating of names is very inefficient.
+* Suppose there is a finite set <em>X</em> and suppose there is a distribution <em>D</em> over that set.
+  * There a black box that will give the probability function <em>p(x)</em> which gives the probability of drawing <em>x &isin; X</em> according to <em>D</em>
+  * Create an efficient algorithm <em>A</em> that generates an element within the set X so that the probability of getting <em>x</em> is approximately <em>p(x)</em>*
+  * In other words, generate random values that are more likely to occur according its chances of occurring.
+
 
 
 
@@ -130,3 +140,4 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 * [How to plot empirical cdf in matplotlib in Python?](https://stackoverflow.com/questions/3209362/how-to-plot-empirical-cdf-in-matplotlib-in-python)
 * [Markov Chain Monte Carlo for Bayesian Inference - The Metropolis Algorithm](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)
 * [A Zero-Math Introduction to Markov Chain Monte Carlo Methods](https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50)
+* [Markov Chain Monte Carlo Without all the Bullshit](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/)

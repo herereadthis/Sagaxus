@@ -32,6 +32,8 @@
   * [Sixpack](./libraries/sixpack.md)
   * [json-rules-engine](./libraries/json-rules-engine.md)
   * [node-rules](./libraries/node-rules.md)
+* Misc
+  * [Math Symbols](./misc/math-symbols.md)
 
 ## Dead Libraries/Services
 
