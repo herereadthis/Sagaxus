@@ -114,7 +114,9 @@ Establish terms so we know we are talking about the same thing when we say a wor
 ## Discrete Mean and Variance
 
 * **Discrete Mean** - the mean of a discrete random variable X is also known as the **expected value** of X, E(X)
-  > ![discrete mean](./img/991a07a6-e273-4bb0-abba-b05abf6760e4.png)
+  > ![discrete mean](./img/991a07a6-e273-4bb0-abba-b05abf6760e4.png)<!--
+    E(X) = \mu_{x} = \sum_{i=1}^n p(x_{i}){x_{i} }
+    -->
   * Expected Value is the sum of every outcome times is probability.
   * For a variable *X* with mean *&mu;<sub>x</sub>* and a variable *Y* with mean *&mu;<sub>y</sub>*:
     * *&mu;<sub>x + y</sub>* = *&mu;<sub>x</sub>* + *&mu;<sub>y</sub>*
@@ -222,15 +224,17 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 * **Expected Value** - measures central tendency
   * *&mu; = E(X)*
-  > ![expected value, continuous](https://user-images.githubusercontent.com/638189/48657589-f8362e00-ea00-11e8-8755-40993607cbcc.png)<!--
-    E(X) =  \int_a^b xf(x)dx
+  > ![expected value, continuous](./img/3f1e837e-afe9-4ce5-9dd5-b69a98b1dc54.png)<!--
+    \mathrm{E}[X] =  \int_a^b xf(x)dx
     -->
 * Expected Value of a standard normal distribution N(0,1) where *&mu; = 0* and *&sigma; = 1*
-  > ![Expected Value standard](https://user-images.githubusercontent.com/638189/48657681-ce7e0680-ea02-11e8-8ea5-ac521c74e5fe.png)<!--
+  > ![Expected Value standard](./img/ab0b600e-9c73-4017-a99c-ed1af08099a8.png)<!--
     E(z) = \phi(z) = \frac{1}{ \sqrt{2 \pi } }e^{-z^2/2} \Big|_{-\infty}^{\infty} = 0
     -->
 * Example: let *X ~ U(0,1)* - for a range [0,1] and a density *f(x) = 1*
-  > ![expected value uniform continuous](https://user-images.githubusercontent.com/638189/48657440-b4422980-e9fe-11e8-88ea-73c4f72b9674.png)
+  > ![expected value uniform continuous](./img/d235e517-bb02-430b-894f-3047ff491820.png)<!--
+    E(X) = \int_{0}^{1}xdx = \frac{x^2}{2}  \Big|_0^1 = \frac{1}{2}
+    -->
   * The range of Z is (-&infin;,&infin;)
 * **Standard Deviation &sigma;** - measures spread or scale
 * **Variance** - square of the standard deviation
@@ -294,12 +298,10 @@ is *probability.*
   * conditional probability: `P(A|B) = \frac{P(A \cap B)}{P(B)}`
   * multiplication rule: `P(A \cap B) = P(A|B) * P(B)`
   * Bayes' Theorem: `P(B|A) = \frac{P(A|B)*P(B)}{P(A)}`
-  * discrete mean: `E(X) = \mu_{x} = \sum_{i=1}^n p(x_{i}){x_{i} }`
   * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
   * discrete standard deviation: `\sigma = \sqrt{Var(X)}`
   * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
   * infinity pdf: `{P(-\infty \leq X \leq \infty) = \int_{-\infty}^\infty f(x) dx = 1}`
-  * expected value uniform continuous: `E(X) = \int_{0}^{1}xdx = \frac{x^2}{2}  \Big|_0^1 = \frac{1}{2}`
   * large n: `\overline{Xn} \approx N(\mu, \frac{\sigma^2}{n}), S_n \approx N(n\mu, n\sigma^2), Zn \approx N(0,1))`
 * [Better Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
 * [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)

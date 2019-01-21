@@ -68,9 +68,45 @@
   * There a black box that will give the probability function <em>p(x)</em> which gives the probability of drawing <em>x &isin; X</em> according to <em>D</em>
   * Create an efficient algorithm <em>A</em> that generates an element within the set X so that the probability of getting <em>x</em> is approximately <em>p(x)</em>*
   * In other words, generate random values that are more likely to occur according its chances of occurring.
-
-
-
+* Suppose the weather is either sunny, rainy, or cloudy.
+  * If today is sunny, then the probability of tomorrow being sunny is 70%, cloudy 20%, and rainy 10%. For all other days, see the matrix below:
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Sunny</th>
+      <th>Cloudy</th>
+      <th>Rainy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sunny</td>
+      <td>0.7</td>
+      <td>0.2</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <td>Cloudy</td>
+      <td>0.2</td>
+      <td>0.6</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>Rainy</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.4</td>
+    </tr>
+  </tbody>
+</table>
+  * Imagine these probabilities as a graph, where the weather is vertex and the connections between weather are edges
+  * <strong>State</strong> - what the weather is on a certain day, i.e., the vertex.
+  * <strong>Stationary Distribution<strong> - Let the day-to-day weather patterns happen over a very long period of time. Then the probability of weather type on a day in the distant future is independent of the weather today.
+  * For a Markov chain to work:
+    * The graph must be <strong>connected</strong> - there is a path from every vertex to every other vertex
+    * The graph must be <strong>Strongly connected</strong> - there is a path from every vertext to every other vertex when considering direction
+    * <strong>Persistence</strong> - Hence, over time, the probability of returning to where you started is 1.
 
 
 ## Monte Carlo Example
