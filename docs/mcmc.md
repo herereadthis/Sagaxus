@@ -1,5 +1,7 @@
 # Markov Chain Monte Carlo (MCMC)
 
+## What is the point?
+
 * It's easy when the likelihood function is a binomial distribution and the prior is a Beta distibution. The posterior is also a Beta distribution. The prior is a <strong>conjugate prior</strong>
 * Not all models can use conjugate priors, so calculating the posterior will have to approximated.
   * Example: <strong>Bayesian Hierachal Modeling</strong> - a statistical model with multiple levels and is basically intractable using analytical methods
@@ -12,9 +14,54 @@
   * Sometimes it&rsquo;s too difficult to solve for the denominator.
 * If a model has many parameters, integrals will have to be solved over multiple dimensions, which leads to:
   * <strong>Curse of Dimensionality</strong> - as integral dimensions increase, the volume space becomes so vast that any data becomes insignificant, e.g., we would need a whole lot more data.
+  <!--
 * Basic idea:
   * Sample the posterior distribution by combining a random search (Monte Carlo) with
   * A mechanism for moving around that is memoryless (Markov Chain)
+  -->
+
+## Non-math introduction (approach #1)
+
+* [Use MCMC methods to approximate the posterior distribution](A Zero-Math Introduction to Markov Chain Monte Carlo Methods) of a parameter by random sampling in a probablistic space
+  * <em>Parameter</em> - the value of the probability of something happening
+  * <em>Distribution</em> - a mathematical representation of every possible value of the parameter and how likely they are, i.e., a probability of probabilties
+  * In Bayesian terminology, it describes our beliefs about the parameter.
+
+### Height example:
+
+* Suppose we believe the average height of a human follows a normal distribution with a mean <strong>&mu;</strong>=74 inches. This is the <em>prior distribution</em>.
+* Supposed we collected data, and observed a range of heights between 60 - 72 inches. If the data can be represented as a curve of what the average human height might be, then it is the <em>likelihood distribution</em>*
+* Combine the prior and likelihood to get the <em>posterior distribution</em>.
+* But what if the prior and likelihood aren't easy bell curve
+
+
+### Monte Carlo
+
+* Suppose we drew a circle with a radius of 1, and the center is at 0,0. If we didn't know the value of <strong>&pi;</strong> can we find the area of the circle?
+* Generate a bunch of random tuples (x,y) such that <em>-1 &le; x &le; 1</em> and <em>-1 &le; y &le; 1</em> Then we can use the ratio of the coordinates that fall inside the circle versus the number of tuples generated to estimat <strong>&pi;</strong>
+
+### Markov Chain
+
+* <strong>Markov Chain</strong> - sequences of events that are probabilistically related to each other.
+  * Each event comes from a set of outcomes
+  * Each outcome determines which outcome occurs next
+  * Each outcome occurs according to a set of probabilties
+* <strong>Memoryless</strong> - everything you need to know to predict the next outcome can be determined by looking at the current state. The history of events provides no new information.
+* Although the first few characters appear as if they were determined by where you started, the distribution of outcomes will eventually settle into a pattern.
+* Interdependent events, if confined to probabilities, will eventually conform to an average.
+
+### combine the two
+
+* MCMC method picks a random parameter value to begin.
+* Next, generate a random value.
+* If that randomly generated value is more likely to explain the data, given prior beliefs, then it is added to the chain of parameter values, with a certain probability based on how much better.
+* Over time, generate a histogram over which values occur most, and that histogram will approximate the posterior distribution.
+
+## Non-bullshit explanation (approach #2)
+
+
+
+
 
 ## Monte Carlo Example
 
@@ -82,3 +129,4 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 * [Python histogram outline](https://stackoverflow.com/questions/42741687/python-histogram-outline)
 * [How to plot empirical cdf in matplotlib in Python?](https://stackoverflow.com/questions/3209362/how-to-plot-empirical-cdf-in-matplotlib-in-python)
 * [Markov Chain Monte Carlo for Bayesian Inference - The Metropolis Algorithm](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)
+* [A Zero-Math Introduction to Markov Chain Monte Carlo Methods](https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50)
