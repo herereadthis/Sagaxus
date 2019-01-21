@@ -109,7 +109,52 @@
     \begin{bmatrix} .25 \\ .20 \\ .25\\ .30 \end{bmatrix} =
     \begin{bmatrix} .25500 \\ .26250 \\ .23250 \\ .25000 \end{bmatrix}}
     -->
+* And on the third night?
+  > ![x3 state](./img/be27584c-45f2-45af-a57f-18953829b38f.png)<!--
+    {x^3 = Ax^2 =
+    \begin{bmatrix}
+    .25 & .20 & .25 & .30 \\
+    .20 & .30 & .25 & .30 \\
+    .25 & .20 & .40 & .10 \\
+    .30 & .30 & .10 & .30
+    \end{bmatrix}
+    \begin{bmatrix} .25500 \\ .26250 \\ .23250 \\ .25000 \end{bmatrix} =
+    \begin{bmatrix} .24938 \\ .26288 \\ .23425 \\ .25350 \end{bmatrix}}
+    -->
 
+## Eigenvalues and Eigenvectors
+
+* Notice that for the state vectors above, every subsequent night begins to become closer and closer in value to the previous state vector?
+* <strong>Stationary Distribution<strong> - let <strong><em>A</em></strong> be an <strong><em>n &times; n</em></strong> Markov matrix and let <strong><em>&pi;</em></strong> be a <strong><em>n &times; 1</em></strong> vector such that
+  > ![stationary distribution](./img/7a2d527c-af25-4bf7-b762-57f896395978.png)<!--
+    A\pi = \pi
+    -->
+  * Then <strong><em>&pi;</em></strong> is the stationary distribution.
+* When multiplying matrices, we know that a <strong><em>n &times; n</em></strong> matrix times a <strong><em>n &times; 1</em></strong> matrix will yield some other <strong><em>n &times; 1</em></strong> matrix, which will be different from the original <strong><em>n &times; 1</em></strong> by a factor <strong><em>&lambda;</em></strong>
+  > ![eigenvalue eigenvector](./img/ceefc424-d6b5-4d72-a4e8-71ae7a635a5b.png)<!--
+    A\vec{\mathbf{v}}_{\,0} = \vec{\mathbf{v}}_{\,1} = \lambda\vec{\mathbf{v}}_{\,0}
+    -->
+  * <strong>Eigenvalue</strong> - the value of <strong><em>&lambda;</em></strong>
+  * <strong>Eigenvector</strong> - the value of <strong><em>v<sub>0</sub></em></strong>
+* In the case of a Markov Chain&rsquo;s stationary distribution, the stationary distribution itself is the eigenvector when the eigenvalue is equal to 1.
+* full code and comments in [scipy-stationary-distribution.py](./libraries/scipy-examples/cipy-stationary-distribution.py).
+```python
+import numpy as np
+import scipy.sparse.linalg as sla
+
+transition_matrix = [
+    [.25, .20, .25, .30],
+    [.20, .30, .25, .30],
+    [.25, .20, .40, .10],
+    [.30, .30, .10, .30]
+]
+
+eigenvalue, eigenvector = sla.eigs(np.array(transition_matrix), k=1, which='LM')
+stationary_distribution = (eigenvector/eigenvector.sum()).real
+
+# output: [[0.2494929], [0.26335362], [0.23394185], [0.25321163]]
+print(stationary_distribution)
+```
 
 ## Sources
 
