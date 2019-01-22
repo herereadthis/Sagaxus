@@ -68,7 +68,7 @@
   </tr>
 </table>
 
-* <strong>Stochastic Matrix</strong> - a square matrix where:
+* <strong>[Stochastic Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix)</strong> - a square matrix where:
   * <strong>Right Stochastic</strong> - the sum of each row is 1
   * <strong>Left Stochastic</strong> - the sum of each column is 1
   * <strong>Doubly Stochastic</strong> - sums of rows and columns add up to 1
@@ -125,12 +125,12 @@
 ## Eigenvalues and Eigenvectors
 
 * Notice that for the state vectors above, every subsequent night begins to become closer and closer in value to the previous state vector?
-* <strong>Stationary Distribution<strong> - let <strong><em>A</em></strong> be an <strong><em>n &times; n</em></strong> Markov matrix and let <strong><em>&pi;</em></strong> be a <strong><em>n &times; 1</em></strong> vector such that
+* <strong>Stationary Distribution</strong> - let <strong><em>A</em></strong> be an <strong><em>n &times; n</em></strong> Markov matrix and let <strong><em>&pi;</em></strong> be a <strong><em>n &times; 1</em></strong> vector such that
   > ![stationary distribution](./img/7a2d527c-af25-4bf7-b762-57f896395978.png)<!--
     A\pi = \pi
     -->
   * Then <strong><em>&pi;</em></strong> is the stationary distribution.
-* When multiplying matrices, we know that a <strong><em>n &times; n</em></strong> matrix times a <strong><em>n &times; 1</em></strong> matrix will yield some other <strong><em>n &times; 1</em></strong> matrix, which will be different from the original <strong><em>n &times; 1</em></strong> by a factor <strong><em>&lambda;</em></strong>
+* [When multiplying matrices](http://tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx), we know that a <strong><em>n &times; n</em></strong> matrix times a <strong><em>n &times; 1</em></strong> matrix will yield some other <strong><em>n &times; 1</em></strong> matrix, which will be different from the original <strong><em>n &times; 1</em></strong> by a factor <strong><em>&lambda;</em></strong>
   > ![eigenvalue eigenvector](./img/ceefc424-d6b5-4d72-a4e8-71ae7a635a5b.png)<!--
     A\vec{\mathbf{v}}_{\,0} = \vec{\mathbf{v}}_{\,1} = \lambda\vec{\mathbf{v}}_{\,0}
     -->
@@ -159,3 +159,8 @@ print(stationary_distribution)
 ## Sources
 
 * [Markov Chains](https://www.math.ucdavis.edu/~daddel/linear_algebra_appl/Applications/MarkovChain/MarkovChain_9_18/node1.html)
+* [scipy.sparse.linalg.eigs](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.eigs.html) scipy documentation
+* [find Markov steady state with left eigenvalues (using numpy or scipy)
+](https://stackoverflow.com/questions/33385763/)
+* [Section 5-3 : Review : Eigenvalues & Eigenvectors](http://tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx)
+* [Stocastic Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Wikipedia)
