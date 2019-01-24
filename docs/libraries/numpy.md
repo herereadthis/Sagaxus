@@ -333,6 +333,15 @@ print(np.std(foo))
 print(np.var(foo))
 ```
 
+## Random Sampling
+
+* `numpy.random.rand(d0, d1)` - generates a random number between 0 and 1.
+  * If no params given, it generates one number
+  * If (n, k) params given, it generates an n &times; k array of random values
+* `numpy.random.randn(d0, d1)` - generates random numbers from a normal distribution where &mu; = 0 and &sigma;<sup>2</sup> = 1
+* `numpy.random.randint(low, high, size) - generates a random integer from `low` value to `high` value. 
+  * Genates one value if `size` arg not given, othewise, an array of `size` values
+
 ## Matplotlib
 
 ```python

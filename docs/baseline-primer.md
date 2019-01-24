@@ -202,8 +202,9 @@ Establish terms so we know we are talking about the same thing when we say a wor
 * Range: (-&infin;, &infin;)
 * Notation: *N(&mu;,&sigma;<sup>2</sup>)*
 * Density:
-  > ![normal density](https://user-images.githubusercontent.com/638189/48657610-7bf01a80-ea01-11e8-850c-54c07d3b309a.png)<!--
-  f(x) = \phi(z) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}} -->
+  > ![normal density](./img/fb256a18-8ac2-4e0c-8e41-5d14f780e8bf.png)<!--
+    f(x) = \phi(z) = \frac{1}{\sigma \sqrt{2 \pi } }e^{\frac{-(x - \mu)^2}{2\sigma^2}}
+    -->
 * **Standard normal distribution Z** - a normal distribution where *&mu;* = 0 and *&sigma;* = 1
 * Let *X* be a random variable with *&mu;* mean and *&sigma;* standard deviation. Then:
   > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)<!--

@@ -8,7 +8,8 @@
 * [Hypothesis Testing](./hypothesis-testing.md)
 * Bayesian Statistics
   * [Bayesian Statistics](./bayesian-statistics.md)
-  * [Beta Distribution](./beta.md)
+  * [Beta Distribution](./beta.md) and beta-binomial-beta conjugate priors
+  * [Normal Conjugate Priors](./normal-conjugate.md)
   * [Monte Carlo](./monte-carlo.md) and Python simulations
   * [Markov Chains](./markov-chains.md)
   * [Markov Chain Monte Carlo](./mcmc.md)

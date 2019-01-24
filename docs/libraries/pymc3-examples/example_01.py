@@ -9,9 +9,13 @@ from scipy.stats import norm
 sns.set_style('white')
 sns.set_context('talk')
 
-np.random.seed(123)
+# this resets the random number generator
+# if you set this, then every random generation will be the same.
+np.random.seed(0)
 
 data = np.random.randn(20)
+
+print(data)
 
 ax = plt.subplot()
 sns.distplot(data, kde=False, ax=ax)
