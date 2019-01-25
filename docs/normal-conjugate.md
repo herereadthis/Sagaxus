@@ -23,7 +23,7 @@
   > ![Bayes proportion](./img/fd64907c-9e08-43e2-a81e-d58e2df28a22.png)<!--
     p(\mu|X) \propto p(X|\mu) p(\mu)
     -->
-  > ![Likelihood](./img/3840a96b-0e25-4b1e-9258-c19d822d85b1.png)<!--
+    ![Likelihood](./img/3840a96b-0e25-4b1e-9258-c19d822d85b1.png)<!--
     {p(X|\mu) = \prod_{i=1}^{n}\frac{1}{\sqrt{2\pi\sigma^2}}e^{\frac{-(x - \mu)^2}{2\sigma^2}}}
     -->
 * <strong>Note:</strong> we don&rsquo;t know the true mean; we just have the means of the historical class means.
@@ -33,6 +33,10 @@
     -->
 
 * [Bayesian Statistics: Normal-Normal Model](http://www2.bcs.rochester.edu/sites/jacobslab/cheat_sheet/bayes_Normal_Normal.pdf) - Robert Jacobs
+<!--
 * [The Conjugate Prior for the Normal Distribution](https://people.eecs.berkeley.edu/~jordan/courses/260-spring10/lectures/lecture5.pdf) - Michael I. Jordan
+-->
+<!--
 * [Conjugate Bayesian analysis of the Gaussian distribution](https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf) - Kevin P. Murphy
 * []
+-->

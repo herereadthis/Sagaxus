@@ -125,6 +125,7 @@
 ## Eigenvalues and Eigenvectors
 
 * Notice that for the state vectors above, every subsequent night begins to become closer and closer in value to the previous state vector?
+  * <strong>[Stationary Transition](https://www.mcmchandbook.net/HandbookChapter1.pdf)</strong> - if we know the probability of being in state <strong><em>n<sup>x+1</sup></em></strong>, given state <strong><em>n<sup>x</sup></em></strong>, a Markov chain will have stationary property if the value of n does not matter. In other words, over a very long period of time after many transitions, the probabilities of each state will settle.
 * <strong>Stationary Distribution</strong> - let <strong><em>A</em></strong> be an <strong><em>n &times; n</em></strong> Markov matrix and let <strong><em>&pi;</em></strong> be a <strong><em>n &times; 1</em></strong> vector such that
   > ![stationary distribution](./img/7a2d527c-af25-4bf7-b762-57f896395978.png)<!--
     A\pi = \pi
@@ -155,6 +156,19 @@ stationary_distribution = (eigenvector/eigenvector.sum()).real
 # output: [[0.2494929], [0.26335362], [0.23394185], [0.25321163]]
 print(stationary_distribution)
 ```
+
+## Finite and Infinite spaces
+
+* <strong>Finite</strong> - -ike the restaurant example if we know all the states and it is countable.
+  * The state space can be expressed as <strong><em>{x<sub>1</sub>,&hellip;,x<sub>n</sub>}</strong>
+  * Let the initial distribution or initial vector be <strong><em>&lambda; = \[&lambda;<sub>1</sub>,&hellip;,&lambda;<sub>n</sub>\]</strong>
+    > ![discrete markov probability](./img/7be306dd-fc99-4ca7-afb4-c6d42f182b70.png)<!--
+      {\mathbf{P}(X_1=x_i) = \lambda_i, i = 1,\ldots,n}
+      -->
+  * let <strong><em>i</em></strong> be some state and let <strong><em>j</em></strong> be the <strong><em>i + 1</em></strong> state. Then for a matrix <strong><em>A</em></strong>
+    > ![discrete state probability](./img/b63a111e-b0cf-4831-beb5-fd38a195f267.png)<!--
+      {\mathbf{P}(X_{n+1}=x_j|X_n=x_i) = a_{ij}}
+      -->
 
 ## Sources
 

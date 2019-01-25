@@ -1,5 +1,10 @@
 # Monte Carlo
 
+## History
+
+* Named after the casinos in Monte Carlo
+* Was invented very soon after computers, to simulate random events
+
 * Suppose we drew a circle with a radius of 1, and the center is at 0,0. If we didn't know the value of <strong>&pi;</strong> can we find the area of the circle?
 * Generate a bunch of random tuples (x,y) such that <em>-1 &le; x &le; 1</em> and <em>-1 &le; y &le; 1</em> Then we can use the ratio of the coordinates that fall inside the circle versus the number of tuples generated to estimat <strong>&pi;</strong>
 
