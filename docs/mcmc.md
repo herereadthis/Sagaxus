@@ -5,7 +5,7 @@
 * It's easy when the likelihood function is a binomial distribution and the prior is a Beta distibution. The posterior is also a Beta distribution. The prior is a <strong>conjugate prior</strong>
 * Not all models can use conjugate priors, so calculating the posterior will have to approximated.
   * Example: <strong>Bayesian Hierachal Modeling</strong> - a statistical model with multiple levels and is basically intractable using analytical methods
-* <strong>Markov Chain Monte Carlo (MCMC) - a family of algorithms that help approximate the posterior distribution from Bayesian Statistics.
+* <strong>Markov Chain Monte Carlo (MCMC)</strong> - a family of algorithms that help approximate the posterior distribution from Bayesian Statistics.
 * Recall Bayes&rsquo; Theorem for continuous priors:
   > ![Continuous bayes](./img/ad81b4e0-f495-4ba3-be45-301752496402.png)<!--
     {f(\theta|x)d\theta =
@@ -46,6 +46,32 @@ repeat {
     Output x
 }
 ```
+
+
+### Functionals
+
+* <strong>Functional</strong> - if <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> is a stochastic process, and there is some function <strong><em>g</em></strong> such that <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> is a stochastic process too.
+  * However, <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> is usually not a Markov chain because the distribution of <strong><em>g(X<sub>n+1</sub>)</em></strong> given <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> does not depend only on <strong><em>g(X<sub>n</sub>)</em></strong>
+
+## OMC - Ordinary Monte Carlo
+
+* AKA &ldquo;Independent and identically distributed (IID) Monte Carlo&rdquo; - a special case of MCMC where <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> are independent (the next state has no memory of the current state), so the Markov Chain is reversible and stationary.
+  * let <strong><em>g</em></strong> be a real-value function, but it is too hard o solve using summation or integration.
+  > ![monte carlo mean](./img/24423d34-0d53-499e-a91f-0864d27f4179.png)<!--
+    \mu = \mathrm{E}[g(X)]
+    -->
+  > ![monte carlo mean](./img/ec13255b-d7cf-4258-acb4-881638430fda.png)<!--
+    \hat{\mu}_n = \frac{1}{n}\sum_{i=1}^{n}g(X_i)
+    -->
+  > ![monte carlo mean](./img/f74d1ae5-e1a4-4b09-8aa1-0be695de1e82.png)<!--
+    \sigma^2_{Y_i}^ = \mathrm{Var}(g(X)), Y_i = g(X_i)
+    -->
+  > ![monte carlo mean](./img/84d6e38d-ceeb-42b8-aa0b-afc0aceac3b1.png)<!--
+    \hat{\mu}_n \approx N \left(\mu, \frac{\sigma^2}{\mu} \right)
+    -->
+  > ![monte carlo mean](./img/f76fa751-96a7-4158-97c8-bc27582b9ac5.png)<!--
+    \hat{\sigma}^2_n = \frac{1}{n}\sum_{i=1}^{n}(g(X_i)-\hat{\mu}_n)^2
+    -->
 
 
 <!--
