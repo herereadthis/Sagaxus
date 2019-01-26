@@ -157,7 +157,7 @@ stationary_distribution = (eigenvector/eigenvector.sum()).real
 print(stationary_distribution)
 ```
 
-## Finite and Infinite spaces
+### Finite and Infinite spaces
 
 * <strong>Finite</strong> - -ike the restaurant example if we know all the states and it is countable.
   * The state space can be expressed as <strong><em>{x<sub>1</sub>,&hellip;,x<sub>n</sub>}</strong>
@@ -169,6 +169,20 @@ print(stationary_distribution)
     > ![discrete state probability](./img/b63a111e-b0cf-4831-beb5-fd38a195f267.png)<!--
       {\mathbf{P}(X_{n+1}=x_j|X_n=x_i) = a_{ij}}
       -->
+
+### More MCMC properties
+
+* <strong>Stochastic Process</strong> - thought if in a different way, it is a system of random events that occur in a sequence over time.
+* <strong>Stationarity</strong> - a stochastic process is stationary if over a suffiently long period of time, the state <strong><em>x<sub>n + k</sub></em></strong> does not depend on the value of <strong><em>n</em></strong> (i.e., it doesn&rsquo;t matter where you started)
+* <strong>Reversible</strong> - if the probability of going from one state to another state is the same as going from the second state to the first state. A system that is reversible implies that it is has stationarity, but not vice versa. Systems that are reversible are easier to deal with.
+* <strong>Functional</strong> - if <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> is a stochastic process, and there is some function <strong><em>g</em></strong> such that <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> is a stochastic process too.
+  * However, <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> is usually not a Markov chain because the distribution of <strong><em>g(X<sub>n+1</sub>)</em></strong> given <strong><em>g(X<sub>1</sub>), g(X<sub>2</sub>), &hellip;</em></strong> does not depend only on <strong><em>g(X<sub>n</sub>)</em></strong>
+
+## OMC - Ordinary Monte Carlo
+
+* AKA &ldquo;Independent and identically distributed (IID) Monte Carlo&rdquo; - a special case of MCMC where <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> are independent (the next state has no memory of the current state), so the Markov Chain is reversible and stationary.
+
+ 
 
 ## Sources
 

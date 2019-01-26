@@ -34,6 +34,20 @@
   * This process will approximate the curve and we won't have to generate as many values as a plain Monte Carlo system.
   * This process of acceptance/rejection [makes it a Markov Chain]((https://stats.stackexchange.com/q/108)) because we are only evaluating the current state/value, and comparing it to the next state/value.
 
+### As code
+
+
+If <strong><em>x</em></strong> is entire state of the below computer program (ignoring the thing that generates the random numbers) then it would be MCMC
+
+```
+Initialize x
+repeat {
+    Generate pseudorandom change to x
+    Output x
+}
+```
+
+
 <!--
 
 ## Non-math introduction (approach #1)
@@ -71,6 +85,8 @@
 
 -->
 
+
+<!--
 ## Non-bullshit explanation (approach #2)
 
 * [MCMC attempts to draw from a distribution efficiently](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/).
@@ -126,6 +142,8 @@
 * This seems like a very good resource to understand MCMC, but it is beyond my level of understanding currently:  [Stat 3701 Lecture Notes: Bayesian Inference via Markov Chain Monte Carlo (MCMC)](http://www.stat.umn.edu/geyer/3701/notes/mcmc-bayes.html)
 * This one is okay, not as good: [An Introduction to MCMC
 methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/presentation4.pdf)
+
+-->
 
 ## Sources
 
