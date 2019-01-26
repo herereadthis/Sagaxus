@@ -14,11 +14,27 @@
   * Sometimes it&rsquo;s too difficult to solve for the denominator.
 * If a model has many parameters, integrals will have to be solved over multiple dimensions, which leads to:
   * <strong>Curse of Dimensionality</strong> - as integral dimensions increase, the volume space becomes so vast that any data becomes insignificant, e.g., we would need a whole lot more data.
-  <!--
-* Basic idea:
-  * Sample the posterior distribution by combining a random search (Monte Carlo) with
-  * A mechanism for moving around that is memoryless (Markov Chain)
-  -->
+
+
+### [Monopoly as MCMC](https://stats.stackexchange.com/q/12680)
+
+* Imagine all properties of a Monoply board game as different possible states.
+* When transitioning to any other probability, you have various probabilities of moving around based on your dice rolls.
+* Eventually, it is possible to return to where you start. Also if your monopoly game lasts forever, the probability of being on any property won't depend on where you started.
+* Now, instead of rolling dice, create some program which simulates random numbers and you move around the board based on your results.
+* The monopoly board = Markov Chain
+* The simulated dice rolls: Markov Chain
+
+### Why not just a ton of Monte Carlo simulations and skip the Markov chain?
+
+* Ultimately, the goal is to find the area under a tricky curve (i.e., integrate complicated posterior distribution). We could theoretically generate a million values and just find the ratio of samples that lie under versus above the curve.
+* The way MCMC would work is to generate a value, and then generate another value.
+  * Based on the probability of the new value occurring, then accept it if is more likely to occur than the previous value, or rejected it (the exact criteria of acceptance or rejection is based on the specific algorithm), and continue to generate new values.
+  * (If rejected, generate a new value and compare that value to the last accepted value.)
+  * This process will approximate the curve and we won't have to generate as many values as a plain Monte Carlo system.
+  * This process of acceptance/rejection [makes it a Markov Chain]((https://stats.stackexchange.com/q/108)) because we are only evaluating the current state/value, and comparing it to the next state/value.
+
+<!--
 
 ## Non-math introduction (approach #1)
 
@@ -52,6 +68,8 @@
 * Next, generate a random value.
 * If that randomly generated value is more likely to explain the data, given prior beliefs, then it is added to the chain of parameter values, with a certain probability based on how much better.
 * Over time, generate a histogram over which values occur most, and that histogram will approximate the posterior distribution.
+
+-->
 
 ## Non-bullshit explanation (approach #2)
 
@@ -112,5 +130,6 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 ## Sources
 
 * [Markov Chain Monte Carlo for Bayesian Inference - The Metropolis Algorithm](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)
-* [A Zero-Math Introduction to Markov Chain Monte Carlo Methods](https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50)
+* Don't bother with this one: [A Zero-Math Introduction to Markov Chain Monte Carlo Methods](https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50) - this one is explains Markov Chains and Monte Carlo well, but devotes no more than couple sentences to MCMC because the author doesn't get it himself.
 * [Markov Chain Monte Carlo Without all the Bullshit](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/)
+* [How would you explain Markov Chain Monte Carlo (MCMC) to a layperson?](https://stats.stackexchange.com/questions/165/) - the first response isn&squo;t good, but the rest are great.
