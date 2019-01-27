@@ -13,7 +13,7 @@ sns.set_context('talk')
 # if you set this, then every random generation will be the same.
 np.random.seed(0)
 
-# numpy
+# numpy.random.randn() generates numbers from a random distribution
 data = np.random.randn(20)
 
 print(data)

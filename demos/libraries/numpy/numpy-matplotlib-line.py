@@ -1,5 +1,6 @@
 '''
 Create a line with numpy and matplotlib
+Reference: sagaxus/docs/numpy.md
 '''
 import numpy as np 
 from matplotlib import pyplot as plt 

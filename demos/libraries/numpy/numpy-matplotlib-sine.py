@@ -1,5 +1,6 @@
 '''
 Create a sine wave with numpy and matplotlib
+Reference: sagaxus/docs/numpy.md
 '''
 import numpy as np 
 import matplotlib.pyplot as plt  

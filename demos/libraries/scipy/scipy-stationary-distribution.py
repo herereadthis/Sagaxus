@@ -1,6 +1,7 @@
 '''
 Find the stationary distribution of a Markov Matrix
 lots of help from https://stackoverflow.com/questions/33385763/
+Reference: sagaxus/docs/markov-chains.md
 '''
 import numpy as np
 import scipy.sparse.linalg as sla

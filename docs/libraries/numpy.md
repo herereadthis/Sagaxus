@@ -253,7 +253,7 @@ for x in np.nditer(foo):
 
 `numpy.matmul()` multiply two matrices
 
-* [numpy multiply example](numpy-examples/numpy-multiply.py)
+* [numpy multiply example](../demos/libraries/numpy/numpy-multiply.py)
 
 ```python
 import numpy as np
@@ -432,11 +432,11 @@ print(hist)
 print(bins)
 ```
 
-1. [Line Graph](./numpy-examples/numpy-matplotlib-line.py)
-2. [Sine Wave](./numpy-examples/numpy-matplotlib-sine.py)
-3. [Multiple subplots](./numpy-examples/numpy-matplotlib-subplot.py)
-4. [Bar Graph](./matplotlib-examples/matplotlib-01-bar.py)
-5. [Histogram](./matplotlib-examples/matplotlib-02-histogram.py)
+1. [Line Graph](../demos/libraries/numpy/numpy-matplotlib-line.py)
+2. [Sine Wave](../demos/libraries/numpy/numpy-matplotlib-sine.py)
+3. [Multiple subplots](../demos/libraries/numpy/numpy-matplotlib-subplot.py)
+4. [Bar Graph](../demos/libraries/matplotlib/matplotlib-01-bar.py)
+5. [Histogram](../demos/libraries/matplotlib/matplotlib-02-histogram.py)
 
 ## Sources
 

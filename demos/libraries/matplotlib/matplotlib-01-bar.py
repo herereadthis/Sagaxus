@@ -1,5 +1,6 @@
 '''
 Create a bar graph with two sets of data
+Reference: sagaxus/docs/numpy.md
 '''
 import matplotlib.pyplot as plt 
 x1 = [5,8,10] 

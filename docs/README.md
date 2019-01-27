@@ -40,12 +40,18 @@
 * Misc
   * [Math Symbols](./misc/math-symbols.md)
 * Reading/Literature
-  * &ldquo;Introduction to Markov Chain Monte Carlo&rdquo; - Charles J. Geyer | [online resource](https://www.mcmchandbook.net/HandbookChapter1.pdf) | [download](./literature/charles_j_geyer-introduction-to-mcmc.pdf
-  )
+  * &ldquo;Introduction to Markov Chain Monte Carlo&rdquo; - Charles J. Geyer | [online resource](https://www.mcmchandbook.net/HandbookChapter1.pdf) | [download](./literature/charles_j_geyer-introduction-to-mcmc.pdf)
+  * &ldquo;Bayesian Statistics: Normal-Normal Model&rdquo; - Robert Jacobs | [online resource](http://www2.bcs.rochester.edu/sites/jacobslab/cheat_sheet/bayes_Normal_Normal.pdf) | [download](./literature/robert_jacobs-basyesian-statistics-normal-normal-model.pdf)
 
 ## Dead Libraries/Services
 
 * [Facebook Planout](http://facebook.github.io/planout/) - last commits in 2016
 
-
-![xkcd-1132](https://imgs.xkcd.com/comics/frequentists_vs_bayesians_2x.png)
+<p align="center">
+    <img
+        src="https://imgs.xkcd.com/comics/frequentists_vs_bayesians_2x.png"
+        style="width: 50%;text-align: center;"
+        width="50%"
+        align="center"
+        alt="xkcd-1132" />
+</p>

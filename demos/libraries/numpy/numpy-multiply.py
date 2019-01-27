@@ -1,6 +1,7 @@
 '''
 Multiply two matrices
 a 4x4 matrix times a 4x1 matrix
+Reference: sagaxus/docs/numpy.md
 '''
 import numpy as np
 

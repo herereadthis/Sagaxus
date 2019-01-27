@@ -1,5 +1,6 @@
 '''
 Create 2 subplots in one output
+Reference: sagaxus/docs/numpy.md
 '''
 import numpy as np 
 import matplotlib.pyplot as plt  

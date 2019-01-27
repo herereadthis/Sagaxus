@@ -1,5 +1,6 @@
 '''
 Create a histogram
+Reference: sagaxus/docs/numpy.md
 '''
 import numpy as np 
 import matplotlib.pyplot as plt 
