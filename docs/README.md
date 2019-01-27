@@ -39,6 +39,9 @@
   * [node-rules](./libraries/node-rules.md)
 * Misc
   * [Math Symbols](./misc/math-symbols.md)
+* Reading/Literature
+  * &ldquo;Introduction to Markov Chain Monte Carlo&rdquo; - Charles J. Geyer | [online resource](https://www.mcmchandbook.net/HandbookChapter1.pdf) | [download](./literature/charles_j_geyer-introduction-to-mcmc.pdf
+  )
 
 ## Dead Libraries/Services
 

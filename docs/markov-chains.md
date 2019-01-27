@@ -75,6 +75,7 @@
 * <strong>Stochastic Process</strong> - thought if in a different way, it is a system of random events that occur in a sequence over time.
 * <strong>Stationarity</strong> - a stochastic process is stationary if over a suffiently long period of time, the state <strong><em>x<sub>n + k</sub></em></strong> does not depend on the value of <strong><em>n</em></strong> (i.e., it doesn&rsquo;t matter where you started)
 * <strong>Reversible</strong> - if the probability of going from one state to another state is the same as going from the second state to the first state. A system that is reversible implies that it is has stationarity, but not vice versa. Systems that are reversible are easier to deal with.
+* <strong>Ergodic</strong> - if it is possible to go (eventually) from any state to every other state. All Reversible Markov Chains are ergodic.
 
 ## Solving for the System
 
@@ -173,6 +174,21 @@ print(stationary_distribution)
       {\mathbf{P}(X_{n+1}=x_j|X_n=x_i) = a_{ij}}
       -->
 
+### Erhenfest model
+
+* An <strong>[Ehrenfest model](https://faculty.math.illinois.edu/~rsong/488f02/ch8.pdf)</strong> is a system where there are two isolated bodies, and particles move back and forth from one another.
+* Let there be 2 urns and let there be 4 balls that can be in either urn. After each step, a ball from either one of the urns moves into the other urn.
+  * Let the states be the number of urns in first urn (e.g., the first state is the probability of having no balls, the second state is the probability of having 1 ball.
+  * If the current state of the first urn is 0 balls, then the next state must be 1 with probablity 1. Why? because all 4 balls are in the 2nd urn and they must move to the 1st urn.
+  > ![urn example](./img/d5cba32d-9f65-4b3f-869b-14a374bc5a18.png)<!--
+      {Ax = \begin{bmatrix}
+      0 & 1 & 0 & 0 & 0 \\
+      .25 & 0 & .75 & 0 & 0 \\
+      0 & .5 & 0 & .5 & 0 \\
+      0 & 0 & .75 & .0 & .25 \\
+      0 & 0 & 0 & 1 & 0
+      \end{bmatrix}}
+      -->
 
 ## Sources
 
@@ -182,3 +198,5 @@ print(stationary_distribution)
 ](https://stackoverflow.com/questions/33385763/)
 * [Section 5-3 : Review : Eigenvalues & Eigenvectors](http://tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx)
 * [Stocastic Matrix](https://en.wikipedia.org/wiki/Stochastic_matrix) (Wikipedia)
+* Ehrenfest models - [Chapter 8: Markov Chains](https://faculty.math.illinois.edu/~rsong/488f02/ch8.pdf)
+* [Ergodic Markov Chains](https://math.dartmouth.edu/archive/m20x06/public_html/Lecture15.pdf)

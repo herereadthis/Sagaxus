@@ -14,6 +14,10 @@
   * Sometimes it&rsquo;s too difficult to solve for the denominator.
 * If a model has many parameters, integrals will have to be solved over multiple dimensions, which leads to:
   * <strong>Curse of Dimensionality</strong> - as integral dimensions increase, the volume space becomes so vast that any data becomes insignificant, e.g., we would need a whole lot more data.
+* [Use MCMC methods to approximate the posterior distribution](A Zero-Math Introduction to Markov Chain Monte Carlo Methods) of a parameter by random sampling in a probablistic space
+  * <em>Parameter</em> - the value of the probability of something happening
+  * <em>Distribution</em> - a mathematical representation of every possible value of the parameter and how likely they are, i.e., a probability of probabilties
+  * In Bayesian terminology, it describes our beliefs about the parameter.
 
 
 ### [Monopoly as MCMC](https://stats.stackexchange.com/q/12680)
@@ -34,8 +38,7 @@
   * This process will approximate the curve and we won't have to generate as many values as a plain Monte Carlo system.
   * This process of acceptance/rejection [makes it a Markov Chain]((https://stats.stackexchange.com/q/108)) because we are only evaluating the current state/value, and comparing it to the next state/value.
 
-### As code
-
+### [As code](https://www.mcmchandbook.net/HandbookChapter1.pdf)
 
 If <strong><em>x</em></strong> is entire state of the below computer program (ignoring the thing that generates the random numbers) then it would be MCMC
 
@@ -57,31 +60,52 @@ repeat {
 
 * AKA &ldquo;Independent and identically distributed (IID) Monte Carlo&rdquo; - a special case of MCMC where <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> are independent (the next state has no memory of the current state), so the Markov Chain is reversible and stationary.
   * let <strong><em>g</em></strong> be a real-value function, but it is too hard o solve using summation or integration.
+    * This is just an expectation because cannot be known in practice. It can only be approximated via Monte Carlo
   > ![monte carlo mean](./img/24423d34-0d53-499e-a91f-0864d27f4179.png)<!--
     \mu = \mathrm{E}[g(X)]
     -->
+  * The formula below is the <strong>Monte Carlo Approximation</strong> a.k.a., Monte Carlo calculation of <strong><em>&mu;</em></strong>.
+    * It is not a point estimate because in computer simulations are always pseudo-random, not true random.
+    * Let <strong><em>n</em></strong> be the <em>Monte Carlo sample size</em>
   > ![monte carlo mean](./img/ec13255b-d7cf-4258-acb4-881638430fda.png)<!--
     \hat{\mu}_n = \frac{1}{n}\sum_{i=1}^{n}g(X_i)
     -->
+  * Let <strong><em>Y<sub>i</sub> - g(X<sub>i</sub>)</em></strong>. Then <strong><em>Y<sub>i</sub></em></strong> are also independent and identically distributed. The mean and variance:
   > ![monte carlo mean](./img/f74d1ae5-e1a4-4b09-8aa1-0be695de1e82.png)<!--
     \sigma^2_{Y_i}^ = \mathrm{Var}(g(X)), Y_i = g(X_i)
     -->
+  * Since drawing a groups of samples follows the central limit theorem, the mean of the samples is normally distributed.
   > ![monte carlo mean](./img/84d6e38d-ceeb-42b8-aa0b-afc0aceac3b1.png)<!--
     \hat{\mu}_n \approx N \left(\mu, \frac{\sigma^2}{\mu} \right)
     -->
+  * The variance:
   > ![monte carlo mean](./img/f76fa751-96a7-4158-97c8-bc27582b9ac5.png)<!--
     \hat{\sigma}^2_n = \frac{1}{n}\sum_{i=1}^{n}(g(X_i)-\hat{\mu}_n)^2
     -->
+    * And the Monte Carlo Standard Error (MCSE) is equal to the standard deviation divided by the square root of the Monte Carlo sample size.
+* Properties of OMC:
+  * <strong>Square root law</strong> - the accuracy is inversely proportional to the square root of the sample size. In other words, increasing accuracy 10 times (one more decimal place) requires 100 times the number of samples.
+
+### From OMC to MCMC
+
+* When going to MCMC, the standard error changes because there is stochastic dependence, e.g., the next state depends on the curren state. Then the variance for a stationary Markov Chain is
+  > ![mcmc variance](./img/459f252e-cb06-457c-a919-fbcba1ce057b.png)<!--
+    {\sigma^2 = \mathrm{Var}(g(X_i)) +
+    2 \sum_{k=1}^{\infty} \mathrm{cov}(g(X_i),g(X_{i+k}))}
+    -->
+  * (It is very, very hard to calculate the above.)
+* However, MCMC does not use stationary Markov Chains because if you can simulate <strong><em>X<sub>i</sub></em></strong>, then you could just simulate <strong><em>X<sub>1</sub>, X<sub>2</sub>, &hellip;</em></strong> with regular OMC.
+* [Develop this further. The theory for now is beyond my capabilities](https://www.mcmchandbook.net/HandbookChapter1.pdf)
+
+## Finally maybe some code?
+
+
 
 
 <!--
 
 ## Non-math introduction (approach #1)
 
-* [Use MCMC methods to approximate the posterior distribution](A Zero-Math Introduction to Markov Chain Monte Carlo Methods) of a parameter by random sampling in a probablistic space
-  * <em>Parameter</em> - the value of the probability of something happening
-  * <em>Distribution</em> - a mathematical representation of every possible value of the parameter and how likely they are, i.e., a probability of probabilties
-  * In Bayesian terminology, it describes our beliefs about the parameter.
 
 ### Height example:
 
@@ -163,6 +187,7 @@ repeat {
     * The graph must be <strong>connected</strong> - there is a path from every vertex to every other vertex
     * The graph must be <strong>Strongly connected</strong> - there is a path from every vertext to every other vertex when considering direction
     * <strong>Persistence</strong> - Hence, over time, the probability of returning to where you started is 1.
+    * <strong>Aperiodic</strong> - regardless of where you start, the probability of being at any state is positive. A non-aperiodic system is where the probability of being at any state is positive every other step.
 
 * This one has Python code to do multivariate testing with Markov Chain Monte Carlo. Definitely worth studying [A/B Testing with Hierarchical Models in Python](https://blog.dominodatalab.com/ab-testing-with-hierarchical-models-in-python/)
 * This seems like a very good resource to understand MCMC, but it is beyond my level of understanding currently:  [Stat 3701 Lecture Notes: Bayesian Inference via Markov Chain Monte Carlo (MCMC)](http://www.stat.umn.edu/geyer/3701/notes/mcmc-bayes.html)
@@ -177,3 +202,4 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 * Don't bother with this one: [A Zero-Math Introduction to Markov Chain Monte Carlo Methods](https://towardsdatascience.com/a-zero-math-introduction-to-markov-chain-monte-carlo-methods-dcba889e0c50) - this one is explains Markov Chains and Monte Carlo well, but devotes no more than couple sentences to MCMC because the author doesn't get it himself.
 * [Markov Chain Monte Carlo Without all the Bullshit](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/)
 * [How would you explain Markov Chain Monte Carlo (MCMC) to a layperson?](https://stats.stackexchange.com/questions/165/) - the first response isn&squo;t good, but the rest are great.
+* [Introduction to Markov Chain Monte Carlo](https://www.mcmchandbook.net/HandbookChapter1.pdf) - Charles J. Geyer
