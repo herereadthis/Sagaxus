@@ -104,6 +104,8 @@ repeat {
 * The <strong>Metropolis</strong> sampler - take a sample from a normal distribution centered at `mc_current` with a standard deviation defined as `proposed_width` which defines how far the jumps go.
 
 ```python
+from scipy.stats import norm
+
 mu_current = 1
 proposal_width
 
@@ -117,7 +119,9 @@ proposal = norm(mu_current, proposal_width).rvs()
 likelihood_current = norm(mu_current, 1).pdf(data).prod()
 likelihood_proposal = norm(mu_proposal, 1).pdf(data).prod()
 
+# Prior probability of current mean μ
 prior_current = norm(mu_prior_mu, mu_prior_sd).pdf(mu_current)
+# Prior probability of proposed mean μ
 prior_proposal = norm(mu_prior_mu, mu_prior_sd).pdf(mu_proposal)
 
 p_current = likelihood_current * prior_current

@@ -253,7 +253,7 @@ for x in np.nditer(foo):
 
 `numpy.matmul()` multiply two matrices
 
-* [numpy multiply example](../../demos/libraries/numpy/numpy-multiply.py)
+* [numpy multiply example](../../demos/libraries/numpy/numpy_multiply.py)
 
 ```python
 import numpy as np
@@ -334,6 +334,26 @@ print(np.var(foo))
 ```
 
 ## Random Sampling
+
+* `numpy.random.seed(value)` - sets the seed for the random number generator
+  * The way (psuedo) random number generator works is starts with a (seed) number, then multiplies it by a very large number, then gets the modulo of it, and then starts again.
+  * If you do not set a seed, your random numbers will be different every time.
+  * If you set a seed, the random numbers will be the same every time.
+  ```
+  numpy.random.randint(10, size=5)
+  # array([4, 0, 4, 6, 4])
+  # next result is different
+  numpy.random.randint(10, size=5)
+  # array([6, 8, 2, 0, 6])
+
+  # now set a seed
+  numpy.random.seed(314)
+  numpy.random.randint(10, size=5)
+  # array([8, 9, 3, 6, 0])
+  # next result is the same
+  numpy.random.randint(10, size=5)
+  # array([8, 9, 3, 6, 0])
+  ```
 
 * `numpy.random.rand(d0, d1)` - generates a random number between 0 and 1.
   * If no params given, it generates one number
@@ -432,11 +452,11 @@ print(hist)
 print(bins)
 ```
 
-1. [Line Graph](../../demos/libraries/numpy/numpy-matplotlib-line.py)
-2. [Sine Wave](../../demos/libraries/numpy/numpy-matplotlib-sine.py)
-3. [Multiple subplots](../../demos/libraries/numpy/numpy-matplotlib-subplot.py)
-4. [Bar Graph](../../demos/libraries/matplotlib/matplotlib-01-bar.py)
-5. [Histogram](../../demos/libraries/matplotlib/matplotlib-02-histogram.py)
+1. [Line Graph](../../demos/libraries/numpy/numpy_matplotlib_line.py)
+2. [Sine Wave](../../demos/libraries/numpy/numpy_matplotlib_sine.py)
+3. [Multiple subplots](../../demos/libraries/numpy/numpy_matplotlib_subplot.py)
+4. [Bar Graph](../../demos/libraries/matplotlib/matplotlib_01_bar.py)
+5. [Histogram](../../demos/libraries/matplotlib/matplotlib_02_histogram.py)
 
 ## Sources
 

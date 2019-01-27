@@ -1,7 +1,11 @@
+'''
+Simulate a Poisson Distribution
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 samples = np.random.poisson(5, 10000)
-count, bins, ignored = plt.hist(samples, 14, density=True)
+count, bins, ignored = plt.hist(samples, 14, density=True, edgecolor='w')
 
 
 print('count')

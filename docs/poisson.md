@@ -1,8 +1,12 @@
 
 # Poisson Distribution
 
-A Poisson distribution measures probability of events when you know how often the event has occurred. In other words, poisson process is the probability of a number of events occurring in a fixed interval. Examples:
+A Poisson distribution measures probability of events when you know how often the event has occurred. In other words, poisson process is the probability of a number of events occurring in a fixed interval.
+> ![poisson distribution](./img/f2c23011-74e9-473a-837c-e50038e76022.png)<!--
+  P(X = x) = \frac{e^{-\lambda}\lambda^x}{x!}
+  -->
 
+Examples:
 * Observe an intersection. Success = accident occurred (time)
 * Observe a stretch of highway. Success = car passes (time)
 * Walk along a path. Success = see a flower (distance)
@@ -12,9 +16,6 @@ A Poisson distribution measures probability of events when you know how often th
   * Probability distribution of the number of successes over time depends on the length of the interval
   * Successes cannot be simultaneous
 
-> ![poisson distribution](./img/f2c23011-74e9-473a-837c-e50038e76022.png)<!--
-  P(X = x) = \frac{e^{-\lambda}\lambda^x}{x!}
-  -->
 
 ## Examples
 
@@ -35,9 +36,11 @@ A Poisson distribution measures probability of events when you know how often th
 import numpy as np
 import matplotlib.pyplot as plt
 samples = np.random.poisson(5, 10000)
-count, bins, ignored = plt.hist(samples, 14, density=True)
+count, bins, ignored = plt.hist(samples, 14, density=True, edgecolor='w')
 plt.show()
 ```
+
+* Full code example: [poisson_histogram.py](../../demos/simulations/poisson_histogram.py)
 
 ## Sources
 * [Online equation editor](https://www.codecogs.com/latex/eqneditor.php)

@@ -4,7 +4,7 @@ import pymc3 as pm
 import theano.tensor as tt
 import matplotlib.pyplot as plt
 
-count_data = np.loadtxt("demos/bayesian-programming/014-poisson.csv")
+count_data = np.loadtxt("demos/bayesian-programming/014_poisson.csv")
 n_count_data = len(count_data)
 
 with pm.Model() as model:

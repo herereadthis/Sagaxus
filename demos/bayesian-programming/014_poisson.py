@@ -5,7 +5,7 @@ import scipy.stats as stats
 
 figsize(12.5, 3.5)
 
-count_data = np.loadtxt("demos/bayesian-programming/014-poisson.csv")
+count_data = np.loadtxt("demos/bayesian-programming/014_poisson.csv")
 n_count_data = len(count_data)
 plt.bar(np.arange(n_count_data), count_data, color="#348ABD")
 plt.xlabel("Time (days)")
