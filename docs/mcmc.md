@@ -99,8 +99,39 @@ repeat {
 
 ## Finally maybe some code?
 
+* Let `mc_current` be the starting parameter <strong><em>&mu;</em></strong> position.
+* Propose a jump (i.e., Markov Chain) to a new position
+* The <strong>Metropolis</strong> sampler - take a sample from a normal distribution centered at `mc_current` with a standard deviation defined as `proposed_width` which defines how far the jumps go.
 
+```python
+mu_current = 1
+proposal_width
 
+proposal = norm(mu_current, proposal_width).rvs()
+```
+
+* Does the `proposal` describe the data better than `mu_current`? Then accept
+* <strong>Describe the data better</strong> - compute the data, given the likelihood with the proposed parameter values
+
+```python
+likelihood_current = norm(mu_current, 1).pdf(data).prod()
+likelihood_proposal = norm(mu_proposal, 1).pdf(data).prod()
+
+prior_current = norm(mu_prior_mu, mu_prior_sd).pdf(mu_current)
+prior_proposal = norm(mu_prior_mu, mu_prior_sd).pdf(mu_proposal)
+
+p_current = likelihood_current * prior_current
+p_proposal = likelihood_proposal * prior_proposal
+```
+
+```python
+p_accept = p_proposal / p_current
+
+accept = np.random.rand() < p_accept
+
+if accept():
+  cur_pos = proposal
+```
 
 <!--
 

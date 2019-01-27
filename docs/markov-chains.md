@@ -142,7 +142,7 @@
   * <strong>Eigenvalue</strong> - the value of <strong><em>&lambda;</em></strong>
   * <strong>Eigenvector</strong> - the value of <strong><em>v<sub>0</sub></em></strong>
 * In the case of a Markov Chain&rsquo;s stationary distribution, the stationary distribution itself is the eigenvector when the eigenvalue is equal to 1.
-* full code and comments in [scipy-stationary-distribution.py](../demos/libraries/scipy/cipy-stationary-distribution.py).
+* full code and comments in [scipy-stationary-distribution.py](../demos/libraries/scipy/scipy-stationary-distribution.py).
 ```python
 import numpy as np
 import scipy.sparse.linalg as sla
