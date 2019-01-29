@@ -24,6 +24,7 @@
     .30 & .30 & .10 & .30
     \end{bmatrix}
     -->
+* To read the matrix, think of the columns where a household is on particular night, and the rows as where the househoulds could be on the next night
 * Or represented as a table
 
 <table>
@@ -173,6 +174,7 @@ print(stationary_distribution)
     > ![discrete state probability](./img/b63a111e-b0cf-4831-beb5-fd38a195f267.png)<!--
       {\mathbf{P}(X_{n+1}=x_j|X_n=x_i) = a_{ij}}
       -->
+* <strong>Infinite</strong> - for an infinite space, we cannot think of the initial distribution as vector or the transition states as a matrix. We have to think of them as a continuous probability distribution.
 
 ### Erhenfest model
 

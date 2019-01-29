@@ -137,6 +137,21 @@ if accept():
   cur_pos = proposal
 ```
 
+### [Metropolis Algorithm Rephrased](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)
+
+1. Begin the algorithm at the current position <strong><em>&theta;<sub>c</sub></em></strong>
+1. Propose a &ldquo;jump&rdquo; to a new position <strong><em>&theta;<sub>p</sub></em></strong>
+   * The proposal to jump is based on a normal distribution with mean and standard deviation
+   * Use normal distibution it is more likely to choose jumps that are closer to current position than farther away.
+   * The <em>&ldquo;Proposal Width&rdquo;</em> is the value of the standard deviation
+   * A wide proposal width covers space in the posterior distribution quicker, but might initially miss the region of higher probability.
+   * A narrow proposal width could take longer to converge
+1. Accept or reject the jump using a probability function based on the prior distribution and data
+   * Calculate the ratio of the posterior distribution at the new position versus the the posterior distribution at the current position
+   * Generate a uniform random number <strong><em>&isin; [0,1]</em></strong>. If the number is within the space of the ratio, accept the jump, otherwise reject.
+1. If accepted, jump to new position and return to step 1
+1. If rejected, maintin current position and return to step 1
+1. After some number of jumps occurred, return all accepted positions.
 <!--
 
 ## Non-math introduction (approach #1)
@@ -238,3 +253,4 @@ methods and Bayesian Statistics](https://www.ukdataservice.ac.uk/media/307220/pr
 * [Markov Chain Monte Carlo Without all the Bullshit](https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/)
 * [How would you explain Markov Chain Monte Carlo (MCMC) to a layperson?](https://stats.stackexchange.com/questions/165/) - the first response isn&squo;t good, but the rest are great.
 * [Introduction to Markov Chain Monte Carlo](https://www.mcmchandbook.net/HandbookChapter1.pdf) - Charles J. Geyer
+* [Markov Chain Monte Carlo for Bayesian Inference - The Metropolis Algorithm](https://www.quantstart.com/articles/Markov-Chain-Monte-Carlo-for-Bayesian-Inference-The-Metropolis-Algorithm)
