@@ -63,7 +63,7 @@
 ### Graph
 
 <p align="center">
-  <img src="./img/18eb3f64-26e1-47e4-9f56-d6334d7267e6.png" />
+  <img src="./img/18eb3f64-26e1-47e4-9f56-d6334d7267e6.png" width="720" />
 </p>
 
 ```python
