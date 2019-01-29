@@ -124,13 +124,29 @@ prior_current = norm(mu_prior_mu, mu_prior_sd).pdf(mu_current)
 # Prior probability of proposed mean μ
 prior_proposal = norm(mu_prior_mu, mu_prior_sd).pdf(mu_proposal)
 
+# Bayes nominator of current posterior probability of mean μ
 p_current = likelihood_current * prior_current
+# Bayes nominator of proposed posterior probability of mean μ
 p_proposal = likelihood_proposal * prior_proposal
 ```
 
+* The acceptance probability is the nominator of the proposed posterior divided by the nominator of the current posterior.
+
 ```python
 p_accept = p_proposal / p_current
+```
 
+* How does above work (i.e., why only divide the nominators?) Let <strong><em>&mu;<sub>p</sub></em></strong> be the proposed mean and let <strong><em>&mu;<sub>p</sub></em></strong> be the current mean
+  > ![divide nominators](./img/a791d3a4-4fba-481e-a697-14c077a758e7.png)<!--
+    {\frac{p(\mu_p|x)}{p(\mu_c|x)} =
+    \frac{\frac{p(x|\mu_p)p(\mu_p)}{p(x)}}{\frac{p(x|\mu_c)p(\mu_c)}{p(x)}} =
+    \frac{p(x|\mu_p)p(\mu_p)}{p(x|\mu_c)p(\mu_c)} }
+    -->
+  * By dividing the proposed posterior by the current posterior, the denominators cancel out.
+* However, this isn&rsquo;t enough because the only acceptable jumps would be those that go closer to the the mean.
+* Generate a uniform random number <strong><em>v &isin; [0,1]</em></strong> If this number is contained within the the interval <strong><em>[0,p_accept]</em></strong> then accept the jump.
+
+```python
 accept = np.random.rand() < p_accept
 
 if accept():
