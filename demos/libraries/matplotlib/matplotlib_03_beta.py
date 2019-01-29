@@ -8,54 +8,51 @@ from matplotlib import pyplot as plt
 
 beta_distributions = [
     {
-        'alpha': 1,
-        'beta': 1,
+        'alpha': 9,
+        'beta': 5,
         'linestyle': '-',
-        'color': 'b'
-    },
-    {
-        'alpha': 3,
-        'beta': 7,
-        'linestyle': '--',
         'color': 'g'
     },
     {
-        'alpha': 5,
-        'beta': 5,
-        'linestyle': ':',
+        'alpha': 9,
+        'beta': 6,
+        'linestyle': '--',
         'color': 'r'
     },
     {
-        'alpha': 4,
-        'beta': 6,
-        'linestyle': '-.',
-        'color': 'c'
+        'alpha': 10,
+        'beta': 5,
+        'linestyle': ':',
+        'color': 'b'
     }
 ]
 
 x = np.linspace(0, 1, 1002)[1:-1]
 
-fig, ax = plt.subplots(figsize=(5, 3.75))
+fig, ax = plt.subplots(figsize=(9, 6), dpi=80, facecolor='w', edgecolor='k')
+
+plt.grid(color='#DDDDDD')
 
 for params in beta_distributions:
     alpha = params['alpha']
     beta = params['beta']
     linestyle = params['linestyle']
     color = params['color']
-    label = r'$\alpha={0:.1f},\ \beta={0:.1f}$'.format(alpha, beta)
+    label = r'$\alpha={0:.1f},\ \beta={1:.1f}$'.format(alpha, beta)
     distribution = stats.beta(alpha, beta)
 
     plt.plot(
         x,
         distribution.pdf(x),
         linestyle=linestyle,
+        linewidth=2,
         color=color,
         label=label
     )
 
 
 plt.xlim(0, 1)
-plt.ylim(0, 3)
+plt.ylim(0, 3.5)
 
 plt.xlabel('$x$')
 plt.ylabel(r'$p(x|\alpha,\beta)$')

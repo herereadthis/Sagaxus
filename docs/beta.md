@@ -60,6 +60,22 @@
     -->
 * Therefore, (while possible) a beta distribution should not have a standard deviation greater than 0.28868 because a uniform prior has no beliefs
 
+### Graph
+
+<p align="center">
+  <img src="./img/18eb3f64-26e1-47e4-9f56-d6334d7267e6.png" />
+</p>
+
+```python
+import scipy.stats as stats
+
+alpha = 9
+beta = 5
+distribution = stats.beta(alpha, beta)
+```
+
+* Full code available at [matplotlib_03_beta.py](../demos/libraries/matplotlib/matplotlib_03_beta.py)
+
 ### Example: coin flips
 
 * What is the probability of getting 8 heads and 4 tails from a coin flip?
