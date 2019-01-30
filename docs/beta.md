@@ -74,7 +74,7 @@ beta = 5
 distribution = stats.beta(alpha, beta)
 ```
 
-* Full code available at [matplotlib_03_beta.py](../demos/libraries/matplotlib/matplotlib_03_beta.py)
+* Full code available at [matplotlib_04_beta.py](../demos/libraries/matplotlib/matplotlib_04_beta.py)
 
 ### Example: coin flips
 
