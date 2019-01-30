@@ -168,6 +168,21 @@ if accept():
 1. If accepted, jump to new position and return to step 1
 1. If rejected, maintin current position and return to step 1
 1. After some number of jumps occurred, return all accepted positions.
+
+### Simple MCMC with Beta
+
+```python
+beta_distributions = [
+    {'alpha': 12, 'beta': 12, 'linestyle': '--', 'color': '#9999FF'},
+    {'alpha': 22, 'beta': 52, 'linestyle': '-', 'color': '#000099'}
+]
+```
+
+<p align="center">
+  <img src="./img/f6d828f3-14e5-4138-89a1-7d21377784ee.png" width="720" />
+</p>
+
+
 <!--
 
 ## Non-math introduction (approach #1)

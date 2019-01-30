@@ -175,14 +175,17 @@ distribution = stats.beta(alpha, beta)
 </table>
 
 * Prior Constant
-> ![c1](./img/e2e7e975-71d0-4a3c-b865-b47531751055.png)<!--
-  c_1 = \frac{(a+b-1)!}{(a-1)!(b-1)!} -->
+  > ![c1](./img/e2e7e975-71d0-4a3c-b865-b47531751055.png)<!--
+    c_1 = \frac{(\alpha+\beta-1)!}{(\alpha-1)!(\beta-1)!}
+    -->
 * Likelihood Constant
   > ![c2](./img/6f15ce85-f7c5-40ba-be15-bc4f2c547e88.png)<!--
-  c_2 = \begin{pmatrix}N \\x \end{pmatrix} = \frac{N!}{x!(N-x)!} -->
+    c_2 = \begin{pmatrix}N \\x \end{pmatrix} = \frac{N!}{x!(N-x)!}
+    -->
 * Posterior Constant
   > ![c3](./img/b2e3b028-aa45-465e-840c-be212c0256d8.png)<!--
-  c_3 = \frac{(a+b+N-1)!}{(a+x-1)!(b+N-x-1)!} -->
+    c_3 = \frac{(a+b+N-1)!}{(a+x-1)!(b+N-x-1)!}
+    -->
 
   * notice that the peak of the curve approaches the expected value as the hyperparamters get larger
 
