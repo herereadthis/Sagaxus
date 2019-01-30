@@ -20,16 +20,18 @@
 
 * **Beta Distribution** - beta(a, b) 2-parameter distribution with range [0,1]
   > ![Beta distribution](./img/56786ea0-b970-49d0-9a4a-b5fc2c891c13.png)<!--
-    {f(\theta) = \frac{(a+b-1)!}{(a-1)!(b-1)!}\theta^{a-1}(1-\theta)^{b-1}}
+    {f(\theta) = \left(\frac{(\alpha+\beta-1)!}{(\alpha-1)!(\beta-1)!}\right)
+    \theta^{\alpha-1}(1-\theta)^{\beta-1}}
     -->
 * *a* and *b* are called **hyperparameters**, they are different than the hypothesis parameter *&theta;*
 * That fraction area is called a normalizing constant
   > ![normalizing constant](./img/c5d1c8a8-d6a1-4629-ac87-0321d01de1f6.png)<!--
-    {c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}
+    {c = \frac{(\alpha+\beta-1)!}{(\alpha-1)!(\beta-1)!},
+    c\theta^{\alpha-1}(1-\theta)^{\beta-1}}
     -->
 * Beta Mean: [Expected Value](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
   > ![beta mean](./img/5d6b37fc-580a-4a9f-a792-efdef29d3811.png)<!--
-    E(\theta) = \mu = \frac{a}{a+b}
+    E(\theta) = \mu = \frac{\alpha}{\alpha+\beta}
     -->
 * Variance
   > ![beta variance](./img/e02cd9d5-1f08-47fa-aaf7-df630154d91f.png)<!--
@@ -37,7 +39,7 @@
     -->
 * Mode: aka what is peak of the curve?
   > ![beta mode](./img/f2b2fc98-70aa-45dc-8932-4481bb377b43.png)<!--
-    \gamma  = \frac{a-1}{a+b-2}
+    \gamma = \frac{\alpha-1}{\alpha+\beta-2}
     -->
 * Solve for <em>&alpha;</em>
   > ![beta alpha](./img/592ddcea-1109-49a2-9f16-69c482c3a74e.png)<!--
@@ -55,10 +57,19 @@
     \sigma = \frac{b-a}{\sqrt{12}}
     -->
 * In a beta distribiton the hypothesis <em>&theta;</em> is between 0 and 1. Therefore, a uniform prior is:
-  > ![uniform prior standard deviation](./img/589ca684-1b99-4c60-a24f-97747494db3e.png)<!--
+  > ![uniform prior standard deviation](./img/bff34dbb-8a4e-4cce-b7fe-b7f83e65daf5.png)<!--
     \sigma = \frac{1 - 0}{\sqrt{12}} = 0.28868
     -->
 * Therefore, (while possible) a beta distribution should not have a standard deviation greater than 0.28868 because a uniform prior has no beliefs
+* We can also use the standard deviation of a beta distribution to determine <strong><em>&alpha;</em></strong> and <strong><em>&beta;</em></strong> of a fair coin, if we know the value of <strong><em>&sigma;</em></strong>. In the case of a fair coin, <strong><em>&alpha = &beta;</em></strong>. Then:
+  > ![beta of a fair coin](./img/589f5f15-943a-4c29-a0ff-284e9818443b.png)<!--
+    {\sigma^2 = \frac{\alpha^2}{\alpha^2(2\alpha + 1)},
+    \alpha = \beta = \frac{1/\sigma^2}{8} - 0.5}
+    -->
+* Example: what is <strong><em>&alpha;</em></strong> and <strong><em>&beta;</em></strong> for a beta distribution where <strong><em>&sigma; = 1</em></strong>?
+  > ![beta with standard deviation](./img/a21fd784-ef71-4ff0-9466-3f71782cc07e.png)<!--
+    \alpha = \beta = \frac{1/0.1^2}{8} - 0.5 = 12
+    -->
 
 ### Graph
 
@@ -86,9 +97,12 @@ distribution = stats.beta(alpha, beta)
     \begin{pmatrix}n \\k \end{pmatrix}p^{k}(1-p)^{n-k} =
     \big({\frac{n!}{k!(n - k)!}}\big)p^{k}(1-p)^{n-k}}
     }
+    -->
   * The posterior pdf for a binomial distribution is also a binomial distribution since we are still dealing with bernoulli trials
   * If we solve for the posterior with *&theta;* from 0 to 1, the answer must be 1 - that is the normalizing constant
-  > ![Beta Posterior](./img/c7b2de3b-bc90-46df-a92e-678e4a4fc2c4.png)
+  > ![Beta Posterior](./img/c7b2de3b-bc90-46df-a92e-678e4a4fc2c4.png)<!--
+    c_2\int_0^1 \theta^{a-1}(1-\theta)^{b-1}d\theta
+    -->
   * We had 8 heads and 4 tails before
     * 8 = a - 1, a = 9
     * 4 = b - 1, b = 5
@@ -190,10 +204,6 @@ distribution = stats.beta(alpha, beta)
 ## Sources
 
 * [Online equation editor](https://www.codecogs.com/latex/eqneditor.php)
-  * get beta
-    * beta distribution: ``
-    * normalizing constant: `{c = \frac{(a+b-1)!}{(a-1)!(b-1)!}, c\theta^{a-1}(1-\theta)^{b-1}}`
-    * beta posterior: `c_2\int_0^1 \theta^{a-1}(1-\theta)^{b-1}d\theta`
 * [Beta Distributions](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading14a.pdf)
 * [Beta Distribution](http://pj.freefaculty.org/guides/stat/Distributions/DistributionWriteups/Beta/Beta.pdf)
 * [Understanding the beta distribution (using baseball statistics)](http://varianceexplained.org/statistics/beta_distribution_and_baseball/)
