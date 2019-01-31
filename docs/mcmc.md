@@ -171,6 +171,9 @@ if accept():
 
 ### Simple MCMC with Beta
 
+* A prior beta distribution of a fair coin with <strong><em>&mu; = 0.5</em></strong> and <strong><em>&sigma; = 0.1</em></strong> is a <strong><em>Beta(12, 12)</em></strong> distribution. See [docs/beta.md](./beta.md) for more info on getting beta from <strong><em>&mu;</em></strong> and <strong><em>&sigma;</em></strong>
+* Let the data be 10 heads out of 50 coin clips (i.e., 40 tails). Then the posterior is <strong><em>Beta(22, 52)</em></strong>
+
 ```python
 beta_distributions = [
     {'alpha': 12, 'beta': 12, 'linestyle': '--', 'color': '#9999FF'},
@@ -179,8 +182,29 @@ beta_distributions = [
 ```
 
 <p align="center">
-  <img src="./img/f6d828f3-14e5-4138-89a1-7d21377784ee.png" width="720" />
+  <img src="./img/f6d828f3-14e5-4138-89a1-7d21377784ee.png" width="480" height="320" />
 </p>
+
+* In this case, obtaining the posterior is relatively easy. So let's do it with `PyMC3` to confirm it works.
+* Establish prior parameters and data:
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import pymc3
+import scipy.stats as stats
+
+# Parameter values for prior and analytic posterior
+n = 50
+z = 10
+alpha_prior = 12
+beta_prior = 12
+alpha_posterior = alpha_prior + z
+beta_posterior = beta_prior + n - z
+
+# number of iterations of Metropolis algorithm for MCMC
+iterations = 20000
+```
 
 
 <!--
