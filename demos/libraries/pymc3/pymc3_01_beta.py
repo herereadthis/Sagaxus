@@ -20,10 +20,10 @@ iterations = 100000
 # Use PyMC3 to construct a model context
 basic_model = pymc3.Model()
 with basic_model:
-    # Let theta be the paramater to be determined by the prior beta distribution
+    # Let theta be the parameter to be determined by the prior beta distribution
     theta = pymc3.Beta('theta', alpha=alpha_prior, beta=beta_prior)
 
-    # Define the Bernoulli likelihood function
+    # Define the Binomial likelihood with n trials p theta parameter
     y = pymc3.Binomial('y', n=trials, p=theta, observed=successes)
 
     '''
@@ -34,10 +34,10 @@ with basic_model:
     start = pymc3.sample()
 
     # Use the Metropolis algorithm (as opposed to NUTS or HMC, etc.)
-    step = pymc3.Metropolis()
+    jump = pymc3.Metropolis()
 
-    # Calculate the trace
-    trace = pymc3.sample(iterations, step, start, random_seed=1, progressbar=True)
+    # Calculate the trace. Samples are stored here
+    trace = pymc3.sample(iterations, jump, start, random_seed=1, progressbar=True)
 
 # Plot the analytic prior and posterior beta distributions
 x = np.linspace(0, 1, 100)

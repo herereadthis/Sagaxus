@@ -181,10 +181,6 @@ beta_distributions = [
 ]
 ```
 
-<p align="center">
-  <img src="./img/f6d828f3-14e5-4138-89a1-7d21377784ee.png" width="480" height="320" />
-</p>
-
 * In this case, obtaining the posterior is relatively easy. So let's do it with `PyMC3` to confirm it works.
 * Establish prior parameters and data:
 
@@ -203,9 +199,45 @@ alpha_posterior = alpha_prior + z
 beta_posterior = beta_prior + n - z
 
 # number of iterations of Metropolis algorithm for MCMC
-iterations = 20000
+iterations = 100000
 ```
 
+* `PyMC3` uses a with context to assign all the parameters to a `pymc3.Model` instance, which in this case is named `basic_model`
+
+```python
+basic_model = pymc3.Model()
+with basic_model:
+    # Let theta be the parameter to be determined by the prior distribution
+    theta = pymc3.Beta('theta', alpha=alpha_prior, beta=beta_prior)
+
+    # Define the Binomial likelihood with n trials p theta parameter
+    y = pymc3.Binomial('y', n=trials, p=theta, observed=successes)
+
+    # define a place to start sampling
+    start = pymc3.sample()
+
+    # Use the Metropolis algorithm (as opposed to NUTS or HMC, etc.)
+    jump = pymc3.Metropolis()
+
+    # Calculate the trace. Samples are stored here
+    trace = pymc3.sample(iterations, jump, start, random_seed=1, progressbar=True)
+```
+
+<p align="center">
+  <img src="./img/f6d828f3-14e5-4138-89a1-7d21377784ee.png" width="512" height="384" />
+</p>
+
+* Plot the posterior as a histogram
+
+```python
+plt.hist(
+    trace['theta'],
+    50, # number of bins
+    histtype='step',
+    normed=True,
+    label='Posterior (MCMC)'
+)
+```
 
 <!--
 
