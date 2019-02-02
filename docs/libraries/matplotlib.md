@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td>`D`</td>
-            <td>Diamon marker</td>
+            <td>Diamond marker</td>
         </tr>
         <tr>
             <td>`*`</td>

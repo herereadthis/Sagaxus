@@ -9,6 +9,7 @@
   * [Frequentist Statistics](./frequentist-statistics.md)
   * [Sampling Size](./sampling-size.md)
   * [Hypothesis Testing](./hypothesis-testing.md)
+  * [Frequentist Linear Regression](frequentist-linear-regression.md)
 * Bayesian Statistics
   * [Bayesian Statistics](./bayesian-statistics.md) - introduction
   * [Beta Distribution](./beta.md) and beta-binomial-beta conjugate priors
