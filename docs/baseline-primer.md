@@ -9,9 +9,13 @@ Establish terms so we know we are talking about the same thing when we say a wor
   * If *p* = 1, the event will occur.
   * The probability of *A* happening is *P(A)*
   * The probability of *A* happening, given that *B* has occurred is *P(A|B)*
-    > ![conditional probability](https://user-images.githubusercontent.com/638189/48657458-1a2eb100-e9ff-11e8-8a1e-797fd5740ab7.png)
+    > ![conditional probability](./img/fd0d993e-43c1-4eeb-81e5-92bc3f36d1fe.png)<!--
+      P(A|B) = \frac{P(A \cap B)}{P(B)}
+      -->
   * Rewritten is the multiplication rule:
-    > ![multiplication rule](https://user-images.githubusercontent.com/638189/48657485-6548c400-e9ff-11e8-9104-eeee08786db4.png)
+    > ![multiplication rule](./img/0e5a30e9-26bd-42d8-9ef1-edd694e6fe34.png)<!--
+      P(A \cap B) = P(A|B) \cdot P(B)
+      -->
 * Example: What is the probability that you draw from a pack of cards 2 diamonds in a row?
   * Reworded: What is the probability that the second card drawn from a pack of cards is a diamond *P(D<sub>2</sub>|D<sub>1</sub>)*, given that the first card drawn was a diamond *P(D<sub>1</sub>)*?
   * If 1 card has been drawn from a pack of cards, the probability that diamond is drawn from the remaining cards is:
@@ -122,13 +126,17 @@ Establish terms so we know we are talking about the same thing when we say a wor
     * *&mu;<sub>x + y</sub>* = *&mu;<sub>x</sub>* + *&mu;<sub>y</sub>*
     * *&mu;<sub>x - y</sub>* = *&mu;<sub>x</sub>* - *&mu;<sub>y</sub>*
 * **Discrete Variance** - a measure of how much the probability mass is spread out around the discrete mean.
-  > ![Discrete variance](https://user-images.githubusercontent.com/638189/48657511-ae991380-e9ff-11e8-8355-608e84687093.png)
+  > ![Discrete variance](./img/ed1fd387-4f36-4bb8-9f75-7c06a74e64c3.png)<!--
+    \text{Var}(X) = \text{E}[(X- \mu )^{2}] = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }
+    -->
   * Where *X* is a random variable with a mean *E(X) = &mu;*
   * Variance is taking the weighted average of the squared distance to the mean. Squaring makes sure we are averaging non-negative values (the spread to the right doesn't cancel the spread to the left). Using expectation means we weigh the high-probability values more.
     * *&sigma;* has the same units as *X*
     * *Var(X)* has the same units as the square of *X*. If X is measured in inches, then *Var(X)* is inches squared.
 * **Discrete Standard Deviation** - *&sigma;* - the square root of the variance
-  > ![discrete standard deviation](https://user-images.githubusercontent.com/638189/48657514-ca041e80-e9ff-11e8-9e38-622a8af05922.png)
+  > ![discrete standard deviation](./img/85abbbef-2b89-4b6a-ae68-8cb6219ae441.png)<!--
+    \sigma = \sqrt{\text{Var}(X)}
+    -->
   * Because *&sigma;* and *X* have the same units, the standard deviation is measure of the spread.
 * **Discrete Independence** - two random variables *X* and *Y* are independent if the probably of both of them happening is the product of their probabilities
   * *P(X = a, Y = b) = P(X = a) * P(X = b)*
@@ -247,15 +255,17 @@ Establish terms so we know we are talking about the same thing when we say a wor
 
 * **Law of Large Numbers** - the frequency of an event will converge on the probability of the event as the number of trials increase.
   * The average of many independent samples is close to the average of the population.
-  > ![law of large numbers](https://user-images.githubusercontent.com/638189/48669423-6eef2c00-ead2-11e8-8fb2-559bbd693ab3.png)<!--
-    \lim_{n \rightarrow \infty} P(\left |  \overline{X} - \mu  \right | < a) = 1 -->
+  > ![law of large numbers](./img/a7e65c98-a61e-4cd4-8e2c-5e6c7e8802ed.png)<!--
+    \lim_{n \rightarrow \infty} P(\left |  \overline{X} - \mu  \right | < a) = 1
+    -->
 * **Central Limit Theorem** - as more averages of independent samples is gathered, the distribution approaches a normal distribution
 * **Standardization** - For a random variable *X* that has a normal distribution, the standardization is:
   > ![Z](./img/5f680ec1-bf14-47c5-aec0-d0a7b31f39b6.png)
   * *Z* has a mean of 0 and standard deviation 1
 * Let *S<sub>n</sub>* the the sum of *X<sub>1</sub>, X<sub>1</sub>, ... , X<sub>n</sub>* random variables each with a mean &mu; and a standard deviation *&sigma;*. Then the weighted average of the random variables is:
-  > ![clt](https://user-images.githubusercontent.com/638189/48669537-a5c64180-ead4-11e8-9885-ededb2b0302f.png)<!--
-    \overline{X}_{n} = \frac{S_{n}}{n} = \frac{X_{1} + ... + X_{n}}{n} =  \big(\sum_{i=1}^nX_{i}\big)/n -->
+  > ![clt](./img/d837515c-3d03-4737-84a5-7ba8cf4c22d6.png)<!--
+    \overline{X}_{n} = \frac{S_{n}}{n} = \frac{X_{1} + \ldots + X_{n}}{n} = \left(\sum_{i=1}^nX_{i}\right)/n
+    -->
 * Mean
   > ![Expected Value Sum, Sample](./img/79ec9ea9-a0cf-4ae2-b199-b69678789f18.png)<!--
     E(S_{n}) = n\mu, E( \overline{X}_{n}) =\mu -->
@@ -296,11 +306,7 @@ is *probability.*
 * [HTML Math Symbols, Math Entities, and ASCII Math Character Code Reference](https://www.toptal.com/designers/htmlarrows/math/)
 * [Rules of Probability](https://stattrek.com/probability/probability-rules.aspx?Tutorial=AP)
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
-  * conditional probability: `P(A|B) = \frac{P(A \cap B)}{P(B)}`
-  * multiplication rule: `P(A \cap B) = P(A|B) * P(B)`
   * Bayes' Theorem: `P(B|A) = \frac{P(A|B)*P(B)}{P(A)}`
-  * discrete variance: `Var(X) = E((X- \mu )^{2}) = \sum_{i=1}^n p({x_{i})(x_{i}- \mu )^{2} }`
-  * discrete standard deviation: `\sigma = \sqrt{Var(X)}`
   * continuous pdf: `P(c \leq d) = \int_c^d f(x)dx`
   * infinity pdf: `{P(-\infty \leq X \leq \infty) = \int_{-\infty}^\infty f(x) dx = 1}`
   * large n: `\overline{Xn} \approx N(\mu, \frac{\sigma^2}{n}), S_n \approx N(n\mu, n\sigma^2), Zn \approx N(0,1))`
