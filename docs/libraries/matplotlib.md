@@ -168,7 +168,13 @@ for curve in curves:
 plt.xlabel('x label')
 plt.ylabel('y label')
 plt.title('Simple Plot')
+
+# use this formatting to put equations into labels
+# r'regular text: $a+b={}$'.format(a_plus_b)
+plt.title(r'Least Squares Fit: $\beta_1 = {0:.4f}, \beta_0 = {0:.5f}$'.format(b1, b0))
 ```
+
+
 
 * Figure enhancements
   * `pyplot.legend()` creates the legend

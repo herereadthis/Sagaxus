@@ -10,18 +10,16 @@ y = np.array([.05, .06, .08, .10, .13, .15, .20, .22, .25, .29, .32, .33, .34,
     .37, .39, .41, .42, .44, .45, .46, .49])
 
 def main():
-
     # we want to solve the equation y = A*p
     A = np.vstack([x, np.ones(len(x))]).T
     # solve for p
-    m, c = np.linalg.lstsq(A, y, rcond=None)[0]
-    print('m = {:.5f}'.format(m))
-    print('c = {:.5f}'.format(c))
+    b1, b0 = np.linalg.lstsq(A, y, rcond=None)[0]
 
-
+    print('$\\b1={:.5f}$'.format(b1))
+    print('$\\b0={:.5f}$'.format(b0))
 
     plt.plot(x, y, 'or', label='Raw data')
-    plt.plot(x, m*x + c, 'b', label='Fitted line')
+    plt.plot(x, b1*x + b0, 'b', label='Fitted line')
 
     plt.xlim(1960,2020)
     plt.ylim(-0.1, 0.6)
@@ -29,14 +27,14 @@ def main():
     plt.legend()
 
     # pyplot.title() sets label for title
-    plt.title('Least Squares Fit: m = {0:.4f}, c = {0:.5f}'.format(m, c))
+    plt.title(r'Least Squares Fit: $\beta_1 = {0:.4f}, \beta_0 = {0:.5f}$'.format(b1, b0))
     plt.show()
 
     '''
     Residuals are the leftovers from applying m*x+c formula and comparing it to
     the actual data value.
     '''
-    residuals = [(y[index] - (m*x_i + c)) for index, x_i in enumerate(x)]
+    residuals = [(y[index] - (b1*x_i + b0)) for index, x_i in enumerate(x)]
     '''
     Numpy formula for getting the sum of the squares of all the residuals.
     Ideally, this number should be close to 0

@@ -6,7 +6,10 @@
 * <strong>Linear Regression</strong> - find a relationship for bivariate data <strong><em>(x<sub>i</sub>, y<sub>i</sub>)</em></strong>  where <strong><em>y = f(x)</em></strong> is a good fit.
   * <strong>Independent/Predictor Variable</strong> - <strong><em>x<sub>i</sub></em></strong> is not random
   * <strong>Dependent/Response Variable</strong> - <strong><em>y<sub>i</sub></em></strong> is some function of <strong><em>x<sub>i</sub></em></strong>, and with random noise
-* <strong>Lease Squares Fit</strong> - a line that fits the data.
+* <strong>Lease Squares Fit</strong> - a line that fits the data. We want to find this line:
+  > ![solve for y](./img/499f110f-7df9-4395-98ce-0cd625f9f650.png)<!--
+    y = \beta_1x + \beta_0
+    -->
 
 ### Example
 
@@ -32,11 +35,55 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 * the result is `y = 0.00879x - 17.23146` for `m` and `c`
 * Full code available at [numpy_matplotlib_lstsq.py](../demos/libraries/numpy/numpy_matplotlib_lstsq.py)
 
-<p align="center">
-  <img src="./img/c87436b0-d130-4c13-940f-3c1cc936d07d.png" width="540" height='384' />
-</p>
 
 ### Residuals
 
 * <strong>Residuals (<strong><em>&epsilon;</em></strong>)</strong> -  the difference when comparing the actual data versus applying the formula for the best fit of the data, also known as the error.
+  > ![residuals](./img/7946cdb3-5cb5-45e2-9881-85c9a0eb12d3.png)<!--
+    y_1 = \beta_1x + \beta_0 + \epsilon_1, \quad i = 1,\ldots,n
+    -->
+* The least squares fit (essentially) is trying to find solve the above formula such that the sum of the squares of the errors is as close to zero as possible.
+  > ![least squares](./img/1a4d7494-15a3-47d5-a910-0dc642a1854a.png)<!--
+    {S(m, c) = \sum\epsilon_i^2 = \sum_i(y_i-mx_i-c)^2}
+    -->
+* Assumptions about <strong><em>&epsilon;</em></strong>:
+  * <strong><em>&epsilon;</em></strong> are independent variables with a mean <strong><em>0</em></strong> and standard deviation <strong><em>&sigma;</em></strong>
+  * <strong><em>&epsilon;</em></strong> follows a normal distribution
+* <strong>Homoscedasticity</strong> the values of <strong><em>&epsilon;</em></strong> have the same variance
+* From the above example, graph the residuals and the sum of the squares of residuals to illustrate homoscedasticity.
+<p align="center">
+  <img src="./img/b4021850-3f4b-4058-9b50-12c379933a1b.png" width="540" height='384' />
+</p>
+* <strong>Heteroscedastic</strong> - the values of <strong><em>&epsilon;</em></strong> have different variance over <strong><em>x</em></strong>
+
+### Matrix formula
+
+* Write out all the formulas for <strong><em>y</em></strong>:
+  > ![y formulas](./img/dde3545f-2885-431e-a931-19f62b142c09.png)<!--
+    \newline y_1 = \beta_1x + \beta_0 + \epsilon_1
+    \newline y_2 = \beta_2x + \beta_0 + \epsilon_2
+    \newline \text{ \,} \vdots
+    \newline y_n = \beta_nx + \beta_0 + \epsilon_n
+    -->
+* Re-write the above formulas as a matrix equation:
+  > ![y matrix](./img/f7d2a7ef-2e5b-4039-a3bb-091e298e8bac.png)<!--
+    \begin{bmatrix}y_1\\ \y_2\\ \vdots\\ y_n \end{bmatrix} =
+    \begin{bmatrix}1 & x_1\\ 1 & x_2\\ \vdots & \vdots \\ 1 & x_n \end{bmatrix}
+    \begin{bmatrix}\beta_0\\ \beta_1\end{bmatrix} +
+    \begin{bmatrix}\epsilon_1\\ \epsilon_2\\ \vdots\\ \epsilon_n \end{bmatrix}
+    -->
+* let the response matrix be <strong><em>Y</em></strong>, let the predictor matrix be <strong><em>X</em></strong>, and let the error matrix be <strong><em>&epsilon;</em></strong>. Then:
+  > ![linear regression function](./img/f6c1a470-65a3-4b4b-917e-b37b787c89c9.png)<!--
+    \textit{\textbf{Y}} = \textit{\textbf{X}}\beta + \epsilon
+    -->
+  * <strong><em>X</em></strong> is an <strong><em>n &times; 2</em></strong> matrix
+  * <strong><em>Y</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
+  * <strong><em>&beta;</em></strong> is an <strong><em>2 &times; 1</em></strong> column vector
+  * <strong><em>&epsilon;</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
+
+## Sources
+
+* [Linear Regression](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading25.pdf) - MIT introduction to statistics
+* [Find the sum of the residuals of a least-squares regression](https://kite.com/python/examples/360/numpy-find-the-sum-of-the-residuals-of-a-least-squares-regression)
+* [numpy.linalg.lstsq](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.linalg.lstsq.html) - scipy.org reference
 
