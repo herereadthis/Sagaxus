@@ -13,9 +13,7 @@
 * Let <strong><em>y</em></strong> be the price of stamps every <strong><em>x</em></strong> year.
 
 ```python
-from scipy.optimize import leastsq
 import numpy as np
-
 
 x = np.array([1963, 1968, 1971, 1974, 1975, 1978, 1981, 1985, 1988, 1991, 1995,
     1999, 2001, 2002, 2006, 2007, 2008, 2009, 2012, 2013, 2014])
@@ -32,8 +30,13 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 ```
 
 * the result is `y = 0.00879x - 17.23146` for `m` and `c`
+* Full code available at [numpy_matplotlib_lstsq.py](../demos/libraries/numpy/numpy_matplotlib_lstsq.py)
 
 <p align="center">
   <img src="./img/c87436b0-d130-4c13-940f-3c1cc936d07d.png" width="540" height='384' />
 </p>
+
+### Residuals
+
+* <strong>Residuals (<strong><em>&epsilon;</em></strong>)</strong> -  the difference when comparing the actual data versus applying the formula for the best fit of the data, also known as the error.
 

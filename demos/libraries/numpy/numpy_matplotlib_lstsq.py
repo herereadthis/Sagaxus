@@ -1,7 +1,6 @@
 '''
 Get least squares fit over bivariate data
 '''
-from scipy.optimize import leastsq
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,6 +19,7 @@ def main():
     print('c = {:.5f}'.format(c))
 
 
+
     plt.plot(x, y, 'or', label='Raw data')
     plt.plot(x, m*x + c, 'b', label='Fitted line')
 
@@ -30,6 +30,22 @@ def main():
 
     # pyplot.title() sets label for title
     plt.title('Least Squares Fit: m = {0:.4f}, c = {0:.5f}'.format(m, c))
+    plt.show()
+
+    '''
+    Residuals are the leftovers from applying m*x+c formula and comparing it to
+    the actual data value.
+    '''
+    residuals = [(y[index] - (m*x_i + c)) for index, x_i in enumerate(x)]
+    '''
+    Numpy formula for getting the sum of the squares of all the residuals.
+    Ideally, this number should be close to 0
+    '''
+    residuals_sum = np.linalg.lstsq(A, y, rcond=None)[1][0] 
+    plt.plot(x, residuals, 'or')
+    plt.hlines(residuals_sum, x[0], x[-1,], 'b')
+    plt.grid(color='#DDDDDD')
+    plt.title('Residuals: sum = {0:.5f}'.format(residuals_sum))
     plt.show()
 
 if __name__ == '__main__':
