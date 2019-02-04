@@ -35,16 +35,20 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 * the result is `y = 0.00879x - 17.23146` for `m` and `c`
 * Full code available at [numpy_matplotlib_lstsq.py](../demos/libraries/numpy/numpy_matplotlib_lstsq.py)
 
+<p align="center">
+  <img src="./img/c87436b0-d130-4c13-940f-3c1cc936d07d.png" width="540" height='384' />
+</p>
+
 
 ### Residuals
 
 * <strong>Residuals (<strong><em>&epsilon;</em></strong>)</strong> -  the difference when comparing the actual data versus applying the formula for the best fit of the data, also known as the error.
   > ![residuals](./img/7946cdb3-5cb5-45e2-9881-85c9a0eb12d3.png)<!--
-    y_1 = \beta_1x + \beta_0 + \epsilon_1, \quad i = 1,\ldots,n
+    y_i = \beta_1x + \beta_0 + \varepsilon_i, \quad i = 1,\ldots,n
     -->
 * The least squares fit (essentially) is trying to find solve the above formula such that the sum of the squares of the errors is as close to zero as possible.
   > ![least squares](./img/1a4d7494-15a3-47d5-a910-0dc642a1854a.png)<!--
-    {S(m, c) = \sum\epsilon_i^2 = \sum_i(y_i-mx_i-c)^2}
+    {S(m, c) = \sum\varepsilon_i^2 = \sum_i(y_i-\beta_1x_i-\beta_0)^2}
     -->
 * Assumptions about <strong><em>&epsilon;</em></strong>:
   * <strong><em>&epsilon;</em></strong> are independent variables with a mean <strong><em>0</em></strong> and standard deviation <strong><em>&sigma;</em></strong>
@@ -60,26 +64,35 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 
 * Write out all the formulas for <strong><em>y</em></strong>:
   > ![y formulas](./img/dde3545f-2885-431e-a931-19f62b142c09.png)<!--
-    \newline y_1 = \beta_1x + \beta_0 + \epsilon_1
-    \newline y_2 = \beta_2x + \beta_0 + \epsilon_2
+    \newline y_1 = \beta_1x + \beta_0 + \varepsilon_1
+    \newline y_2 = \beta_1x + \beta_0 + \varepsilon_2
     \newline \text{ \,} \vdots
-    \newline y_n = \beta_nx + \beta_0 + \epsilon_n
+    \newline y_n = \beta_1x + \beta_0 + \varepsilon_n
     -->
 * Re-write the above formulas as a matrix equation:
   > ![y matrix](./img/f7d2a7ef-2e5b-4039-a3bb-091e298e8bac.png)<!--
     \begin{bmatrix}y_1\\ \y_2\\ \vdots\\ y_n \end{bmatrix} =
     \begin{bmatrix}1 & x_1\\ 1 & x_2\\ \vdots & \vdots \\ 1 & x_n \end{bmatrix}
     \begin{bmatrix}\beta_0\\ \beta_1\end{bmatrix} +
-    \begin{bmatrix}\epsilon_1\\ \epsilon_2\\ \vdots\\ \epsilon_n \end{bmatrix}
+    \begin{bmatrix}\varepsilon_1\\ \varepsilon_2\\ \vdots\\ \varepsilon_n \end{bmatrix}
     -->
-* let the response matrix be <strong><em>Y</em></strong>, let the predictor matrix be <strong><em>X</em></strong>, and let the error matrix be <strong><em>&epsilon;</em></strong>. Then:
+* Sibebar: suppose we want to fit a parabolic line to the data. Then instead of a straight line, we would try to solve:
+  > ![parabolic](./img/d596195c-ea94-4b18-8399-7b52bd3a1524.png)<!--
+    {y_i = \beta_2x^2 + \beta_1x + \beta_0 + \varepsilon_i,
+    \quad i = 1,\ldots,n}
+    -->
+  * In which case, the matrix would be:
+   
+* let the response matrix be <strong><em>y</em></strong>, let the predictor matrix be <strong><em>X</em></strong>, and let the error matrix be <strong><em>&epsilon;</em></strong>. Then:
   > ![linear regression function](./img/f6c1a470-65a3-4b4b-917e-b37b787c89c9.png)<!--
-    \textit{\textbf{Y}} = \textit{\textbf{X}}\beta + \epsilon
+    \textit{\textbf{y}} = \textit{\textbf{X}}\beta + \varepsilon
     -->
   * <strong><em>X</em></strong> is an <strong><em>n &times; 2</em></strong> matrix
   * <strong><em>Y</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
   * <strong><em>&beta;</em></strong> is an <strong><em>2 &times; 1</em></strong> column vector
   * <strong><em>&epsilon;</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
+* Then, for any given <strong><em>y</em></strong>:
+
 
 ## Sources
 
