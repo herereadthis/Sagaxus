@@ -14,24 +14,20 @@
 ### Example
 
 * Let <strong><em>y</em></strong> be the price of stamps every <strong><em>x</em></strong> year.
+  ```python
+  import numpy as np
 
-```python
-import numpy as np
-
-x = np.array([1963, 1968, 1971, 1974, 1975, 1978, 1981, 1985, 1988, 1991, 1995,
-    1999, 2001, 2002, 2006, 2007, 2008, 2009, 2012, 2013, 2014])
-y = np.array([.05, .06, .08, .10, .13, .15, .20, .22, .25, .29, .32, .33, .34,
-    .37, .39, .41, .42, .44, .45, .46, .49])
-```
-
+  x = np.array([1963, 1968, 1971, 1974, 1975, 1978, 1981, 1985, 1988, 1991, 1995,
+      1999, 2001, 2002, 2006, 2007, 2008, 2009, 2012, 2013, 2014])
+  y = np.array([.05, .06, .08, .10, .13, .15, .20, .22, .25, .29, .32, .33, .34,
+      .37, .39, .41, .42, .44, .45, .46, .49])
+  ```
 * Solve for `y = Ap`, where `A = [[x 1]]` and `p = [[m], [c]]`
-
-```python
-A = np.vstack([x, np.ones(len(x))]).T
-# solve for p
-m, c = np.linalg.lstsq(A, y, rcond=None)[0]
-```
-
+  ```python
+  A = np.vstack([x, np.ones(len(x))]).T
+  # solve for p
+  b1, b0 = np.linalg.lstsq(A, y, rcond=None)[0]
+  ```
 * the result is `y = 0.00879x - 17.23146` for `m` and `c`
 * Full code available at [numpy_matplotlib_lstsq.py](../demos/libraries/numpy/numpy_matplotlib_lstsq.py)
 
@@ -46,6 +42,13 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
   > ![residuals](./img/7946cdb3-5cb5-45e2-9881-85c9a0eb12d3.png)<!--
     y_i = \beta_1x + \beta_0 + \varepsilon_i, \quad i = 1,\ldots,n
     -->
+* Finding residuals in Python:
+  ```python
+  # get errors for each estimated y versus data y
+  residuals = [(y[index] - (b1*x_i + b0)) for index, x_i in enumerate(x)]
+  # get the sum of the squares of residuals
+  residuals_sum = np.linalg.lstsq(A, y, rcond=None)[1][0]
+  ```
 * The least squares fit (essentially) is trying to find solve the above formula such that the sum of the squares of the errors is as close to zero as possible.
   > ![least squares](./img/1a4d7494-15a3-47d5-a910-0dc642a1854a.png)<!--
     {S(m, c) = \sum\varepsilon_i^2 = \sum_i(y_i-\beta_1x_i-\beta_0)^2}
@@ -53,7 +56,7 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 * Assumptions about <strong><em>&epsilon;</em></strong>:
   * <strong><em>&epsilon;</em></strong> are independent variables with a mean <strong><em>0</em></strong> and standard deviation <strong><em>&sigma;</em></strong>
   * <strong><em>&epsilon;</em></strong> follows a normal distribution
-* <strong>Homoscedasticity</strong> the values of <strong><em>&epsilon;</em></strong> have the same variance
+* <strong>[Homoscedasticity](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading25.pdf)</strong> the values of <strong><em>&epsilon;</em></strong> have the same variance
 * From the above example, graph the residuals and the sum of the squares of residuals to illustrate homoscedasticity.
 <p align="center">
   <img src="./img/b4021850-3f4b-4058-9b50-12c379933a1b.png" width="540" height='384' />
@@ -69,20 +72,26 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
     \newline \text{ \,} \vdots
     \newline y_n = \beta_1x + \beta_0 + \varepsilon_n
     -->
-* Re-write the above formulas as a matrix equation:
+* Re-write the above formulas [as a matrix equation](https://newonlinecourses.science.psu.edu/stat501/node/382/):
   > ![y matrix](./img/f7d2a7ef-2e5b-4039-a3bb-091e298e8bac.png)<!--
-    \begin{bmatrix}y_1\\ \y_2\\ \vdots\\ y_n \end{bmatrix} =
+    \begin{bmatrix}y_1\\ y_2\\ \vdots\\ y_n \end{bmatrix} =
     \begin{bmatrix}1 & x_1\\ 1 & x_2\\ \vdots & \vdots \\ 1 & x_n \end{bmatrix}
     \begin{bmatrix}\beta_0\\ \beta_1\end{bmatrix} +
     \begin{bmatrix}\varepsilon_1\\ \varepsilon_2\\ \vdots\\ \varepsilon_n \end{bmatrix}
     -->
-* Sibebar: suppose we want to fit a parabolic line to the data. Then instead of a straight line, we would try to solve:
-  > ![parabolic](./img/d596195c-ea94-4b18-8399-7b52bd3a1524.png)<!--
-    {y_i = \beta_2x^2 + \beta_1x + \beta_0 + \varepsilon_i,
+* Sibebar: suppose the value of <strong><em>y</em></strong> depends on 2 predictors, <strong><em>x<sub>1</sub></em></strong> and <strong><em>x<sub>2</sub></em></strong>. Then we would try to solve
+  > ![two predictors](./img/d596195c-ea94-4b18-8399-7b52bd3a1524.png)<!--
+    {y_i = \beta_2x_2 + \beta_1x_1 + \beta_0 + \varepsilon_i,
     \quad i = 1,\ldots,n}
     -->
   * In which case, the matrix would be:
-   
+  > ![parabolic matrix](./img/a7e91df8-6231-4090-b43c-5bb7531c4ffa.png)<!--
+    \begin{bmatrix}y_1\\ y_2\\ \vdots\\ y_n \end{bmatrix} =
+    \begin{bmatrix}1 & x_1 & x_1\\ 1 & x_2 & x_2\\ \vdots & \vdots & \vdots \\ 1 & x_n & x_n \end{bmatrix}
+    \begin{bmatrix}\beta_0\\ \beta_1\\ \beta_2\end{bmatrix} +
+    \begin{bmatrix}\varepsilon_1\\ \varepsilon_2\\ \vdots\\ \varepsilon_n \end{bmatrix}
+    -->
+
 * let the response matrix be <strong><em>y</em></strong>, let the predictor matrix be <strong><em>X</em></strong>, and let the error matrix be <strong><em>&epsilon;</em></strong>. Then:
   > ![linear regression function](./img/f6c1a470-65a3-4b4b-917e-b37b787c89c9.png)<!--
     \textit{\textbf{y}} = \textit{\textbf{X}}\beta + \varepsilon
@@ -92,6 +101,9 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
   * <strong><em>&beta;</em></strong> is an <strong><em>2 &times; 1</em></strong> column vector
   * <strong><em>&epsilon;</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
 * Then, for any given <strong><em>y</em></strong>:
+  > ![solve transpose](./img/90a1dee8-ff6f-458e-b2b8-54f7a9c1febb.png)<!--
+    y_i = \beta^2\textbf{x}_i^{T} + \varepsilon_i
+    -->
 
 
 ## Sources
@@ -99,4 +111,5 @@ m, c = np.linalg.lstsq(A, y, rcond=None)[0]
 * [Linear Regression](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading25.pdf) - MIT introduction to statistics
 * [Find the sum of the residuals of a least-squares regression](https://kite.com/python/examples/360/numpy-find-the-sum-of-the-residuals-of-a-least-squares-regression)
 * [numpy.linalg.lstsq](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.linalg.lstsq.html) - scipy.org reference
+* [5.4 - A Matrix Formulation of the Multiple Regression Model](https://newonlinecourses.science.psu.edu/stat501/node/382/)
 
