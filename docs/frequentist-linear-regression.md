@@ -10,6 +10,8 @@
   > ![solve for y](./img/499f110f-7df9-4395-98ce-0cd625f9f650.png)<!--
     y = \beta_1x + \beta_0
     -->
+* In Frequentist Linear Regression, the model is informed just by the data, and everything we need to know for the model will come from the data.
+  * Plug in some new value for <strong><em>x</em></strong> with the above formula and we should get the mostly like result, given the data.
 
 ### Example
 
@@ -51,7 +53,8 @@
   ```
 * The least squares fit (essentially) is trying to find solve the above formula such that the sum of the squares of the errors is as close to zero as possible.
   > ![least squares](./img/1a4d7494-15a3-47d5-a910-0dc642a1854a.png)<!--
-    {S(m, c) = \sum\varepsilon_i^2 = \sum_i(y_i-\beta_1x_i-\beta_0)^2}
+    {\mathrm{RSS}(\beta) = \sum_{i=1}^n\varepsilon_i^2 =
+    \sum_{i=1}^n(y_i-\beta_1x_i-\beta_0)^2}
     -->
 * Assumptions about <strong><em>&epsilon;</em></strong>:
   * <strong><em>&epsilon;</em></strong> are independent variables with a mean <strong><em>0</em></strong> and standard deviation <strong><em>&sigma;</em></strong>
@@ -94,7 +97,7 @@
 
 * let the response matrix be <strong><em>y</em></strong>, let the predictor matrix be <strong><em>X</em></strong>, and let the error matrix be <strong><em>&epsilon;</em></strong>. Then:
   > ![linear regression function](./img/f6c1a470-65a3-4b4b-917e-b37b787c89c9.png)<!--
-    \textit{\textbf{y}} = \textit{\textbf{X}}\beta + \varepsilon
+    \mathit{\mathbf{y}} = \mathit{\mathbf{X}}\beta + \varepsilon
     -->
   * <strong><em>X</em></strong> is an <strong><em>n &times; 2</em></strong> matrix
   * <strong><em>Y</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
@@ -102,7 +105,7 @@
   * <strong><em>&epsilon;</em></strong> is an <strong><em>n &times; 1</em></strong> column vector
 * Then, for any given <strong><em>y</em></strong>:
   > ![solve transpose](./img/90a1dee8-ff6f-458e-b2b8-54f7a9c1febb.png)<!--
-    y_i = \beta^2\textbf{x}_i^{T} + \varepsilon_i
+    y_i = \beta^2\mathbf{x}_i^{T} + \varepsilon_i
     -->
 
 

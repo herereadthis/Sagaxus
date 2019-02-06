@@ -111,11 +111,23 @@
       <td></td>
     </tr>
     <tr>
-      <td style="font-size: 2rem;">&#772;</td>
+      <td style="font-size: 2rem;">&#773;</td>
       <td>Sample Average</td>
-      <td><pre>&amp;#772;</pre></td>
+      <td><pre>&amp;#773;</pre></td>
       <td><pre>\overline{x}</pre></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="font-size: 2rem;">&#770;</td>
+      <td>Estimate</td>
+      <td><pre>&amp;#770;</pre></td>
+      <td><pre>\hat{x}</pre></td>
       <td></td>
     </tr>
   </tbody>
 </table>
+
+
+## Sources
+
+[Unicode](http://unicode.scarfboy.com/?s=U%2B304)

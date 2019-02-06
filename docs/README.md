@@ -19,6 +19,7 @@
   * [Markov Chains](./markov-chains.md)
   * [Markov Chain Monte Carlo](./mcmc.md) (MCMC)
   * [Bayesian PyMC](./bayesian-pymc) - notes from quantstart tutorials
+  * [Bayesian Linear Regression](./bayesian-linear-regression.md)
   * [Bayesian Programming](./bayesian-programming.md)
 * [Lindley's Paradox](./lindleys-paradox.md)
 * [A/B Testing, Part 1](./ab-testing-part-1.md)
