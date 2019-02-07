@@ -16,6 +16,11 @@
     {\mathrm{RSS}(\beta) = \sum_{i=1}^n(y_i-\^{y}_i)^2=
     \sum_{i=1}^n(y_i-\beta^Tx_i)^2}
     -->
+* The residuals themselves are a normal distribution:
+  > ![residuals distribution](./img/ce0795a8-454a-4f73-8417-4295d05d50d2.png)<!--
+    \varepsilon_i \sim \mathcal{N}(0,\sigma^2)
+    -->
+  * (Tilde symbol means &ldquo;[has the distribution of](http://mathworld.wolfram.com/Tilde.html)&rdquo;
 
 ### Ordinary Least Squares
 
@@ -33,4 +38,5 @@
 ## Sources
 
 * [Introduction to Bayesian Linear Regression](https://towardsdatascience.com/introduction-to-bayesian-linear-regression-e66e60791ea7)
+* [Tilde](http://mathworld.wolfram.com/Tilde.html)
 

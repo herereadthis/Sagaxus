@@ -97,6 +97,13 @@
       <td></td>
     </tr>
     <tr>
+      <td style="font-size: 2rem;">~</td>
+      <td>Has distribution of</td>
+      <td><pre>~</pre></td>
+      <td><pre>\sim</pre></td>
+      <td></td>
+    </tr>
+    <tr>
       <td style="font-size: 2rem;">&#8477;</td>
       <td>Real number</td>
       <td><pre>&amp;#8477;</pre></td>
