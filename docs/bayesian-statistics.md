@@ -56,42 +56,49 @@
 * **Likelihood** - same as MLE - assume the hypothesis is true, then what what is the probability of the data? E.g., if the coin is fair, what is the probability of getting heads? If the patient has the disease, what is the probability of testing positive?
 * **Bayes Numerator** - prior &times; likelihood
 * **Posterior** - probability of hypothesis, given the data
-
-
 * *P(H|D)* - The probability that the hypothesis is true, given the data that is collected
-* Example:
-  * The rate of the foo gene in a population is 0.002, or 0.2%.
-  * The screening test for a gene has a 1% false positive rate and a 1% false negative rate
-  * *What is the probability that a randomly selected person tests positive?*
-    * In other words, what is the probability that a person has the gene given that they test positive?
-    * Hypothesis: *H* = person has gene
-    * Data: *D* = the test is positive
-    * To solve for the right-hand side of Bayes' Theorem:
-      * What is the probability that a person's test is positive, given that they have the gene? 99% (because of the 1% false negative)
-      * What is the probability of having the gene? 0.2%
-      * What is the probability of the test being positive?
-        * The probability of a true positive + a false positive: 0.99 * 0.002 + 0.01 * 0.998 = 0.01196
-      * right-hand side: (0.99 * 0.002)/0.01196 = **0.166**
 
-      * In other words, the probability of having the foo gene is 0.002
-      * What is the probability that a person has the foo gene given that they test positive?
-      * Hypothesis: H = person has the foo gene
-      * Data: D = the test is positive
-      * Likelihood - probability of a positive test if you have the gene
-        > ![foo likelihood](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)<!--
-          {Likelihood = P(\mathcal{D}|\mathcal{H}) = 0.99}
-          -->
-      * Prior - probability of having the gene
-        > ![foo prior](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)<!--
-          {Prior = P(\mathcal{H}) = 0.002}
-          -->
-      * Evidence - a true positive test for those who have the gene, and a false positive for those who don't have it
-        > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)<!--
-          {Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}
-          -->
-  * **Base Rate Fallacy**
-    * It's worth pausing on this result for a bit. The probability that a patient who tests positive actually has the disease less than 17%, despite the test being 99% accurate. Why so low?
-      * Suppose the population was a thousand people. Then the expected number of people who actually have the disease is 2. Of the remaining 998 people, 1% of them will test positive. which will be about 10 other people.
+### Sidebar: 3 variables
+
+* What is the the probablity of B, given Y and X?
+  > ![3 variables](./img/a605b2b6-f1b2-4eab-85ec-be1096036036.png)<!--
+    \mathbf{P}(B|Y, X) =
+    \frac{\mathbf{P}(Y|B, X) \cdot \mathbf{P}(B|X)}{\mathbf{P}(Y|X)}
+    -->
+
+### Gene Example:
+* The rate of the foo gene in a population is 0.002, or 0.2%.
+* The screening test for a gene has a 1% false positive rate and a 1% false negative rate
+* *What is the probability that a randomly selected person tests positive?*
+  * In other words, what is the probability that a person has the gene given that they test positive?
+  * Hypothesis: *H* = person has gene
+  * Data: *D* = the test is positive
+  * To solve for the right-hand side of Bayes' Theorem:
+    * What is the probability that a person's test is positive, given that they have the gene? 99% (because of the 1% false negative)
+    * What is the probability of having the gene? 0.2%
+    * What is the probability of the test being positive?
+      * The probability of a true positive + a false positive: 0.99 * 0.002 + 0.01 * 0.998 = 0.01196
+    * right-hand side: (0.99 * 0.002)/0.01196 = **0.166**
+
+    * In other words, the probability of having the foo gene is 0.002
+    * What is the probability that a person has the foo gene given that they test positive?
+    * Hypothesis: H = person has the foo gene
+    * Data: D = the test is positive
+    * Likelihood - probability of a positive test if you have the gene
+      > ![foo likelihood](./img/2b527e94-6bc5-4107-8da1-1883c54b6917.png)<!--
+        {Likelihood = P(\mathcal{D}|\mathcal{H}) = 0.99}
+        -->
+    * Prior - probability of having the gene
+      > ![foo prior](./img/5e91f63d-535e-4d12-8819-b5757ecafcc0.png)<!--
+        {Prior = P(\mathcal{H}) = 0.002}
+        -->
+    * Evidence - a true positive test for those who have the gene, and a false positive for those who don't have it
+      > ![foo evidence](./img/7cf57639-310a-4578-88dd-d62d9ebd5e5a.png)<!--
+        {Evidence = P(\mathcal{D}) = 0.99(0.002) + 0.01(0.998) = 0.01196}
+        -->
+* **Base Rate Fallacy**
+  * It's worth pausing on this result for a bit. The probability that a patient who tests positive actually has the disease less than 17%, despite the test being 99% accurate. Why so low?
+    * Suppose the population was a thousand people. Then the expected number of people who actually have the disease is 2. Of the remaining 998 people, 1% of them will test positive. which will be about 10 other people.
 * **Statistical Inference** - estimate the probability of parameters, given a parametric model and its observed data. These parameters can be thought of as hypotheses. So we are estimating the probability of hypotheses, given data.
 * **Maximum Likelihood Estimate (MLE) - for which parameter value does the observed data have the biggest probability? (point estimate)
   * Example: What is the MLE of the probability *p*, given 55 heads from 100 coin flips?

@@ -13,7 +13,7 @@
     -->
 * And now we revisit residual sum of squares
   > ![rss again](./img/1445dcf3-3c02-4bc5-9e49-cf344da8013e.png)<!--
-    {\mathrm{RSS}(\beta) = \sum_{i=1}^n(y_i-\^{y}_i)^2=
+    {\mathrm{RSS}(\beta) = \sum_{i=1}^n(y_i-\hat{y}_i)^2=
     \sum_{i=1}^n(y_i-\beta^Tx_i)^2}
     -->
 * The residuals themselves are a normal distribution:
@@ -32,8 +32,17 @@
     -->
 * In Frequentist Linear Regression, the model is informed just by the data, and everything we need to know for the model will come from the data.
 * What if the size of the dataset is small? Then the estimate will be a distribution of possible values.
-* <strong><em>Bayesian Linear Regression</em></strong> - linear regression is a probability distribution, rather than point estimates.
-
+* <strong><em>Bayesian Linear Regression</em></strong> - linear regression is a probability distribution, rather than point estimates. In other words, we want to find the probability distribution of <strong><em>&beta;</em></strong>
+* <strong><em>y</em></strong> follows a normal distribution where the mean is the estimated value of <strong><em>y&#770;</em></strong>, with a variance of <strong><em>&sigma;<sup>2</sup></em></strong> times the identity matrix <strong><em>I</em></strong>:
+  > ![y distribution](./img/4c7a2117-99c7-4d36-b804-6ae31ea7abf7.png)<!--
+    \mathbf{y} \sim \mathcal{N}(\mathbf{\hat{y}},\sigma^2\mathbf{I}) \sim
+    \mathcal{N}(\beta^T\mathbf{X},\sigma^2\mathbf{I})
+    -->
+* The probability of the parameters, given y and x:
+  > ![parameters bayes](./img/fa191f32-83f9-4732-8f49-6d81edf74abb.png)<!--
+    \mathbf{P}(\beta|\mathbf{y}, \mathbf{X}) =
+    \frac{\mathbf{P}(\mathbf{y}|\beta, \mathbf{X}) \cdot \mathbf{P}(\beta|\mathbf{X})}{\mathbf{P}(\mathbf{y}|\mathbf{X})}
+    -->
 
 ## Sources
 
