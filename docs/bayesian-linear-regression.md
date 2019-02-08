@@ -9,7 +9,11 @@
     -->
 * Let <strong><em>y&#770;</em></strong> be the estimated value of <strong><em>y</em></strong>:
   > ![solve transpose](./img/d306a846-283d-4206-ba27-3a8519cc20be.png)<!--
-    \^{y}_i = \beta^2\mathbf{x}_i^{T}
+    \hat{y}_i = \beta^2\mathbf{x}_i^{T}
+    -->
+* In other words, the residuals are the difference between <strong><em>y</em></strong> and <strong><em>y&#770;</em></strong>
+  > ![residuals difference](./img/04984212-b315-4f78-82ba-1a23a19ebefd.png)<!--
+    \varepsilon_i = y_i - \^{y}_i
     -->
 * And now we revisit residual sum of squares
   > ![rss again](./img/1445dcf3-3c02-4bc5-9e49-cf344da8013e.png)<!--
@@ -44,8 +48,15 @@
     \frac{\mathbf{P}(\mathbf{y}|\beta, \mathbf{X}) \cdot \mathbf{P}(\beta|\mathbf{X})}{\mathbf{P}(\mathbf{y}|\mathbf{X})}
     -->
 
+### Bayesian Linear Modeling
+
+* Implementing Bayesian Linear Regression
+  * Specify priors for model parameters (use normal distribution for non-informative priors)
+  * Create a model that maps the inputs to the outputs
+  * Use a Markov Chain Monte Carlo (MCMC) algorithm to draw samples from the posterior distributions for the parameters
+
 ## Sources
 
-* [Introduction to Bayesian Linear Regression](https://towardsdatascience.com/introduction-to-bayesian-linear-regression-e66e60791ea7)
+* [Introduction to Bayesian Linear Regression](https://towardsdatascience.com/introduction-to-bayesian-linear-regression-e66e60791ea7) - Will Koehsen
 * [Tilde](http://mathworld.wolfram.com/Tilde.html)
 
