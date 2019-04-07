@@ -6,6 +6,7 @@ npm-debug.log
 dist/*
 build
 .vscode
+temp
 
 # python stuff
 venv/
