@@ -12,7 +12,11 @@ histogram_data = np.histogram(foo_data, bins = [0,20,40,60,80,100])
 
 hist = histogram_data[0]
 bins = histogram_data[1]
+plot_bins = [0,20,40,60,80,100]
 
-plt.hist(foo_data, bins = [0,20,40,60,80,100], color='b', edgecolor='k') 
+
+plt.hist(foo_data, bins = plot_bins, color='b', edgecolor='k') 
+# .xticks() makes the x-scale all nice and neat
+plt.xticks(plot_bins)
 plt.title('histogram') 
 plt.show()

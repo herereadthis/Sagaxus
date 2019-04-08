@@ -26,15 +26,20 @@ if command -v python3 &>/dev/null; then
     DESTINATION="demos/bayesian-linear-regression/temp"
     FILE="student.zip"
     URL="https://archive.ics.uci.edu/ml/machine-learning-databases/00320/student.zip"
+    DESTINATION_FILE="$DESTINATION/$FILE"
+    CSV_FILE1="student-mat.csv"
+    CSV_FILE2="student-por.csv"
 
-    if [ -e "$DESTINATION/student.txt" ]
+    if [ -e "$DESTINATION/$CSV_FILE1" ]
     then
         echo -e "\n\n${B_GREEN}Student data already exists.${NC}"
     else
         echo -e "\n\n${B_GREEN}Downloading student data.${NC}"
         wget $URL -P $DESTINATION
-        unzip "$DESTINATION/$FILE" -d "demos/bayesian-linear-regression/temp"
-        rm "$DESTINATION/$FILE"
+        unzip "$DESTINATION_FILE" -d "demos/bayesian-linear-regression/temp"
+        rm "$DESTINATION_FILE"
+        sed -i -e "s/;/,/g" "$DESTINATION/$CSV_FILE1"
+        sed -i -e "s/;/,/g" "$DESTINATION/$CSV_FILE2"
     fi
     echo -e "\n\n${B_GREEN}Finished grabbing student data.${NC}"
 
