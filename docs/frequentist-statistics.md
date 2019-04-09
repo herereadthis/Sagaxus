@@ -96,7 +96,9 @@ A student&rsquo;s *t*-distribution is a continuous porbability distribution that
 * The test statistic *t* (studentized mean) with a sample variance *s<sup>2</sup>*
   > ![t](./img/36d04a3e-462f-4629-8629-65d9a3acc276.png)
 * variance *s<sup>2</sup>* is:
-  > ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)
+  > ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)<!--
+    s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2
+    -->
   * The sample variance *s<sup>2</sup>* is an estimate of the true variance *&sigma<sup>2</sup>*
   * What&rsquo;s with that <em>n - 1</em>? It&rsquo;s because we don&rsquo;t know the true mean, and so we estimate it; doing so costs 1 degree of freedom. Increasing the amount of unknowns and estimates will raise the variance.
 * Null Distribution *f(t|H<sub>0</sub>)* is the pdf of *T ~ t(n -1)* with *n* - 1 degrees of freedom
@@ -123,7 +125,6 @@ A student&rsquo;s *t*-distribution is a continuous porbability distribution that
 
 * [Online equation editor](http://www.sciweavers.org/free-online-latex-equation-editor)
   * t: `t = \frac{ \overline{x} - \mu_{0}}{s/\sqrt{n}}`
-  * sample variance: `s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2`
 * [What is a confidence interval in layman's terms?](https://www.quora.com/What-is-a-confidence-interval-in-laymans-terms/answer/Michael-Hochster)
 * (My Journey From Frequentist to Bayesian Statistics)[http://www.fharrell.com/post/journey/]
 * [Frequentist And Bayesian Approaches In Statistics](https://www.probabilisticworld.com/frequentist-bayesian-approaches-inferential-statistics/)

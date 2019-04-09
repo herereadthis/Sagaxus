@@ -79,7 +79,9 @@ Define the ["simple linear regression model"](https://newonlinecourses.science.p
 
 We will never know the true value of the variance <em>&sigma;<sup>2</sup></em> for the errors, because it is a population parameter. However, [recall that the sample variance for a population](./frequentist-statistics.md#student-t-distribution)  with unknown standard deviation follows a student&rsquo;s t-distribution.
 
-> ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)
+> ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)<!--
+  s^{2}=\frac{1}{n-1}\sum_{i=1}^{n}(x_{i}-\overline{x})^2
+  ->
 
 Important question: how much of variance of <em>y</em> is described by the variance of <em>x</em>?
 * We can indirectly answer that by finding how much of the variance of  <em>y</em> is not describe by <em>x</em>? That&rsquo;s just the residual sum of squares
@@ -101,6 +103,25 @@ Let the correlation coefficient <em>R</em> be:
 
 * If the slope coefficient <em>&beta;<sub>1</sub></em> is positive, then <em>R</em> is positive, and vice versa.
 * <em>R</em> is a unitless number. This fact is important because it makes comparing <em>x</em> and <em>y</em> possible even if they are different units.
+
+### Metrics
+
+* <strong>Mean Absolute Error (MAE)</strong> - the average magnitude of the errors in a set of predictions; the errors are the absolute difference between the actual and predicted <em>y</em>
+  > ![mae](./img/fb3a3899-22df-4871-997d-cf6324270b75.png)<!--
+    \mathrm{MAE}
+    = \frac{1}{n}\sum_{i=1}^{n}\left | \varepsilon_i \right |
+    = \frac{1}{n}\sum_{i=1}^{n}\left | y_i - \hat{y}_i \right |
+    -->
+* <strong>Root mean squared error (RMSE)</strong> - a measure of the average magnitude of the error
+  > ![rmse](./img/f6058801-a4a5-44b6-9260-b2a59bbb7890.png)<!--
+    \mathrm{RMSE}
+    = \sqrt{\frac{1}{n}\sum_{i=1}^{n}( \varepsilon_i )^2}
+    = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i )^2}
+    -->
+  * RMSE gives relatively high weight to large errors, which means RMSE is more valuable when we don&rsquo;t want to see large errors. This does not mean a higher variance always means a higher RMSE.
+* For both measures, the range goes from 0 to infinity, and lower values are better
+* RMSE will always be >= to MAE.
+* RMSE will always be <= MAE &times; sqrt(n), where n is the number of samples
 
 
 ### Matrix formula
@@ -153,4 +174,5 @@ Let the correlation coefficient <em>R</em> be:
 * [numpy.linalg.lstsq](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.linalg.lstsq.html) - scipy.org reference
 * [5.4 - A Matrix Formulation of the Multiple Regression Model](https://newonlinecourses.science.psu.edu/stat501/node/382/)
 * [1.3 - The Simple Linear Regression Model](https://newonlinecourses.science.psu.edu/stat501/node/253/)
+* [MAE and RMSE — Which Metric is Better? (Mean Absolute Error versus Root Mean Squared Error)](https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d)
 

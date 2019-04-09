@@ -55,6 +55,10 @@
   * Create a model that maps the inputs to the outputs
   * Use a Markov Chain Monte Carlo (MCMC) algorithm to draw samples from the posterior distributions for the parameters
 
+* First, establish a baseline!
+  * [Recall](./frequentist-linear-regression.md#metrics) that two metrics to measure accuracy for regression are Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE)
+  * A way create a baseline is to get the MAE and RMSE when we predict the result of <em>y</em> is always the median of <em>y</em>. Any model created afterwards must at least beat these values.
+
 ## Sources
 
 * [Introduction to Bayesian Linear Regression](https://towardsdatascience.com/introduction-to-bayesian-linear-regression-e66e60791ea7) - Will Koehsen

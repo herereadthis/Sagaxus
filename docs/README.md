@@ -36,6 +36,7 @@
   * [Pandas](./libraries/pandas.md)
   * [PyMC](./libraries/pymc.md)
   * [React A/B Test](./libraries/react-ab-test.md)
+  * [scikit-learn](./libraries/scikit-learn.md) - tools for machine learning, data mining, and data-analysis
   * [Sixpack](./libraries/sixpack.md)
   * [json-rules-engine](./libraries/json-rules-engine.md)
   * [node-rules](./libraries/node-rules.md)
