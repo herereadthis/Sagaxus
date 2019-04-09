@@ -187,7 +187,7 @@ Establish terms so we know we are talking about the same thing when we say a wor
       \mu = \frac{1}{2}(a + b)
       -->
   * Variance:
-    > ![uniform variance](./img/42a1b621-535d-470d-8c09-87c6e7ff96e0.png<!--
+    > ![uniform variance](./img/42a1b621-535d-470d-8c09-87c6e7ff96e0.png)<!--
       \sigma^2 = \frac{1}{12}(b-a)^2
       -->
   * Standard Deviation:

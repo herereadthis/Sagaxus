@@ -86,7 +86,9 @@
 
 * Assuming the null hypothesis, what is the probability of seeing data at least as extreme as the experimental data.
 
-## Student *t* distribution
+## Student&rsquo;s *t*-distribution
+
+A student&rsquo;s *t*-distribution is a continuous porbability distribution that comes from a normally-distributed population where the sample size is small and we don&rsquo;t know the standard deviation <em>&sigma;</em>.
 
 * in a *z*-test, the variance of the population data is known.
 * *&sigma;* isn't know, then we estimate it from the data
@@ -96,6 +98,7 @@
 * variance *s<sup>2</sup>* is:
   > ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)
   * The sample variance *s<sup>2</sup>* is an estimate of the true variance *&sigma<sup>2</sup>*
+  * What&rsquo;s with that <em>n - 1</em>? It&rsquo;s because we don&rsquo;t know the true mean, and so we estimate it; doing so costs 1 degree of freedom. Increasing the amount of unknowns and estimates will raise the variance.
 * Null Distribution *f(t|H<sub>0</sub>)* is the pdf of *T ~ t(n -1)* with *n* - 1 degrees of freedom
   * Right-side *p = P(T > t|H<sub>0</sub>)*
   * Left-side *p = P(T < t|H<sub>0</sub>)*

@@ -66,6 +66,43 @@
 </p>
 * <strong>Heteroscedastic</strong> - the values of <strong><em>&epsilon;</em></strong> have different variance over <strong><em>x</em></strong>
 
+### Summary: The Simple Linear Regression Model
+
+Define the ["simple linear regression model"](https://newonlinecourses.science.psu.edu/stat501/node/253/) a.k.a. **LINE**
+
+1. The expected value of <em>y<sub>i</sub></em> is a **linear function** of <em>x<sub>i</sub></em>
+2. The errors <em>&epsilon;<sub>i</sub></em> are <strong>independent</strong>.
+3. <em>&epsilon;<sub>i</sub></em> follows a <strong>normal distribution</strong>.
+4. <em>&epsilon;<sub>i</sub></em> has equal variance (homoscedasticity).
+
+### Coeffient of Determination, <em>R<sup>2</sup></em>
+
+We will never know the true value of the variance <em>&sigma;<sup>2</sup></em> for the errors, because it is a population parameter. However, [recall that the sample variance for a population](./frequentist-statistics.md#student-t-distribution)  with unknown standard deviation follows a student&rsquo;s t-distribution.
+
+> ![sample variance](./img/3d1c5ddb-cd37-41d8-a84a-3f3a32198636.png)
+
+Important question: how much of variance of <em>y</em> is described by the variance of <em>x</em>?
+* We can indirectly answer that by finding how much of the variance of  <em>y</em> is not describe by <em>x</em>? That&rsquo;s just the residual sum of squares
+* (The variance of <em>y</em> comes from how far all the values of y is from the mean of y.)
+* In other words,
+  > ![r](./img/fad7f90d-b38f-4fcd-97da-267388481bb8.png)<!--
+    R^2 =
+    1 - \frac{SS_{residuals}}{SS_{total}} =
+    \frac{\sum_{i}\varepsilon_i^2}{\sum_{i}(y_i - \overline{y})^2}
+    -->
+* <em>R<sup>2</sup></em> is always between 0 and 1.
+* If <em>R<sup>2</sup> = 1</em> then the line perfectly describes the data.
+* If <em>R<sup>2</sup> = 0</em> then the line is exactly horizontal.
+* &ldquo;<em>R<sup>2</sup> &times; 100%</em> of the variation in <em>y</em> is reduced by taking into account predictor <em>x</em>.&rdquo;
+  * We say <em>reduced by</em> instead of <em>explained by</em> because the latter implies causality
+
+Let the correlation coefficient <em>R</em> be:
+> ![R](./img/249ff7f8-6106-45e2-9a60-6510052cc32f.png)
+
+* If the slope coefficient <em>&beta;<sub>1</sub></em> is positive, then <em>R</em> is positive, and vice versa.
+* <em>R</em> is a unitless number. This fact is important because it makes comparing <em>x</em> and <em>y</em> possible even if they are different units.
+
+
 ### Matrix formula
 
 * Write out all the formulas for <strong><em>y</em></strong>:
@@ -115,4 +152,5 @@
 * [Find the sum of the residuals of a least-squares regression](https://kite.com/python/examples/360/numpy-find-the-sum-of-the-residuals-of-a-least-squares-regression)
 * [numpy.linalg.lstsq](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.linalg.lstsq.html) - scipy.org reference
 * [5.4 - A Matrix Formulation of the Multiple Regression Model](https://newonlinecourses.science.psu.edu/stat501/node/382/)
+* [1.3 - The Simple Linear Regression Model](https://newonlinecourses.science.psu.edu/stat501/node/253/)
 
