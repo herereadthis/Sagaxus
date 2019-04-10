@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.model_selection import train_test_split
+import util_functions as uf
 
 grade_col = 'Grade'
 
@@ -45,32 +46,14 @@ dummy_df = pd.get_dummies(category_df)
 # add back grade column to dummy dataframe
 dummy_df['Grade'] = df[grade_col]
 # find correlations (absolute value)
-r2 =  dummy_df.corr()['Grade'].sort_values(ascending=False)
+r2 = dummy_df.corr()['Grade'].sort_values(ascending=False)
 
-def format_data(df, target_col=grade_col, drop_num_cols=[], drop_cat_cols=[]):
-    '''
-    do both numerical and categorical, and get the most correlated
-    '''
-    labels = df[target_col]
-    df = df.drop(columns=drop_num_cols)
-    df = pd.get_dummies(df)
-    most_correlated = df.corr().abs()[target_col].sort_values(ascending=False)
-    most_correlated = most_correlated[:9]
-    df = df.ix[:, most_correlated.index]
-    df = df.drop(columns=drop_cat_cols)
-    X_train, X_test, y_train, y_test = train_test_split(df, 
-                                                        labels,
-                                                        test_size=0.25,
-                                                        random_state=42)
-    
-    return X_train, X_test, y_train, y_test
+formatted_data = uf.format_dataframe(df, 
+                                     target_col=grade_col,
+                                     drop_num_cols=['G1', 'G2', 'school'],
+                                     drop_cat_cols=['higher_no'])
 
-X_train, X_test, y_train, y_test = format_data(df, 
-                                            target_col=grade_col,
-                                            drop_num_cols=['G1', 'G2', 'school'],
-                                            drop_cat_cols=['higher_no'])
-
-
+X_train, X_test, y_train, y_test = formatted_data
 
 # Rename variables in train and teste
 X_train = X_train.rename(columns={'higher_yes': 'higher_edu'})
@@ -87,12 +70,12 @@ def evaluate_predictions(predictions, true):
     return mae, rmse
 
 
-
 median_prediction = df[grade_col].median()
 median_predictions = [median_prediction for i in range(len(X_test))]
 true = X_test[grade_col]
 
-mb_mae, mb_rmse = evaluate_predictions(median_predictions, true)
+mb_mae = uf.get_mae(median_predictions, true)
+mb_rmse = uf.get_rmse(median_predictions, true)
 print('MAE: {:.4f}'.format(mb_mae))
 print('RMSE: {:.4f}'.format(mb_rmse))
 

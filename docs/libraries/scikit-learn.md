@@ -11,3 +11,16 @@ What is a <strong>learning problem?</strong> Consider a set of <em>n</em> sample
   * <strong>Visualization</strong> - project the data from higher to lower dimensions
 
 To learn about a data set, it is commonly split in two. On the <strong>training set</strong> we try to learn some properties, and then we see if those properties also apply to the <strong>testing set</strong>
+
+
+### Linear Regression models
+
+
+`sklearn.linear_model.LinearRegression`
+* Ordinary Least Squares (OLS) Linear Regression
+`sklearn.linear_model.ElasticNet`
+* Elastic Net Regularization
+`sklearn.linear_model.RandomForestRegressor`
+`sklearn.linear_model.ExtraTreesRegressor`
+`sklearn.linear_model.GradientBoostingRegressor`
+`sklearn.linear_model.GradientBoostingRegressor`
