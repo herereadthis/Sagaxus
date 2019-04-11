@@ -16,6 +16,10 @@ To learn about a data set, it is commonly split in two. On the <strong>training 
 ### Linear Regression models
 
 
+### Examples
+
+* [Boston Housing Prices Demo](../demos/libraries/scikit-learn/boston.py)
+
 `sklearn.linear_model.LinearRegression`
 * Ordinary Least Squares (OLS) Linear Regression
 `sklearn.linear_model.ElasticNet`

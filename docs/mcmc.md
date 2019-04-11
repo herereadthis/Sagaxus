@@ -239,6 +239,13 @@ plt.hist(
 )
 ```
 
+### Algorithms
+
+#### Metropolis Hastings
+
+This is the simplest MCMC algorithm. The system makes a random proposal for new values, and then accepts or rejects the proposal. Eventually over time, the distribution of accepted proposals approximates the posterior distribution. The problem with this algorithm is that is inefficent. It makes a lot of rejected proposals
+
+
 <!--
 
 ## Non-math introduction (approach #1)
