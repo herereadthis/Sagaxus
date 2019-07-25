@@ -31,6 +31,7 @@
   * [VWO](https://vwo.com/) Stats engine developed by [Chris Stucchio](https://www.chrisstucchio.com/) with Bayesian inference
   * [Optimizely](./services/optimizely.md) According to Evan Miller, they use [Sequential probability ratio test](https://en.wikipedia.org/wiki/Sequential_probability_ratio_test) for their "Stats Engine"
 * Libraries
+  * [Anaconda](./libraries/anaconda.md) - a Python and R distribution for scientific computing
   * [NumPy](./libraries/numpy.md)
   * [Matplotlib](./libraries/matplotlib.md)
   * [Pandas](./libraries/pandas.md)
