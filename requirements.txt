@@ -9,7 +9,7 @@ jedi==0.13.2
 joblib==0.12.5
 kiwisolver==1.0.1
 matplotlib==3.0.2
-numpy==1.15.4
+numpy==1.22.0
 pandas==0.23.4
 parso==0.3.1
 patsy==0.5.1
